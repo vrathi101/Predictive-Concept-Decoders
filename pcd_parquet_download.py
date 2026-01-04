@@ -558,7 +558,7 @@ def train_step(subject_model, batch, layer, start_pos, end_pos,
     return ce_loss + aux_loss, num_inactive
 
 num_epochs = 100
-patience = 5
+patience = 10
 curr_bad = 0
 best_val = float("inf")
 
@@ -574,14 +574,60 @@ count_steps = 0
 
 stop_training = False
 
-def do_train_full():
+CKPT_PATH = "best_checkpoint_aux2.pt"
+
+
+def load_ckpt_if_exists():
+    global seen_tokens, best_val, curr_bad, inactive_concepts_tracker
+
+    if rank == 0 and os.path.exists(CKPT_PATH):
+        ckpt = torch.load(CKPT_PATH, map_location="cpu")
+    else:
+        ckpt = None
+
+    obj_list = [ckpt]
+    dist.broadcast_object_list(obj_list, src=0)
+    ckpt = obj_list[0]
+
+    if ckpt is None:
+        return 0, 0  # start_epoch, start_step
+
+    # models
+    encoder.module.load_state_dict(ckpt["encoder"])
+    decoder.module.load_state_dict(ckpt["decoder"])
+
+    # optimizer (must be after models are loaded)
+    optim.load_state_dict(ckpt["optim"])
+    for st in optim.state.values():
+        for k, v in st.items():
+            if torch.is_tensor(v):
+                st[k] = v.to(device)
+
+    # counters / trackers
+    best_val = ckpt["best_val"]
+    curr_bad = ckpt["curr_bad"]
+    seen_tokens = ckpt["seen_tokens"]
+    inactive_concepts_tracker = ckpt["inactive_concepts_tracker"]
+
+    # this one is a tensor on GPU
+    concepts_last_occ_by_seen_tokens.copy_(ckpt["concepts_last_occ_by_seen_tokens"].to(device))
+
+    start_epoch = int(ckpt["epoch"])
+    start_step  = int(ckpt["step"]) + 1  # continue after saved step
+    return start_epoch, start_step
+
+
+def do_train_full(start_epoch=0, start_step=1):
     global global_step, count_steps, total_inactive_concepts
     global seen_tokens, best_val, curr_bad, stop_training
     
-    for epoch in range(num_epochs):
+    for epoch in range(start_epoch, num_epochs):
     
         pbar = tqdm(enumerate(train_loader, start=1), desc=f"epoch {epoch+1}/{num_epochs}")
         for step, train_batch in pbar:
+            if epoch == start_epoch and step < start_step:
+                continue
+                
             global_step += 1
     
             train_batch = train_batch.to(device, non_blocking=True)
@@ -644,7 +690,7 @@ def do_train_full():
                                 "seen_tokens": seen_tokens,
                                 "inactive_concepts_tracker": inactive_concepts_tracker
                             },
-                            "best_checkpoint_aux.pt",
+                            "best_checkpoint_aux3.pt",
                         )
         
                     else:
@@ -673,4 +719,6 @@ def do_train_full():
     dist.destroy_process_group()
 
 if __name__ == "__main__":
-    do_train_full()
+    start_epoch, start_step = load_ckpt_if_exists()
+    dist.barrier(device_ids=[local_rank])
+    do_train_full(start_epoch, start_step)
