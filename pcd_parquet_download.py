@@ -1,6 +1,7 @@
 import os
 os.environ["PIP_CACHE_DIR"] = "/workspace/.cache/pip"
 os.environ["HF_HOME"] = "/workspace/.cache/huggingface"
+os.environ["TOKENIZERS_PARALLELISM"] = "false"
 
 import sys
 sys.path.append('.')
@@ -20,30 +21,60 @@ from torch.utils.data import IterableDataset, DataLoader, get_worker_info
 # from nnsight import LanguageModel
 from peft import LoraConfig, get_peft_model
 from tqdm import tqdm
+from itertools import islice
 from datasets import load_dataset, Dataset
 from transformers import AutoTokenizer, AutoModelForCausalLM  # other option: Qwen/Qwen2.5-0.5B-Instruct
 
-dist.init_process_group(backend="nccl")
 local_rank = int(os.environ["LOCAL_RANK"])
-rank = int(os.environ["RANK"])
-world_size = int(os.environ["WORLD_SIZE"])
-
 torch.cuda.set_device(local_rank)
 device = torch.device(f"cuda:{local_rank}")
 
+dist.init_process_group(backend="nccl")
+rank = dist.get_rank()
+world_size = dist.get_world_size()
 
-K = 4  # e.g. 4 ~ quarter-ish, 8 ~ half-ish, 15 = all
 
-BASE = "hf://datasets/HuggingFaceFW/fineweb/sample/10BT"
-DATA_FILES = [f"{BASE}/{i:03d}_00000.parquet" for i in range(K)]
+# K = 4  # e.g. 4 ~ quarter-ish, 8 ~ half-ish, 15 = all
 
-fineweb_stream = load_dataset(
-    "parquet",
-    data_files=DATA_FILES,
-    split="train",
-    streaming=True,
-).shuffle(buffer_size=100_000, seed=42)
+# BASE = "hf://datasets/HuggingFaceFW/fineweb/sample/10BT"
+# DATA_FILES = [f"{BASE}/{i:03d}_00000.parquet" for i in range(K)]
 
+# fineweb_stream = load_dataset(
+#     "parquet",
+#     data_files=DATA_FILES,
+#     split="train",
+#     streaming=True,
+# ).shuffle(buffer_size=100_000, seed=42)
+from huggingface_hub import hf_hub_download
+
+# FineWeb sample/10BT has 15 shards: 000..014  (total ~30.6GB)
+FINEWEB_REV = "9bb295ddab0e05d785b879661af7260fed5140fc"  # pin for stability (optional but recommended)
+
+# Pick how many shards to cache locally:
+# quarter-ish:
+FILE_IDS = list(range(4))
+# half-ish: FILE_IDS = list(range(8))
+# all:      FILE_IDS = list(range(15))
+
+def fineweb_local_parquets(file_ids, local_only: bool):
+    return [
+        hf_hub_download(
+            repo_id="HuggingFaceFW/fineweb",
+            repo_type="dataset",
+            filename=f"sample/10BT/{i:03d}_00000.parquet",
+            revision=FINEWEB_REV,
+            local_files_only=local_only,
+        )
+        for i in file_ids
+    ]
+
+
+if rank == 0:
+    _ = fineweb_local_parquets(FILE_IDS, local_only=False)  # does the download
+
+dist.barrier(device_ids=[local_rank])
+
+LOCAL_PARQUETS = fineweb_local_parquets(FILE_IDS, local_only=True)  # everyone stays offline now
 
 
 
@@ -190,48 +221,130 @@ rng = random.Random(42)
 
 # resid[0].float().cpu().numpy()[:10]
 
+# class CroppedTokenDataset(IterableDataset):
+#     def __init__(self, hf_dataset, tokenizer, prefix_ids, cropped_len=48, mode="train",
+#                  total_samples=None, skip_samples=0):
+#         self.ds = hf_dataset
+#         self.tokenizer = tokenizer
+#         self.prefix = torch.tensor(prefix_ids, dtype=torch.long)
+#         self.cropped_len = cropped_len
+#         self.mode = mode
+#         self.total_samples = total_samples
+#         self.skip_samples = skip_samples
+
+#     def __iter__(self):
+#         info = get_worker_info()
+#         wid = 0 if info is None else info.id
+#         nw  = 1 if info is None else info.num_workers
+
+#         rank = int(os.environ["RANK"])
+#         world = int(os.environ["WORLD_SIZE"])
+
+#         num_shards = world * nw
+#         shard_index = rank * nw + wid
+
+#         ds = self.ds.shard(num_shards=num_shards, index=shard_index)
+
+#         # Split AFTER sharding (important)
+#         if self.skip_samples:
+#             ds = ds.skip(self.skip_samples // num_shards)
+#         if self.total_samples is not None:
+#             ds = ds.take(self.total_samples // num_shards)
+
+#         g = torch.Generator()
+#         g.manual_seed(0)
+
+#         for item in ds:
+#             text_ids = self.tokenizer(item["text"], return_tensors=None, add_special_tokens=False)["input_ids"]
+#             if len(text_ids) >= self.cropped_len:
+#                 if self.mode == "train":
+#                     start = int(torch.randint(0, len(text_ids) - self.cropped_len + 1, (1,), generator=g).item())
+#                 else:
+#                     start = 0
+#                 cropped = torch.tensor(text_ids[start:start + self.cropped_len], dtype=torch.long)
+#                 yield torch.cat([self.prefix, cropped], dim=0)
 class CroppedTokenDataset(IterableDataset):
-    def __init__(self, hf_dataset, tokenizer, prefix_ids, cropped_len=48, mode="train",
-                 total_samples=None, skip_samples=0):
-        self.ds = hf_dataset
+    def __init__(
+        self,
+        data_files,
+        tokenizer,
+        prefix_ids,
+        cropped_len=48,
+        mode="train",
+        total_samples=100_000,
+        skip_samples=0,
+        seed=42,
+        shuffle_buffer=50_000,
+    ):
+        self.data_files = data_files
         self.tokenizer = tokenizer
         self.prefix = torch.tensor(prefix_ids, dtype=torch.long)
         self.cropped_len = cropped_len
         self.mode = mode
         self.total_samples = total_samples
         self.skip_samples = skip_samples
+        self.seed = seed
+        self.shuffle_buffer = shuffle_buffer
 
     def __iter__(self):
-        info = get_worker_info()
-        wid = 0 if info is None else info.id
-        nw  = 1 if info is None else info.num_workers
+        # DDP rank/world
+        rank = int(os.environ.get("RANK", "0"))
+        world = int(os.environ.get("WORLD_SIZE", "1"))
 
-        rank = int(os.environ["RANK"])
-        world = int(os.environ["WORLD_SIZE"])
+        # IMPORTANT: make per-rank counts identical (DDP-safe)
+        assert self.total_samples % world == 0, "total_samples must be divisible by WORLD_SIZE"
+        assert self.skip_samples % world == 0, "skip_samples must be divisible by WORLD_SIZE"
 
-        num_shards = world * nw
-        shard_index = rank * nw + wid
+        take_local = self.total_samples // world
+        skip_local = self.skip_samples // world
 
-        ds = self.ds.shard(num_shards=num_shards, index=shard_index)
+        # ✅ FILE-LEVEL sharding: each rank gets a disjoint subset of parquet files
+        local_files = self.data_files[rank::world]
+        if len(local_files) == 0:
+            return  # no files assigned to this rank
 
-        # Split AFTER sharding (important)
-        if self.skip_samples:
-            ds = ds.skip(self.skip_samples // num_shards)
-        if self.total_samples is not None:
-            ds = ds.take(self.total_samples // num_shards)
+        # ✅ local parquet streaming (no hf://; no hub listing)
+        ds = load_dataset(
+            "parquet",
+            data_files=local_files,
+            split="train",
+            streaming=True,
+        )
+
+        # shuffle within this rank's file subset
+        ds = ds.shuffle(buffer_size=self.shuffle_buffer, seed=self.seed + rank)
+
+        # ✅ skip safely without calling next() in a generator
+        stream = islice(ds, skip_local, None)
 
         g = torch.Generator()
-        g.manual_seed(0)
+        g.manual_seed(self.seed + rank)
 
-        for item in ds:
-            text_ids = self.tokenizer(item["text"], return_tensors=None, add_special_tokens=False)["input_ids"]
-            if len(text_ids) >= self.cropped_len:
-                if self.mode == "train":
-                    start = int(torch.randint(0, len(text_ids) - self.cropped_len + 1, (1,), generator=g).item())
-                else:
-                    start = 0
-                cropped = torch.tensor(text_ids[start:start + self.cropped_len], dtype=torch.long)
-                yield torch.cat([self.prefix, cropped], dim=0)
+        emitted = 0
+        for item in stream:
+            text_ids = self.tokenizer(
+                item["text"],
+                return_tensors=None,
+                add_special_tokens=False
+            )["input_ids"]
+
+            if len(text_ids) < self.cropped_len:
+                continue
+
+            if self.mode == "train":
+                start = int(torch.randint(
+                    0, len(text_ids) - self.cropped_len + 1, (1,), generator=g
+                ).item())
+            else:
+                start = 0
+
+            cropped = torch.tensor(text_ids[start:start + self.cropped_len], dtype=torch.long)
+            yield torch.cat([self.prefix, cropped], dim=0)
+
+            emitted += 1
+            if emitted >= take_local:
+                break
+
 
 
 
@@ -352,21 +465,11 @@ concepts_last_occ_by_seen_tokens = torch.full(
 seen_tokens = 0
 inactive_concepts_tracker = []
 
-TRAIN_SAMPLES = 500_000
 VAL_SAMPLES   = 10_000
-
-pcd_val_ds = CroppedTokenDataset(
-    hf_dataset=fineweb_stream,
-    tokenizer=tokenizer,
-    prefix_ids=prefix_ids,
-    cropped_len=48,
-    mode="val",
-    total_samples=VAL_SAMPLES,
-    skip_samples=0,
-)
+TRAIN_SAMPLES = 500_000
 
 pcd_train_ds = CroppedTokenDataset(
-    hf_dataset=fineweb_stream,
+    data_files=LOCAL_PARQUETS,
     tokenizer=tokenizer,
     prefix_ids=prefix_ids,
     cropped_len=48,
@@ -375,9 +478,20 @@ pcd_train_ds = CroppedTokenDataset(
     skip_samples=VAL_SAMPLES,
 )
 
+pcd_val_ds = CroppedTokenDataset(
+    data_files=LOCAL_PARQUETS,
+    tokenizer=tokenizer,
+    prefix_ids=prefix_ids,
+    cropped_len=48,
+    mode="val",
+    total_samples=VAL_SAMPLES,
+    skip_samples=0,
+)
 
-train_loader = DataLoader(pcd_train_ds, batch_size=64, num_workers=2, pin_memory=True, drop_last=True)
-val_loader   = DataLoader(pcd_val_ds,   batch_size=64, num_workers=1, pin_memory=True, drop_last=True)
+
+
+train_loader = DataLoader(pcd_train_ds, batch_size=64, num_workers=0, pin_memory=True, drop_last=True)
+val_loader   = DataLoader(pcd_val_ds,   batch_size=64, num_workers=0, pin_memory=True, drop_last=True)
 
 
 patch_state = {"vecs": None}
