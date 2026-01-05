@@ -1,7 +1,16 @@
 import os
-os.environ["PIP_CACHE_DIR"] = "/workspace/.cache/pip"
-os.environ["HF_HOME"] = "/workspace/.cache/huggingface"
+# os.environ["PIP_CACHE_DIR"] = "/workspace/.cache/pip"
+# os.environ["HF_HOME"] = "/workspace/.cache/huggingface"
+# os.environ["TOKENIZERS_PARALLELISM"] = "false"
+import os
+
+os.environ["HF_HOME"] = "/root/.cache/huggingface"
+os.environ["HF_HUB_CACHE"] = "/root/.cache/huggingface/hub"
+os.environ["HF_DATASETS_CACHE"] = "/root/.cache/huggingface/datasets"
+os.environ["TRANSFORMERS_CACHE"] = "/root/.cache/huggingface/transformers"
+os.environ["PIP_CACHE_DIR"] = "/root/.cache/pip"
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
+
 
 import sys
 sys.path.append('.')
@@ -285,25 +294,26 @@ class CroppedTokenDataset(IterableDataset):
         self.skip_samples = skip_samples
         self.seed = seed
         self.shuffle_buffer = shuffle_buffer
+        self.epoch = 0
+
+    def set_epoch(self, epoch):
+        self.epoch = int(epoch)
 
     def __iter__(self):
         # DDP rank/world
         rank = int(os.environ.get("RANK", "0"))
         world = int(os.environ.get("WORLD_SIZE", "1"))
-
-        # IMPORTANT: make per-rank counts identical (DDP-safe)
-        assert self.total_samples % world == 0, "total_samples must be divisible by WORLD_SIZE"
-        assert self.skip_samples % world == 0, "skip_samples must be divisible by WORLD_SIZE"
+        
+        epoch = getattr(self, "epoch", 0)
+        seed = self.seed + 10_000 * epoch + rank
 
         take_local = self.total_samples // world
         skip_local = self.skip_samples // world
 
-        # ✅ FILE-LEVEL sharding: each rank gets a disjoint subset of parquet files
-        local_files = self.data_files[rank::world]
+        local_files = self.data_files[(rank + epoch) % world :: world]
         if len(local_files) == 0:
-            return  # no files assigned to this rank
+            return
 
-        # ✅ local parquet streaming (no hf://; no hub listing)
         ds = load_dataset(
             "parquet",
             data_files=local_files,
@@ -311,14 +321,14 @@ class CroppedTokenDataset(IterableDataset):
             streaming=True,
         )
 
-        # shuffle within this rank's file subset
-        ds = ds.shuffle(buffer_size=self.shuffle_buffer, seed=self.seed + rank)
+        if self.mode == "train":
+            ds = ds.shuffle(buffer_size=self.shuffle_buffer, seed=seed)
 
-        # ✅ skip safely without calling next() in a generator
+
         stream = islice(ds, skip_local, None)
 
         g = torch.Generator()
-        g.manual_seed(self.seed + rank)
+        g.manual_seed(seed)
 
         emitted = 0
         for item in stream:
@@ -422,13 +432,17 @@ lora_cfg = LoraConfig(
     lora_dropout=0.05,
     bias="none",
     task_type="CAUSAL_LM",
-    target_modules=["q_proj", "k_proj"]
+    target_modules=["q_proj", "k_proj", "v_proj", "o_proj"]
 )
-decoder = get_peft_model(decoder_base, lora_cfg).to(device).train()
+decoder = get_peft_model(decoder_base, lora_cfg).to(device).bfloat16().train()
+
+for name, p in decoder.named_parameters():
+    if "lora_" in name:
+        p.data = p.data.float()
 
 d_model = decoder.config.hidden_size
 d_model_multiplier = 8
-encoder = Encoder(d_in=d_model, multiplier=d_model_multiplier, top_k=16).to(device).to(torch.bfloat16).train()
+encoder = Encoder(d_in=d_model, multiplier=d_model_multiplier, top_k=16).to(device).train()
 
 decoder = DDP(decoder, device_ids=[local_rank], output_device=local_rank)
 encoder = DDP(encoder, device_ids=[local_rank], output_device=local_rank)
@@ -439,6 +453,7 @@ encoder = DDP(encoder, device_ids=[local_rank], output_device=local_rank)
 # print("A mean/std:", A.mean().item(), A.std().item())
 # print("B mean/std:", B.mean().item(), B.std().item())
 # print("B all zero:", (B == 0).all().item())
+
 
 optim = torch.optim.AdamW(
     list(encoder.parameters()) + list(decoder.parameters()),
@@ -494,9 +509,10 @@ train_loader = DataLoader(pcd_train_ds, batch_size=64, num_workers=0, pin_memory
 val_loader   = DataLoader(pcd_val_ds,   batch_size=64, num_workers=0, pin_memory=True, drop_last=True)
 
 
-patch_state = {"vecs": None}
+patch_state = {"vecs": None, "calls": 0}
 def patch_resid_stream_hook(idx):
     def hook(module, inp, out):
+        patch_state["calls"] += 1
         h = out.clone()
         h[:, idx, :] = patch_state["vecs"].to(h.dtype)
         return h
@@ -510,6 +526,7 @@ def train_step(subject_model, batch, layer, start_pos, end_pos,
             subject_model, batch, layer, start_pos, end_pos
         ).to(device)  # (B, 16, d_model)
 
+    encoder_in = encoder_in.float()
     encoder_out, idx = encoder(encoder_in)
     suffix = batch[:, -16:]
     decoder_in = torch.cat([dummy, suffix], dim=-1)
@@ -565,6 +582,12 @@ best_val = float("inf")
 handle = decoder.module.base_model.model.model.embed_tokens.register_forward_hook(
     patch_resid_stream_hook(patch_idx)
 )
+m = decoder.module.base_model.model.model.embed_tokens
+print("num forward hooks:", len(m._forward_hooks))
+print("hook ids:", list(m._forward_hooks.keys())[:5])
+print("handle id:", handle.id)
+print("handle present:", handle.id in m._forward_hooks)
+
 
 every_n_steps = 25
 inactive_concepts_n_steps = 50
@@ -574,7 +597,7 @@ count_steps = 0
 
 stop_training = False
 
-CKPT_PATH = "best_checkpoint_aux2.pt"
+CKPT_PATH = "best_checkpoint_aux.pt"
 
 
 def load_ckpt_if_exists():
@@ -584,13 +607,13 @@ def load_ckpt_if_exists():
         ckpt = torch.load(CKPT_PATH, map_location="cpu")
     else:
         ckpt = None
-
+        
     obj_list = [ckpt]
     dist.broadcast_object_list(obj_list, src=0)
     ckpt = obj_list[0]
 
     if ckpt is None:
-        return 0, 0  # start_epoch, start_step
+        return 0, 1  # start_epoch, start_step
 
     # models
     encoder.module.load_state_dict(ckpt["encoder"])
@@ -622,6 +645,7 @@ def do_train_full(start_epoch=0, start_step=1):
     global seen_tokens, best_val, curr_bad, stop_training
     
     for epoch in range(start_epoch, num_epochs):
+        train_loader.dataset.set_epoch(epoch)
     
         pbar = tqdm(enumerate(train_loader, start=1), desc=f"epoch {epoch+1}/{num_epochs}")
         for step, train_batch in pbar:
@@ -690,14 +714,15 @@ def do_train_full(start_epoch=0, start_step=1):
                                 "seen_tokens": seen_tokens,
                                 "inactive_concepts_tracker": inactive_concepts_tracker
                             },
-                            "best_checkpoint_aux3.pt",
+                            "pcd_data-shuffle_dtype-resolve_expanded-lora.pt",
                         )
         
                     else:
                         curr_bad += 1
                         if curr_bad >= patience:
                             stop_training = True
-    
+
+                    print("hook calls:", patch_state["calls"])
                     pbar.set_postfix(loss=float(loss.item()), val=float(val_mean), best_val=float(best_val))
                 else:
                     pbar.set_postfix(loss=float(loss.item()))
