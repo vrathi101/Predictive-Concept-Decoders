@@ -1,0 +1,132 @@
+W0104 16:01:12.051000 13777 torch/distributed/run.py:803] 
+W0104 16:01:12.051000 13777 torch/distributed/run.py:803] *****************************************
+W0104 16:01:12.051000 13777 torch/distributed/run.py:803] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0104 16:01:12.051000 13777 torch/distributed/run.py:803] *****************************************
+/usr/local/lib/python3.11/dist-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once
+[rank0]:[W104 16:02:17.795909149 ProcessGroupNCCL.cpp:5072] Guessing device ID based on global rank. This can cause a hang if rank to GPU mapping is heterogeneous. You can specify device_id in init_process_group()
+Note: Environment variable`HF_TOKEN` is set and is the current active token independently from the token you've just configured.
+Note: Environment variable`HF_TOKEN` is set and is the current active token independently from the token you've just configured.
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+epoch 1/100: 0it [00:00, ?it/s]huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+epoch 1/100: 0it [00:00, ?it/s]Too many dataloader workers: 2 (max is dataset.num_shards=1). Stopping 1 dataloader workers.
+Too many dataloader workers: 2 (max is dataset.num_shards=1). Stopping 1 dataloader workers.
+epoch 1/100: 0it [00:02, ?it/s, loss=7.1]epoch 1/100: 0it [00:02, ?it/s, loss=6.83]epoch 1/100: 1it [00:02,  2.55s/it, loss=7.1]epoch 1/100: 1it [00:02,  2.60s/it, loss=6.83]epoch 1/100: 1it [00:02,  2.55s/it, loss=7.1]
+epoch 1/100: 1it [00:02,  2.60s/it, loss=6.83]
+[rank1]: Traceback (most recent call last):
+[rank1]:   File "/workspace/predictive_concept_decoders/pcd_parquet_download.py", line 659, in <module>
+[rank1]:     do_train_full()
+[rank1]:   File "/workspace/predictive_concept_decoders/pcd_parquet_download.py", line 567, in do_train_full
+[rank1]:     for step, train_batch in pbar:
+[rank1]:   File "/usr/local/lib/python3.11/dist-packages/tqdm/std.py", line 1181, in __iter__
+[rank1]:     for obj in iterable:
+[rank1]:   File "/usr/local/lib/python3.11/dist-packages/torch/utils/data/dataloader.py", line 732, in __next__
+[rank1]:     data = self._next_data()
+[rank1]:            ^^^^^^^^^^^^^^^^^
+[rank1]:   File "/usr/local/lib/python3.11/dist-packages/torch/utils/data/dataloader.py", line 1479, in _next_data
+[rank1]:     return self._process_data(data, worker_id)
+[rank1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/usr/local/lib/python3.11/dist-packages/torch/utils/data/dataloader.py", line 1541, in _process_data
+[rank1]:     data.reraise()
+[rank1]:   File "/usr/local/lib/python3.11/dist-packages/torch/_utils.py", line 769, in reraise
+[rank1]:     raise exception
+[rank1]: RuntimeError: Caught RuntimeError in DataLoader worker process 1.
+[rank1]: Original Traceback (most recent call last):
+[rank1]:   File "/workspace/predictive_concept_decoders/pcd_parquet_download.py", line 314, in __iter__
+[rank1]:     next(it)
+[rank1]: StopIteration
+
+[rank1]: The above exception was the direct cause of the following exception:
+
+[rank1]: Traceback (most recent call last):
+[rank1]:   File "/usr/local/lib/python3.11/dist-packages/torch/utils/data/_utils/worker.py", line 349, in _worker_loop
+[rank1]:     data = fetcher.fetch(index)  # type: ignore[possibly-undefined]
+[rank1]:            ^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/usr/local/lib/python3.11/dist-packages/torch/utils/data/_utils/fetch.py", line 33, in fetch
+[rank1]:     data.append(next(self.dataset_iter))
+[rank1]:                 ^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]: RuntimeError: generator raised StopIteration
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/workspace/predictive_concept_decoders/pcd_parquet_download.py", line 659, in <module>
+[rank0]:     do_train_full()
+[rank0]:   File "/workspace/predictive_concept_decoders/pcd_parquet_download.py", line 567, in do_train_full
+[rank0]:     for step, train_batch in pbar:
+[rank0]:   File "/usr/local/lib/python3.11/dist-packages/tqdm/std.py", line 1181, in __iter__
+[rank0]:     for obj in iterable:
+[rank0]:   File "/usr/local/lib/python3.11/dist-packages/torch/utils/data/dataloader.py", line 732, in __next__
+[rank0]:     data = self._next_data()
+[rank0]:            ^^^^^^^^^^^^^^^^^
+[rank0]:   File "/usr/local/lib/python3.11/dist-packages/torch/utils/data/dataloader.py", line 1479, in _next_data
+[rank0]:     return self._process_data(data, worker_id)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/usr/local/lib/python3.11/dist-packages/torch/utils/data/dataloader.py", line 1541, in _process_data
+[rank0]:     data.reraise()
+[rank0]:   File "/usr/local/lib/python3.11/dist-packages/torch/_utils.py", line 769, in reraise
+[rank0]:     raise exception
+[rank0]: RuntimeError: Caught RuntimeError in DataLoader worker process 1.
+[rank0]: Original Traceback (most recent call last):
+[rank0]:   File "/workspace/predictive_concept_decoders/pcd_parquet_download.py", line 314, in __iter__
+[rank0]:     next(it)
+[rank0]: StopIteration
+
+[rank0]: The above exception was the direct cause of the following exception:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/usr/local/lib/python3.11/dist-packages/torch/utils/data/_utils/worker.py", line 349, in _worker_loop
+[rank0]:     data = fetcher.fetch(index)  # type: ignore[possibly-undefined]
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/usr/local/lib/python3.11/dist-packages/torch/utils/data/_utils/fetch.py", line 33, in fetch
+[rank0]:     data.append(next(self.dataset_iter))
+[rank0]:                 ^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]: RuntimeError: generator raised StopIteration
+
+[rank0]:[W104 16:02:54.915694232 ProcessGroupNCCL.cpp:1524] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+W0104 16:02:55.871000 13777 torch/distributed/elastic/multiprocessing/api.py:908] Sending process 13847 closing signal SIGTERM
+E0104 16:02:56.139000 13777 torch/distributed/elastic/multiprocessing/api.py:882] failed (exitcode: 1) local_rank: 1 (pid: 13848) of binary: /usr/bin/python
+Traceback (most recent call last):
+  File "/usr/local/bin/torchrun", line 8, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 357, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/torch/distributed/run.py", line 936, in main
+    run(args)
+  File "/usr/local/lib/python3.11/dist-packages/torch/distributed/run.py", line 927, in run
+    elastic_launch(
+  File "/usr/local/lib/python3.11/dist-packages/torch/distributed/launcher/api.py", line 156, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/torch/distributed/launcher/api.py", line 293, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+pcd_parquet_download.py FAILED
+------------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2026-01-04_16:02:55
+  host      : 68d2614c9a61
+  rank      : 1 (local_rank: 1)
+  exitcode  : 1 (pid: 13848)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================

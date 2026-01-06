@@ -1,0 +1,1932 @@
+W0104 23:45:57.198000 16389 torch/distributed/run.py:803] 
+W0104 23:45:57.198000 16389 torch/distributed/run.py:803] *****************************************
+W0104 23:45:57.198000 16389 torch/distributed/run.py:803] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0104 23:45:57.198000 16389 torch/distributed/run.py:803] *****************************************
+Note: Environment variable`HF_TOKEN` is set and is the current active token independently from the token you've just configured.
+Note: Environment variable`HF_TOKEN` is set and is the current active token independently from the token you've just configured.
+epoch 3/100: 0it [00:00, ?it/s]epoch 3/100: 0it [00:00, ?it/s]epoch 3/100: 1it [00:02,  2.18s/it]epoch 3/100: 3it [00:02,  1.59it/s]epoch 3/100: 4it [00:02,  2.21it/s]epoch 3/100: 1it [00:02,  2.48s/it]epoch 3/100: 5it [00:02,  2.92it/s]epoch 3/100: 3it [00:02,  1.39it/s]epoch 3/100: 6it [00:02,  3.78it/s]epoch 3/100: 4it [00:02,  1.96it/s]epoch 3/100: 8it [00:02,  5.38it/s]epoch 3/100: 6it [00:03,  3.18it/s]epoch 3/100: 10it [00:03,  6.79it/s]epoch 3/100: 8it [00:03,  4.56it/s]epoch 3/100: 12it [00:03,  7.56it/s]epoch 3/100: 9it [00:03,  5.17it/s]epoch 3/100: 13it [00:03,  7.46it/s]epoch 3/100: 11it [00:03,  6.49it/s]epoch 3/100: 15it [00:03,  8.37it/s]epoch 3/100: 13it [00:03,  7.56it/s]epoch 3/100: 17it [00:03,  9.24it/s]epoch 3/100: 15it [00:03,  8.37it/s]epoch 3/100: 19it [00:03,  9.58it/s]epoch 3/100: 17it [00:04,  9.23it/s]epoch 3/100: 21it [00:04,  9.84it/s]epoch 3/100: 19it [00:04,  9.63it/s]epoch 3/100: 23it [00:04,  9.35it/s]epoch 3/100: 21it [00:04,  9.76it/s]epoch 3/100: 25it [00:04,  9.78it/s]epoch 3/100: 23it [00:04,  9.84it/s]epoch 3/100: 27it [00:04,  9.79it/s]epoch 3/100: 25it [00:04,  9.84it/s]epoch 3/100: 28it [00:04,  9.28it/s]epoch 3/100: 27it [00:05, 10.39it/s]epoch 3/100: 29it [00:05,  9.31it/s]epoch 3/100: 29it [00:05, 10.25it/s]epoch 3/100: 31it [00:05,  9.79it/s]epoch 3/100: 33it [00:05, 10.43it/s]epoch 3/100: 31it [00:05,  8.33it/s]epoch 3/100: 35it [00:05, 10.24it/s]epoch 3/100: 33it [00:05,  9.00it/s]epoch 3/100: 37it [00:05, 10.30it/s]epoch 3/100: 34it [00:05,  9.10it/s]epoch 3/100: 39it [00:06,  9.95it/s]epoch 3/100: 36it [00:06,  9.47it/s]epoch 3/100: 40it [00:06,  9.93it/s]epoch 3/100: 38it [00:06, 10.17it/s]epoch 3/100: 42it [00:06, 10.07it/s]epoch 3/100: 40it [00:06, 10.54it/s]epoch 3/100: 44it [00:06,  9.82it/s]epoch 3/100: 42it [00:06, 10.41it/s]epoch 3/100: 46it [00:06, 10.10it/s]epoch 3/100: 44it [00:06, 10.62it/s]epoch 3/100: 48it [00:06, 10.51it/s]epoch 3/100: 46it [00:06, 10.04it/s]epoch 3/100: 50it [00:07,  9.90it/s]epoch 3/100: 48it [00:07, 10.32it/s]epoch 3/100: 52it [00:07, 10.13it/s]epoch 3/100: 50it [00:07, 10.21it/s]epoch 3/100: 54it [00:07, 10.71it/s]epoch 3/100: 52it [00:07, 10.53it/s]epoch 3/100: 56it [00:07, 11.23it/s]epoch 3/100: 54it [00:07, 10.78it/s]epoch 3/100: 58it [00:07, 11.87it/s]epoch 3/100: 56it [00:07, 10.69it/s]epoch 3/100: 60it [00:07, 11.61it/s]epoch 3/100: 58it [00:08, 11.07it/s]epoch 3/100: 60it [00:08, 10.80it/s]epoch 3/100: 62it [00:08,  8.94it/s]epoch 3/100: 64it [00:08,  9.63it/s]epoch 3/100: 62it [00:08, 10.20it/s]epoch 3/100: 66it [00:08,  9.99it/s]epoch 3/100: 64it [00:08,  9.86it/s]epoch 3/100: 68it [00:08, 10.27it/s]epoch 3/100: 66it [00:08, 10.34it/s]epoch 3/100: 70it [00:08, 10.50it/s]epoch 3/100: 68it [00:09, 10.64it/s]epoch 3/100: 72it [00:09, 10.12it/s]epoch 3/100: 70it [00:09, 10.46it/s]epoch 3/100: 74it [00:09, 10.56it/s]epoch 3/100: 72it [00:09, 10.76it/s]epoch 3/100: 76it [00:09, 10.91it/s]epoch 3/100: 74it [00:09, 11.21it/s]epoch 3/100: 78it [00:09, 11.17it/s]epoch 3/100: 76it [00:09, 10.93it/s]epoch 3/100: 80it [00:09, 11.25it/s]epoch 3/100: 78it [00:09, 11.31it/s]epoch 3/100: 82it [00:10, 10.89it/s]epoch 3/100: 80it [00:10, 10.59it/s]epoch 3/100: 84it [00:10, 10.83it/s]epoch 3/100: 82it [00:10, 10.56it/s]epoch 3/100: 86it [00:10, 10.37it/s]epoch 3/100: 84it [00:10, 10.49it/s]epoch 3/100: 88it [00:10, 10.34it/s]epoch 3/100: 86it [00:10, 10.63it/s]epoch 3/100: 90it [00:10, 10.31it/s]epoch 3/100: 88it [00:10, 11.07it/s]epoch 3/100: 92it [00:11, 10.41it/s]epoch 3/100: 90it [00:11, 10.51it/s]epoch 3/100: 94it [00:11, 11.02it/s]epoch 3/100: 92it [00:11, 10.45it/s]epoch 3/100: 96it [00:11, 11.13it/s]epoch 3/100: 94it [00:11, 10.74it/s]epoch 3/100: 98it [00:11, 11.52it/s]epoch 3/100: 96it [00:11,  9.94it/s]epoch 3/100: 100it [00:11, 10.81it/s]epoch 3/100: 98it [00:11,  9.55it/s]epoch 3/100: 102it [00:11, 10.73it/s]epoch 3/100: 100it [00:12,  9.82it/s]epoch 3/100: 104it [00:12, 10.52it/s]epoch 3/100: 101it [00:12,  9.14it/s]epoch 3/100: 106it [00:12, 11.28it/s]epoch 3/100: 103it [00:12,  9.69it/s]epoch 3/100: 108it [00:12, 11.15it/s]epoch 3/100: 105it [00:12, 10.02it/s]epoch 3/100: 110it [00:12, 11.58it/s]epoch 3/100: 106it [00:12,  9.75it/s]epoch 3/100: 112it [00:12, 11.62it/s]epoch 3/100: 108it [00:12, 10.31it/s]epoch 3/100: 114it [00:12, 11.58it/s]epoch 3/100: 110it [00:13, 10.42it/s]epoch 3/100: 116it [00:13, 11.41it/s]epoch 3/100: 112it [00:13, 11.02it/s]epoch 3/100: 118it [00:13, 11.57it/s]epoch 3/100: 114it [00:13, 11.21it/s]epoch 3/100: 120it [00:13, 11.37it/s]epoch 3/100: 116it [00:13,  9.97it/s]epoch 3/100: 122it [00:13, 11.48it/s]epoch 3/100: 124it [00:13, 11.84it/s]epoch 3/100: 118it [00:13,  9.62it/s]epoch 3/100: 126it [00:14, 11.82it/s]epoch 3/100: 120it [00:14,  9.77it/s]epoch 3/100: 128it [00:14, 11.85it/s]epoch 3/100: 122it [00:14,  9.73it/s]epoch 3/100: 130it [00:14, 11.04it/s]epoch 3/100: 124it [00:14, 10.28it/s]epoch 3/100: 132it [00:14, 10.54it/s]epoch 3/100: 126it [00:14, 10.70it/s]epoch 3/100: 134it [00:14, 10.40it/s]epoch 3/100: 128it [00:14, 11.03it/s]epoch 3/100: 136it [00:15, 10.33it/s]epoch 3/100: 130it [00:15, 10.73it/s]epoch 3/100: 138it [00:15, 10.68it/s]epoch 3/100: 132it [00:15, 10.60it/s]epoch 3/100: 140it [00:15, 10.82it/s]epoch 3/100: 134it [00:15, 11.09it/s]epoch 3/100: 136it [00:15, 10.52it/s]epoch 3/100: 142it [00:15,  9.49it/s]epoch 3/100: 138it [00:15, 10.66it/s]epoch 3/100: 144it [00:15, 10.05it/s]epoch 3/100: 140it [00:15, 10.59it/s]epoch 3/100: 146it [00:15, 10.32it/s]epoch 3/100: 142it [00:16, 10.87it/s]epoch 3/100: 148it [00:16, 10.62it/s]epoch 3/100: 150it [00:16, 11.08it/s]epoch 3/100: 144it [00:16, 10.53it/s]epoch 3/100: 146it [00:16, 10.85it/s]epoch 3/100: 152it [00:16,  9.77it/s]epoch 3/100: 148it [00:16, 11.04it/s]epoch 3/100: 154it [00:16, 10.47it/s]epoch 3/100: 150it [00:16, 11.02it/s]epoch 3/100: 156it [00:16, 11.39it/s]epoch 3/100: 158it [00:17, 11.86it/s]epoch 3/100: 152it [00:17, 11.31it/s]epoch 3/100: 154it [00:17, 11.61it/s]epoch 3/100: 160it [00:17, 10.91it/s]epoch 3/100: 156it [00:17, 11.87it/s]epoch 3/100: 162it [00:17, 10.76it/s]epoch 3/100: 158it [00:17, 11.75it/s]epoch 3/100: 164it [00:17, 10.98it/s]epoch 3/100: 160it [00:17, 12.35it/s]epoch 3/100: 166it [00:17, 10.58it/s]epoch 3/100: 162it [00:17, 11.07it/s]epoch 3/100: 168it [00:17, 10.95it/s]epoch 3/100: 164it [00:18, 11.19it/s]epoch 3/100: 166it [00:18, 10.98it/s]epoch 3/100: 170it [00:18,  9.46it/s]epoch 3/100: 171it [00:18,  9.09it/s]epoch 3/100: 168it [00:18, 10.77it/s]epoch 3/100: 172it [00:18,  8.71it/s]epoch 3/100: 170it [00:18, 10.72it/s]epoch 3/100: 173it [00:18,  8.12it/s]epoch 3/100: 174it [00:18,  8.44it/s]epoch 3/100: 172it [00:18, 10.93it/s]epoch 3/100: 176it [00:18,  9.50it/s]epoch 3/100: 174it [00:19,  9.20it/s]epoch 3/100: 178it [00:19, 10.14it/s]epoch 3/100: 176it [00:19,  9.73it/s]epoch 3/100: 180it [00:19,  9.92it/s]epoch 3/100: 178it [00:19, 10.28it/s]epoch 3/100: 182it [00:19, 10.64it/s]epoch 3/100: 180it [00:19, 10.36it/s]epoch 3/100: 184it [00:19, 10.70it/s]epoch 3/100: 182it [00:19, 10.27it/s]epoch 3/100: 186it [00:19,  9.66it/s]epoch 3/100: 187it [00:20,  9.56it/s]epoch 3/100: 184it [00:20, 10.24it/s]epoch 3/100: 186it [00:20, 10.46it/s]epoch 3/100: 189it [00:20,  9.84it/s]epoch 3/100: 190it [00:20,  9.67it/s]epoch 3/100: 188it [00:20, 10.25it/s]epoch 3/100: 191it [00:20,  9.52it/s]epoch 3/100: 190it [00:20, 10.32it/s]epoch 3/100: 193it [00:20,  9.41it/s]epoch 3/100: 192it [00:20, 10.86it/s]epoch 3/100: 194it [00:20,  9.27it/s]epoch 3/100: 195it [00:20,  9.14it/s]epoch 3/100: 194it [00:20, 11.31it/s]epoch 3/100: 197it [00:21,  8.94it/s]epoch 3/100: 196it [00:21, 10.74it/s]epoch 3/100: 198it [00:21,  8.74it/s]epoch 3/100: 198it [00:21, 10.49it/s]epoch 3/100: 199it [00:21,  8.52it/s]epoch 3/100: 200it [00:21,  8.43it/s]epoch 3/100: 200it [00:21, 10.87it/s]epoch 3/100: 202it [00:21,  9.76it/s]epoch 3/100: 202it [00:21,  9.85it/s]epoch 3/100: 204it [00:21,  9.39it/s]epoch 3/100: 204it [00:21, 10.10it/s]epoch 3/100: 205it [00:21,  9.43it/s]epoch 3/100: 206it [00:22, 10.46it/s]epoch 3/100: 207it [00:22, 10.32it/s]epoch 3/100: 208it [00:22, 10.59it/s]epoch 3/100: 209it [00:22, 10.51it/s]epoch 3/100: 211it [00:22, 11.12it/s]epoch 3/100: 210it [00:22, 10.10it/s]epoch 3/100: 212it [00:22, 10.70it/s]epoch 3/100: 213it [00:22, 10.59it/s]epoch 3/100: 214it [00:22, 10.62it/s]epoch 3/100: 215it [00:22, 10.41it/s]epoch 3/100: 216it [00:23, 10.41it/s]epoch 3/100: 217it [00:23, 10.19it/s]epoch 3/100: 218it [00:23, 10.47it/s]epoch 3/100: 219it [00:23, 10.71it/s]epoch 3/100: 220it [00:23, 11.06it/s]epoch 3/100: 221it [00:23, 10.30it/s]epoch 3/100: 222it [00:23, 11.20it/s]epoch 3/100: 223it [00:23, 10.67it/s]epoch 3/100: 224it [00:23, 10.70it/s]epoch 3/100: 225it [00:23,  9.80it/s]epoch 3/100: 226it [00:23, 10.73it/s]epoch 3/100: 228it [00:24, 10.52it/s]epoch 3/100: 227it [00:24,  8.00it/s]epoch 3/100: 228it [00:24,  8.26it/s]epoch 3/100: 230it [00:24, 10.75it/s]epoch 3/100: 230it [00:24,  9.05it/s]epoch 3/100: 232it [00:24, 10.41it/s]epoch 3/100: 232it [00:24,  9.14it/s]epoch 3/100: 234it [00:24,  9.98it/s]epoch 3/100: 233it [00:24,  9.29it/s]epoch 3/100: 236it [00:24, 10.39it/s]epoch 3/100: 235it [00:25,  9.92it/s]epoch 3/100: 238it [00:25, 10.25it/s]epoch 3/100: 237it [00:25, 10.16it/s]epoch 3/100: 240it [00:25, 10.35it/s]epoch 3/100: 239it [00:25, 10.70it/s]epoch 3/100: 242it [00:25,  9.75it/s]epoch 3/100: 241it [00:25, 10.07it/s]epoch 3/100: 244it [00:25,  9.97it/s]epoch 3/100: 243it [00:25, 10.17it/s]epoch 3/100: 246it [00:25, 10.72it/s]epoch 3/100: 245it [00:25, 10.72it/s]epoch 3/100: 248it [00:26, 11.40it/s]epoch 3/100: 247it [00:26, 10.19it/s]epoch 3/100: 250it [00:26, 11.85it/s]epoch 3/100: 249it [00:26, 10.72it/s]epoch 3/100: 252it [00:26, 11.70it/s]epoch 3/100: 251it [00:26, 10.44it/s]epoch 3/100: 254it [00:26, 10.52it/s]epoch 3/100: 253it [00:26, 10.33it/s]epoch 3/100: 256it [00:26, 10.41it/s]epoch 3/100: 255it [00:26, 10.56it/s]epoch 3/100: 258it [00:27, 10.47it/s]epoch 3/100: 257it [00:27, 10.68it/s]epoch 3/100: 260it [00:27, 10.23it/s]epoch 3/100: 259it [00:27, 11.00it/s]epoch 3/100: 262it [00:27, 10.62it/s]epoch 3/100: 261it [00:27, 10.88it/s]epoch 3/100: 264it [00:27, 10.37it/s]epoch 3/100: 263it [00:27, 10.63it/s]epoch 3/100: 266it [00:27, 10.63it/s]epoch 3/100: 265it [00:27, 10.70it/s]epoch 3/100: 268it [00:27, 10.84it/s]epoch 3/100: 267it [00:28, 10.90it/s]epoch 3/100: 270it [00:28, 11.22it/s]epoch 3/100: 269it [00:28, 10.35it/s]epoch 3/100: 272it [00:28, 11.37it/s]epoch 3/100: 271it [00:28, 10.36it/s]epoch 3/100: 274it [00:28, 11.50it/s]epoch 3/100: 273it [00:28, 10.84it/s]epoch 3/100: 276it [00:28, 10.36it/s]epoch 3/100: 275it [00:28, 11.39it/s]epoch 3/100: 278it [00:28, 10.72it/s]epoch 3/100: 277it [00:28, 11.63it/s]epoch 3/100: 280it [00:29, 11.14it/s]epoch 3/100: 279it [00:29, 11.79it/s]epoch 3/100: 282it [00:29, 11.12it/s]epoch 3/100: 281it [00:29, 11.89it/s]epoch 3/100: 284it [00:29, 10.70it/s]epoch 3/100: 283it [00:29, 11.19it/s]epoch 3/100: 286it [00:29, 10.89it/s]epoch 3/100: 285it [00:29, 11.31it/s]epoch 3/100: 288it [00:29, 11.08it/s]epoch 3/100: 287it [00:29, 11.29it/s]epoch 3/100: 290it [00:29, 10.70it/s]epoch 3/100: 289it [00:30, 10.78it/s]epoch 3/100: 291it [00:30, 11.43it/s]epoch 3/100: 292it [00:30, 10.31it/s]epoch 3/100: 293it [00:30, 11.30it/s]epoch 3/100: 294it [00:30, 10.19it/s]epoch 3/100: 295it [00:30, 11.83it/s]epoch 3/100: 296it [00:30, 10.55it/s]epoch 3/100: 297it [00:30, 11.04it/s]epoch 3/100: 298it [00:30, 10.31it/s]epoch 3/100: 299it [00:30, 10.92it/s]epoch 3/100: 300it [00:30, 10.82it/s]epoch 3/100: 301it [00:31, 11.19it/s]epoch 3/100: 302it [00:31, 11.03it/s]epoch 3/100: 303it [00:31, 11.03it/s]epoch 3/100: 304it [00:31, 11.15it/s]epoch 3/100: 305it [00:31, 11.14it/s]epoch 3/100: 306it [00:31, 11.36it/s]epoch 3/100: 307it [00:31, 11.08it/s]epoch 3/100: 308it [00:31, 11.10it/s]epoch 3/100: 309it [00:31, 10.64it/s]epoch 3/100: 310it [00:31, 10.95it/s]epoch 3/100: 311it [00:31, 10.73it/s]epoch 3/100: 312it [00:32, 10.76it/s]epoch 3/100: 313it [00:32, 10.44it/s]epoch 3/100: 314it [00:32, 11.00it/s]epoch 3/100: 316it [00:32, 11.52it/s]epoch 3/100: 315it [00:32, 10.30it/s]epoch 3/100: 318it [00:32, 11.52it/s]epoch 3/100: 317it [00:32, 10.81it/s]epoch 3/100: 320it [00:32, 11.40it/s]epoch 3/100: 319it [00:32, 10.95it/s]epoch 3/100: 322it [00:32, 11.04it/s]epoch 3/100: 321it [00:32, 10.35it/s]epoch 3/100: 324it [00:33, 10.35it/s]epoch 3/100: 323it [00:33, 10.57it/s]epoch 3/100: 326it [00:33, 10.66it/s]epoch 3/100: 325it [00:33, 10.35it/s]epoch 3/100: 328it [00:33, 11.14it/s]epoch 3/100: 327it [00:33,  9.26it/s]epoch 3/100: 330it [00:33, 10.72it/s]epoch 3/100: 329it [00:33,  9.77it/s]epoch 3/100: 332it [00:33, 10.83it/s]epoch 3/100: 331it [00:33, 10.30it/s]epoch 3/100: 334it [00:34, 11.05it/s]epoch 3/100: 333it [00:34, 10.20it/s]epoch 3/100: 336it [00:34, 11.27it/s]epoch 3/100: 335it [00:34, 10.40it/s]epoch 3/100: 338it [00:34, 10.67it/s]epoch 3/100: 337it [00:34, 10.54it/s]epoch 3/100: 340it [00:34, 11.22it/s]epoch 3/100: 339it [00:34, 11.07it/s]epoch 3/100: 342it [00:34, 10.66it/s]epoch 3/100: 341it [00:34, 11.14it/s]epoch 3/100: 344it [00:34, 10.45it/s]epoch 3/100: 343it [00:35, 10.62it/s]epoch 3/100: 346it [00:35, 10.63it/s]epoch 3/100: 348it [00:35, 10.84it/s]epoch 3/100: 345it [00:35,  9.66it/s]epoch 3/100: 347it [00:35,  9.99it/s]epoch 3/100: 350it [00:35, 10.64it/s]epoch 3/100: 352it [00:35,  9.95it/s]epoch 3/100: 349it [00:35,  9.40it/s]epoch 3/100: 351it [00:35, 10.12it/s]epoch 3/100: 354it [00:35, 10.11it/s]epoch 3/100: 353it [00:36, 10.02it/s]epoch 3/100: 356it [00:36, 10.26it/s]epoch 3/100: 355it [00:36, 10.40it/s]epoch 3/100: 358it [00:36, 10.37it/s]epoch 3/100: 357it [00:36, 10.70it/s]epoch 3/100: 360it [00:36, 11.00it/s]epoch 3/100: 362it [00:36, 11.55it/s]epoch 3/100: 359it [00:36, 10.74it/s]epoch 3/100: 364it [00:36, 11.16it/s]epoch 3/100: 361it [00:36, 10.15it/s]epoch 3/100: 366it [00:36, 11.15it/s]epoch 3/100: 363it [00:37, 10.67it/s]epoch 3/100: 365it [00:37, 10.64it/s]epoch 3/100: 368it [00:37,  8.76it/s]epoch 3/100: 369it [00:37,  8.80it/s]epoch 3/100: 367it [00:37,  9.96it/s]epoch 3/100: 371it [00:37,  9.09it/s]epoch 3/100: 369it [00:37,  9.41it/s]epoch 3/100: 373it [00:37,  9.50it/s]epoch 3/100: 371it [00:37,  9.86it/s]epoch 3/100: 374it [00:37,  9.39it/s]epoch 3/100: 373it [00:38,  9.27it/s]epoch 3/100: 376it [00:38,  9.75it/s]epoch 3/100: 375it [00:38, 10.11it/s]epoch 3/100: 378it [00:38,  9.81it/s]epoch 3/100: 379it [00:38,  9.70it/s]epoch 3/100: 377it [00:38, 10.15it/s]epoch 3/100: 380it [00:38,  9.76it/s]epoch 3/100: 379it [00:38, 10.20it/s]epoch 3/100: 381it [00:38,  8.56it/s]epoch 3/100: 381it [00:38, 10.44it/s]epoch 3/100: 383it [00:38,  9.40it/s]epoch 3/100: 383it [00:39, 10.54it/s]epoch 3/100: 384it [00:39,  8.69it/s]epoch 3/100: 385it [00:39,  8.78it/s]epoch 3/100: 385it [00:39,  9.58it/s]epoch 3/100: 386it [00:39,  8.35it/s]epoch 3/100: 386it [00:39,  9.64it/s]epoch 3/100: 388it [00:39,  9.16it/s]epoch 3/100: 388it [00:39,  9.88it/s]epoch 3/100: 389it [00:39,  8.80it/s]epoch 3/100: 390it [00:39,  9.05it/s]epoch 3/100: 390it [00:39, 10.00it/s]epoch 3/100: 392it [00:39,  9.42it/s]epoch 3/100: 392it [00:39, 10.28it/s]epoch 3/100: 393it [00:40,  8.81it/s]epoch 3/100: 394it [00:40, 10.69it/s]epoch 3/100: 395it [00:40,  9.62it/s]epoch 3/100: 396it [00:40, 10.98it/s]epoch 3/100: 397it [00:40, 10.05it/s]epoch 3/100: 398it [00:40, 11.20it/s]epoch 3/100: 398it [00:40,  9.51it/s]epoch 3/100: 399it [00:40,  9.36it/s]epoch 3/100: 400it [00:40, 10.90it/s]epoch 3/100: 400it [00:40,  9.41it/s]epoch 3/100: 402it [00:40, 10.59it/s]epoch 3/100: 402it [00:40, 10.09it/s]epoch 3/100: 404it [00:41, 11.20it/s]epoch 3/100: 403it [00:41, 10.02it/s]epoch 3/100: 404it [00:41,  9.82it/s]epoch 3/100: 406it [00:41, 10.35it/s]epoch 3/100: 405it [00:41,  9.74it/s]epoch 3/100: 407it [00:41, 10.44it/s]epoch 3/100: 408it [00:41, 10.25it/s]epoch 3/100: 409it [00:41, 10.48it/s]epoch 3/100: 410it [00:41, 10.51it/s]epoch 3/100: 411it [00:41, 10.82it/s]epoch 3/100: 412it [00:41, 10.09it/s]epoch 3/100: 413it [00:41, 10.65it/s]epoch 3/100: 414it [00:42, 10.32it/s]epoch 3/100: 416it [00:42, 10.58it/s]epoch 3/100: 415it [00:42, 10.01it/s]epoch 3/100: 418it [00:42, 10.46it/s]epoch 3/100: 417it [00:42,  9.99it/s]epoch 3/100: 420it [00:42, 10.57it/s]epoch 3/100: 419it [00:42,  9.99it/s]epoch 3/100: 422it [00:42, 10.44it/s]epoch 3/100: 421it [00:42,  9.58it/s]epoch 3/100: 424it [00:42, 10.32it/s]epoch 3/100: 423it [00:43,  9.65it/s]epoch 3/100: 424it [00:43,  9.57it/s]epoch 3/100: 426it [00:43,  9.69it/s]epoch 3/100: 426it [00:43,  9.41it/s]epoch 3/100: 428it [00:43, 10.11it/s]epoch 3/100: 430it [00:43, 10.06it/s]epoch 3/100: 428it [00:43,  9.12it/s]epoch 3/100: 429it [00:43,  9.13it/s]epoch 3/100: 432it [00:43, 10.40it/s]epoch 3/100: 430it [00:43,  9.10it/s]epoch 3/100: 431it [00:43,  8.91it/s]epoch 3/100: 434it [00:43, 10.59it/s]epoch 3/100: 432it [00:44,  9.01it/s]epoch 3/100: 436it [00:44, 10.27it/s]epoch 3/100: 434it [00:44,  9.10it/s]epoch 3/100: 438it [00:44, 10.60it/s]epoch 3/100: 435it [00:44,  8.83it/s]epoch 3/100: 440it [00:44, 10.11it/s]epoch 3/100: 437it [00:44,  9.01it/s]epoch 3/100: 442it [00:44, 10.48it/s]epoch 3/100: 438it [00:44,  8.69it/s]epoch 3/100: 439it [00:44,  8.56it/s]epoch 3/100: 444it [00:44, 10.05it/s]epoch 3/100: 440it [00:45,  7.70it/s]epoch 3/100: 446it [00:45, 10.18it/s]epoch 3/100: 441it [00:45,  7.82it/s]epoch 3/100: 442it [00:45,  8.03it/s]epoch 3/100: 448it [00:45,  9.93it/s]epoch 3/100: 443it [00:45,  8.38it/s]epoch 3/100: 444it [00:45,  8.07it/s]epoch 3/100: 450it [00:45, 10.38it/s]epoch 3/100: 445it [00:45,  8.23it/s]epoch 3/100: 452it [00:45, 10.58it/s]epoch 3/100: 446it [00:45,  8.16it/s]epoch 3/100: 454it [00:45, 11.28it/s]epoch 3/100: 448it [00:45,  8.77it/s]epoch 3/100: 456it [00:46, 10.36it/s]epoch 3/100: 449it [00:46,  8.04it/s]epoch 3/100: 450it [00:46,  7.89it/s]epoch 3/100: 458it [00:46, 10.46it/s]epoch 3/100: 460it [00:46, 10.80it/s]epoch 3/100: 452it [00:46,  7.98it/s]epoch 3/100: 453it [00:46,  8.24it/s]epoch 3/100: 462it [00:46, 10.29it/s]epoch 3/100: 454it [00:46,  8.19it/s]epoch 3/100: 464it [00:46, 10.30it/s]epoch 3/100: 455it [00:46,  7.83it/s]epoch 3/100: 456it [00:47,  7.45it/s]epoch 3/100: 466it [00:47,  9.92it/s]epoch 3/100: 457it [00:47,  7.43it/s]epoch 3/100: 468it [00:47, 10.40it/s]epoch 3/100: 458it [00:47,  7.99it/s]epoch 3/100: 459it [00:47,  7.96it/s]epoch 3/100: 470it [00:47, 10.21it/s]epoch 3/100: 460it [00:47,  8.00it/s]epoch 3/100: 461it [00:47,  8.29it/s]epoch 3/100: 472it [00:47, 10.27it/s]epoch 3/100: 462it [00:47,  8.00it/s]epoch 3/100: 474it [00:47, 10.48it/s]epoch 3/100: 463it [00:47,  7.57it/s]epoch 3/100: 476it [00:47, 10.67it/s]epoch 3/100: 464it [00:48,  7.63it/s]epoch 3/100: 465it [00:48,  7.85it/s]epoch 3/100: 478it [00:48, 11.00it/s]epoch 3/100: 466it [00:48,  7.64it/s]epoch 3/100: 480it [00:48, 11.09it/s]epoch 3/100: 467it [00:48,  7.95it/s]epoch 3/100: 482it [00:48, 11.11it/s]epoch 3/100: 469it [00:48,  8.58it/s]epoch 3/100: 484it [00:48, 11.37it/s]epoch 3/100: 470it [00:48,  8.17it/s]epoch 3/100: 471it [00:48,  8.17it/s]epoch 3/100: 486it [00:48, 10.78it/s]epoch 3/100: 472it [00:48,  8.58it/s]epoch 3/100: 488it [00:49, 10.81it/s]epoch 3/100: 474it [00:49,  8.79it/s]epoch 3/100: 475it [00:49,  8.99it/s]epoch 3/100: 490it [00:49, 10.15it/s]epoch 3/100: 476it [00:49,  8.61it/s]epoch 3/100: 477it [00:49,  8.84it/s]epoch 3/100: 492it [00:49,  9.19it/s]epoch 3/100: 478it [00:49,  9.07it/s]epoch 3/100: 493it [00:49,  9.31it/s]epoch 3/100: 479it [00:49,  8.76it/s]epoch 3/100: 495it [00:49,  9.85it/s]epoch 3/100: 480it [00:49,  8.31it/s]epoch 3/100: 481it [00:50,  7.99it/s]epoch 3/100: 482it [00:50,  8.23it/s]epoch 3/100: 497it [00:50,  8.50it/s]epoch 3/100: 483it [00:50,  8.53it/s]epoch 3/100: 498it [00:50,  8.70it/s]epoch 3/100: 499it [00:50,  8.88it/s]epoch 3/100: 484it [00:50,  8.14it/s]epoch 3/100: 500it [00:50,  9.08it/s]epoch 3/100: 485it [00:50,  8.15it/s]epoch 3/100: 486it [00:50,  8.23it/s]epoch 3/100: 502it [00:50,  9.28it/s]epoch 3/100: 488it [00:50,  8.88it/s]epoch 3/100: 504it [00:50,  9.93it/s]epoch 3/100: 489it [00:50,  8.83it/s]epoch 3/100: 506it [00:51,  9.86it/s]epoch 3/100: 490it [00:51,  8.74it/s]epoch 3/100: 508it [00:51, 10.16it/s]epoch 3/100: 492it [00:51,  9.29it/s]epoch 3/100: 493it [00:51,  8.88it/s]epoch 3/100: 510it [00:51, 10.33it/s]epoch 3/100: 494it [00:51,  9.02it/s]epoch 3/100: 495it [00:51,  8.00it/s]epoch 3/100: 512it [00:51,  8.92it/s]epoch 3/100: 496it [00:51,  8.16it/s]epoch 3/100: 497it [00:51,  8.16it/s]epoch 3/100: 514it [00:51,  8.85it/s]epoch 3/100: 498it [00:52,  8.12it/s]epoch 3/100: 516it [00:52,  9.70it/s]epoch 3/100: 499it [00:52,  8.28it/s]epoch 3/100: 500it [00:52,  8.16it/s]epoch 3/100: 518it [00:52, 10.02it/s]epoch 3/100: 501it [00:52,  7.80it/s]epoch 3/100: 520it [00:52, 10.34it/s]epoch 3/100: 502it [00:52,  7.97it/s]epoch 3/100: 522it [00:52, 10.96it/s]epoch 3/100: 504it [00:52,  8.29it/s]epoch 3/100: 524it [00:52, 11.39it/s]epoch 3/100: 505it [00:52,  8.01it/s]epoch 3/100: 526it [00:52, 10.96it/s]epoch 3/100: 507it [00:53,  8.45it/s]epoch 3/100: 528it [00:53, 10.84it/s]epoch 3/100: 508it [00:53,  8.58it/s]epoch 3/100: 509it [00:53,  8.62it/s]epoch 3/100: 530it [00:53, 10.98it/s]epoch 3/100: 510it [00:53,  8.66it/s]epoch 3/100: 532it [00:53, 10.88it/s]epoch 3/100: 511it [00:53,  8.53it/s]epoch 3/100: 512it [00:53,  8.54it/s]epoch 3/100: 534it [00:53, 10.64it/s]epoch 3/100: 536it [00:53, 10.86it/s]epoch 3/100: 514it [00:53,  8.51it/s]epoch 3/100: 516it [00:54,  8.59it/s]epoch 3/100: 538it [00:54,  9.85it/s]epoch 3/100: 517it [00:54,  8.36it/s]epoch 3/100: 540it [00:54,  9.69it/s]epoch 3/100: 518it [00:54,  8.32it/s]epoch 3/100: 541it [00:54,  9.44it/s]epoch 3/100: 519it [00:54,  8.58it/s]epoch 3/100: 542it [00:54,  9.43it/s]epoch 3/100: 520it [00:54,  8.50it/s]epoch 3/100: 543it [00:54,  9.30it/s]epoch 3/100: 521it [00:54,  7.83it/s]epoch 3/100: 544it [00:54,  9.15it/s]epoch 3/100: 522it [00:54,  8.19it/s]epoch 3/100: 546it [00:54,  9.98it/s]epoch 3/100: 523it [00:55,  7.76it/s]epoch 3/100: 547it [00:55,  9.91it/s]epoch 3/100: 525it [00:55,  8.67it/s]epoch 3/100: 549it [00:55, 10.04it/s]epoch 3/100: 526it [00:55,  8.88it/s]epoch 3/100: 527it [00:55,  9.11it/s]epoch 3/100: 551it [00:55, 10.31it/s]epoch 3/100: 528it [00:55,  9.23it/s]epoch 3/100: 553it [00:55, 10.92it/s]epoch 3/100: 529it [00:55,  9.10it/s]epoch 3/100: 530it [00:55,  8.99it/s]epoch 3/100: 555it [00:55, 10.59it/s]epoch 3/100: 531it [00:55,  9.24it/s]epoch 3/100: 532it [00:56,  8.86it/s]epoch 3/100: 557it [00:56, 10.57it/s]epoch 3/100: 533it [00:56,  9.08it/s]epoch 3/100: 534it [00:56,  8.85it/s]epoch 3/100: 559it [00:56, 10.50it/s]epoch 3/100: 535it [00:56,  9.11it/s]epoch 3/100: 561it [00:56, 10.86it/s]epoch 3/100: 536it [00:56,  8.94it/s]epoch 3/100: 537it [00:56,  8.49it/s]epoch 3/100: 563it [00:56, 10.64it/s]epoch 3/100: 538it [00:56,  8.21it/s]epoch 3/100: 565it [00:56, 10.57it/s]epoch 3/100: 540it [00:56,  8.83it/s]epoch 3/100: 567it [00:56, 10.92it/s]epoch 3/100: 541it [00:57,  8.07it/s]epoch 3/100: 569it [00:57, 10.63it/s]epoch 3/100: 542it [00:57,  7.95it/s]epoch 3/100: 543it [00:57,  7.99it/s]epoch 3/100: 571it [00:57, 10.64it/s]epoch 3/100: 544it [00:57,  8.28it/s]epoch 3/100: 573it [00:57, 10.81it/s]epoch 3/100: 546it [00:57,  8.77it/s]epoch 3/100: 575it [00:57, 10.75it/s]epoch 3/100: 547it [00:57,  8.68it/s]epoch 3/100: 577it [00:57, 10.61it/s]epoch 3/100: 548it [00:57,  8.07it/s]epoch 3/100: 549it [00:58,  8.35it/s]epoch 3/100: 579it [00:58, 10.73it/s]epoch 3/100: 550it [00:58,  8.09it/s]epoch 3/100: 581it [00:58, 11.13it/s]epoch 3/100: 551it [00:58,  8.23it/s]epoch 3/100: 552it [00:58,  8.01it/s]epoch 3/100: 583it [00:58, 10.76it/s]epoch 3/100: 553it [00:58,  8.22it/s]epoch 3/100: 585it [00:58, 10.45it/s]epoch 3/100: 554it [00:58,  7.85it/s]epoch 3/100: 555it [00:58,  7.43it/s]epoch 3/100: 587it [00:58, 10.79it/s]epoch 3/100: 556it [00:58,  7.58it/s]epoch 3/100: 589it [00:59, 10.55it/s]epoch 3/100: 557it [00:59,  7.56it/s]epoch 3/100: 558it [00:59,  7.46it/s]epoch 3/100: 591it [00:59, 10.17it/s]epoch 3/100: 559it [00:59,  7.94it/s]epoch 3/100: 593it [00:59, 10.29it/s]epoch 3/100: 560it [00:59,  8.10it/s]epoch 3/100: 561it [00:59,  8.41it/s]epoch 3/100: 595it [00:59,  9.93it/s]epoch 3/100: 562it [00:59,  8.60it/s]epoch 3/100: 596it [00:59,  9.77it/s]epoch 3/100: 563it [00:59,  8.41it/s]epoch 3/100: 597it [00:59,  9.78it/s]epoch 3/100: 564it [00:59,  8.19it/s]epoch 3/100: 565it [01:00,  8.46it/s]epoch 3/100: 599it [01:00, 10.44it/s]epoch 3/100: 566it [01:00,  8.24it/s]epoch 3/100: 601it [01:00, 10.47it/s]epoch 3/100: 567it [01:00,  7.48it/s]epoch 3/100: 603it [01:00, 10.63it/s]epoch 3/100: 568it [01:00,  7.82it/s]epoch 3/100: 569it [01:00,  8.00it/s]epoch 3/100: 605it [01:00, 11.16it/s]epoch 3/100: 570it [01:00,  7.79it/s]epoch 3/100: 607it [01:00, 10.88it/s]epoch 3/100: 571it [01:00,  8.06it/s]epoch 3/100: 572it [01:00,  8.11it/s]epoch 3/100: 609it [01:00, 10.47it/s]epoch 3/100: 573it [01:01,  8.25it/s]epoch 3/100: 574it [01:01,  8.54it/s]epoch 3/100: 611it [01:01, 10.52it/s]epoch 3/100: 576it [01:01,  9.30it/s]epoch 3/100: 613it [01:01, 10.66it/s]epoch 3/100: 577it [01:01,  9.06it/s]epoch 3/100: 578it [01:01,  8.61it/s]epoch 3/100: 615it [01:01,  9.23it/s]epoch 3/100: 579it [01:01,  8.73it/s]epoch 3/100: 617it [01:01,  9.67it/s]epoch 3/100: 580it [01:01,  8.75it/s]epoch 3/100: 581it [01:01,  8.11it/s]epoch 3/100: 619it [01:01, 10.17it/s]epoch 3/100: 582it [01:02,  8.34it/s]epoch 3/100: 621it [01:02, 10.72it/s]epoch 3/100: 584it [01:02,  8.39it/s]epoch 3/100: 623it [01:02, 10.55it/s]epoch 3/100: 585it [01:02,  8.43it/s]epoch 3/100: 586it [01:02,  8.64it/s]epoch 3/100: 625it [01:02, 10.13it/s]epoch 3/100: 587it [01:02,  8.57it/s]epoch 3/100: 627it [01:02, 10.05it/s]epoch 3/100: 588it [01:02,  8.46it/s]epoch 3/100: 590it [01:02,  8.99it/s]epoch 3/100: 629it [01:02,  9.38it/s]epoch 3/100: 630it [01:03,  9.18it/s]epoch 3/100: 592it [01:03,  9.59it/s]epoch 3/100: 593it [01:03,  9.55it/s]epoch 3/100: 632it [01:03,  9.74it/s]epoch 3/100: 595it [01:03,  9.85it/s]epoch 3/100: 634it [01:03, 10.34it/s]epoch 3/100: 597it [01:03,  9.92it/s]epoch 3/100: 636it [01:03, 10.26it/s]epoch 3/100: 598it [01:03,  9.87it/s]epoch 3/100: 638it [01:03, 10.55it/s]epoch 3/100: 600it [01:03,  9.92it/s]epoch 3/100: 640it [01:04, 10.56it/s]epoch 3/100: 601it [01:04,  9.40it/s]epoch 3/100: 642it [01:04,  9.75it/s]epoch 3/100: 603it [01:04,  9.80it/s]epoch 3/100: 643it [01:04,  9.74it/s]epoch 3/100: 605it [01:04, 10.20it/s]epoch 3/100: 645it [01:04,  9.70it/s]epoch 3/100: 646it [01:04,  9.75it/s]epoch 3/100: 607it [01:04,  9.65it/s]epoch 3/100: 608it [01:04,  9.18it/s]epoch 3/100: 648it [01:04,  9.70it/s]epoch 3/100: 609it [01:04,  8.80it/s]epoch 3/100: 649it [01:04,  9.66it/s]epoch 3/100: 610it [01:05,  8.88it/s]epoch 3/100: 611it [01:05,  9.04it/s]epoch 3/100: 651it [01:05, 10.43it/s]epoch 3/100: 612it [01:05,  9.08it/s]epoch 3/100: 653it [01:05, 10.37it/s]epoch 3/100: 614it [01:05,  9.62it/s]epoch 3/100: 655it [01:05,  9.71it/s]epoch 3/100: 615it [01:05,  8.84it/s]epoch 3/100: 657it [01:05,  9.85it/s]epoch 3/100: 617it [01:05,  9.39it/s]epoch 3/100: 658it [01:05,  9.86it/s]epoch 3/100: 618it [01:05,  9.40it/s]epoch 3/100: 619it [01:06,  9.48it/s]epoch 3/100: 659it [01:06,  9.24it/s]epoch 3/100: 660it [01:06,  9.36it/s]epoch 3/100: 621it [01:06,  9.59it/s]epoch 3/100: 661it [01:06,  9.11it/s]epoch 3/100: 623it [01:06, 10.10it/s]epoch 3/100: 663it [01:06,  9.49it/s]epoch 3/100: 625it [01:06,  9.76it/s]epoch 3/100: 665it [01:06, 10.16it/s]epoch 3/100: 626it [01:06,  9.54it/s]epoch 3/100: 667it [01:06, 10.44it/s]epoch 3/100: 627it [01:06,  9.49it/s]epoch 3/100: 628it [01:06,  9.31it/s]epoch 3/100: 669it [01:06, 10.72it/s]epoch 3/100: 629it [01:07,  8.98it/s]epoch 3/100: 671it [01:07, 10.30it/s]epoch 3/100: 630it [01:07,  8.79it/s]epoch 3/100: 632it [01:07,  9.76it/s]epoch 3/100: 673it [01:07, 10.45it/s]epoch 3/100: 633it [01:07,  9.29it/s]epoch 3/100: 675it [01:07, 10.07it/s]epoch 3/100: 634it [01:07,  9.28it/s]epoch 3/100: 636it [01:07,  9.81it/s]epoch 3/100: 677it [01:07,  9.89it/s]epoch 3/100: 637it [01:07,  9.71it/s]epoch 3/100: 679it [01:07, 10.50it/s]epoch 3/100: 638it [01:07,  9.54it/s]epoch 3/100: 639it [01:08,  9.63it/s]epoch 3/100: 681it [01:08,  9.89it/s]epoch 3/100: 640it [01:08,  9.48it/s]epoch 3/100: 641it [01:08,  9.08it/s]epoch 3/100: 683it [01:08,  9.22it/s]epoch 3/100: 642it [01:08,  9.17it/s]epoch 3/100: 643it [01:08,  9.29it/s]epoch 3/100: 685it [01:08,  9.76it/s]epoch 3/100: 644it [01:08,  9.41it/s]epoch 3/100: 686it [01:08,  9.68it/s]epoch 3/100: 645it [01:08,  9.42it/s]epoch 3/100: 687it [01:08,  9.52it/s]epoch 3/100: 646it [01:08,  9.57it/s]epoch 3/100: 647it [01:08,  9.30it/s]epoch 3/100: 689it [01:09, 10.14it/s]epoch 3/100: 648it [01:09,  8.88it/s]epoch 3/100: 691it [01:09, 10.41it/s]epoch 3/100: 649it [01:09,  8.61it/s]epoch 3/100: 650it [01:09,  8.65it/s]epoch 3/100: 693it [01:09, 10.02it/s]epoch 3/100: 651it [01:09,  8.64it/s]epoch 3/100: 652it [01:09,  8.99it/s]epoch 3/100: 695it [01:09, 10.10it/s]epoch 3/100: 653it [01:09,  8.68it/s]epoch 3/100: 655it [01:09,  9.52it/s]epoch 3/100: 656it [01:09,  9.59it/s]epoch 3/100: 697it [01:09,  7.83it/s]epoch 3/100: 657it [01:10,  9.24it/s]epoch 3/100: 698it [01:10,  7.95it/s]epoch 3/100: 658it [01:10,  8.73it/s]epoch 3/100: 700it [01:10,  8.65it/s]epoch 3/100: 659it [01:10,  8.79it/s]epoch 3/100: 701it [01:10,  8.65it/s]epoch 3/100: 660it [01:10,  8.73it/s]epoch 3/100: 661it [01:10,  8.47it/s]epoch 3/100: 703it [01:10,  9.58it/s]epoch 3/100: 662it [01:10,  8.34it/s]epoch 3/100: 705it [01:10, 10.62it/s]epoch 3/100: 664it [01:10,  9.26it/s]epoch 3/100: 707it [01:10, 10.94it/s]epoch 3/100: 709it [01:11, 11.27it/s]epoch 3/100: 666it [01:11,  9.37it/s]epoch 3/100: 711it [01:11, 11.33it/s]epoch 3/100: 668it [01:11,  9.68it/s]epoch 3/100: 713it [01:11, 11.01it/s]epoch 3/100: 670it [01:11, 10.05it/s]epoch 3/100: 715it [01:11, 11.03it/s]epoch 3/100: 672it [01:11, 10.28it/s]epoch 3/100: 717it [01:11, 10.34it/s]epoch 3/100: 674it [01:11, 10.55it/s]epoch 3/100: 719it [01:12, 10.66it/s]epoch 3/100: 676it [01:12,  9.45it/s]epoch 3/100: 721it [01:12, 10.63it/s]epoch 3/100: 678it [01:12, 10.18it/s]epoch 3/100: 723it [01:12, 10.50it/s]epoch 3/100: 680it [01:12,  9.64it/s]epoch 3/100: 725it [01:12, 10.19it/s]epoch 3/100: 682it [01:12, 10.10it/s]epoch 3/100: 727it [01:12, 10.30it/s]epoch 3/100: 684it [01:12, 10.22it/s]epoch 3/100: 729it [01:12, 10.98it/s]epoch 3/100: 686it [01:13,  9.84it/s]epoch 3/100: 731it [01:13, 11.21it/s]epoch 3/100: 688it [01:13, 10.39it/s]epoch 3/100: 733it [01:13, 10.69it/s]epoch 3/100: 690it [01:13,  9.82it/s]epoch 3/100: 735it [01:13, 10.87it/s]epoch 3/100: 692it [01:13,  9.37it/s]epoch 3/100: 737it [01:13, 10.37it/s]epoch 3/100: 694it [01:13, 10.09it/s]epoch 3/100: 739it [01:13, 10.68it/s]epoch 3/100: 696it [01:14, 10.31it/s]epoch 3/100: 741it [01:14, 10.87it/s]epoch 3/100: 698it [01:14, 10.37it/s]epoch 3/100: 743it [01:14, 10.80it/s]epoch 3/100: 700it [01:14, 10.04it/s]epoch 3/100: 745it [01:14, 10.06it/s]epoch 3/100: 702it [01:14,  9.86it/s]epoch 3/100: 747it [01:14,  9.94it/s]epoch 3/100: 703it [01:14,  9.88it/s]epoch 3/100: 749it [01:14,  9.92it/s]epoch 3/100: 705it [01:14, 10.30it/s]epoch 3/100: 750it [01:15,  9.63it/s]epoch 3/100: 751it [01:15,  9.42it/s]epoch 3/100: 707it [01:15,  9.43it/s]epoch 3/100: 753it [01:15,  9.86it/s]epoch 3/100: 708it [01:15,  8.60it/s]epoch 3/100: 709it [01:15,  8.69it/s]epoch 3/100: 755it [01:15, 10.21it/s]epoch 3/100: 711it [01:15,  9.54it/s]epoch 3/100: 757it [01:15, 10.28it/s]epoch 3/100: 712it [01:15,  8.92it/s]epoch 3/100: 759it [01:15,  9.97it/s]epoch 3/100: 714it [01:15,  9.41it/s]epoch 3/100: 760it [01:16,  9.71it/s]epoch 3/100: 716it [01:16,  9.81it/s]epoch 3/100: 762it [01:16,  9.98it/s]epoch 3/100: 763it [01:16,  9.61it/s]epoch 3/100: 718it [01:16,  9.95it/s]epoch 3/100: 764it [01:16,  9.66it/s]epoch 3/100: 719it [01:16,  9.70it/s]epoch 3/100: 765it [01:16,  9.21it/s]epoch 3/100: 721it [01:16, 10.08it/s]epoch 3/100: 767it [01:16, 10.14it/s]epoch 3/100: 723it [01:16, 10.62it/s]epoch 3/100: 769it [01:16, 10.64it/s]epoch 3/100: 725it [01:16, 10.95it/s]epoch 3/100: 771it [01:17, 10.16it/s]epoch 3/100: 727it [01:17, 10.68it/s]epoch 3/100: 773it [01:17, 10.16it/s]epoch 3/100: 729it [01:17,  9.82it/s]epoch 3/100: 775it [01:17, 10.54it/s]epoch 3/100: 731it [01:17, 10.06it/s]epoch 3/100: 777it [01:17, 10.62it/s]epoch 3/100: 733it [01:17, 10.13it/s]epoch 3/100: 779it [01:17, 10.87it/s]epoch 3/100: 781it [01:18, 10.73it/s]epoch 3/100: 735it [01:18, 10.00it/s]epoch 3/100: 737it [01:18, 10.19it/s]epoch 3/100: 783it [01:18, 10.37it/s]epoch 3/100: 739it [01:18, 10.21it/s]epoch 3/100: 785it [01:18, 10.35it/s]epoch 3/100: 741it [01:18, 10.08it/s]epoch 3/100: 787it [01:18, 10.26it/s]epoch 3/100: 743it [01:18, 10.51it/s]epoch 3/100: 789it [01:18, 10.53it/s]epoch 3/100: 745it [01:18, 10.36it/s]epoch 3/100: 791it [01:18, 10.60it/s]epoch 3/100: 747it [01:19, 10.69it/s]epoch 3/100: 793it [01:19,  9.95it/s]epoch 3/100: 749it [01:19, 10.40it/s]epoch 3/100: 795it [01:19,  9.88it/s]epoch 3/100: 751it [01:19, 10.70it/s]epoch 3/100: 797it [01:19, 10.45it/s]epoch 3/100: 753it [01:19, 10.73it/s]epoch 3/100: 799it [01:19, 10.20it/s]epoch 3/100: 755it [01:19, 10.51it/s]epoch 3/100: 757it [01:20, 10.27it/s]epoch 3/100: 759it [01:20, 10.23it/s]epoch 3/100: 761it [01:20, 10.11it/s]epoch 3/100: 763it [01:20, 10.39it/s]epoch 3/100: 765it [01:20, 10.26it/s]epoch 3/100: 767it [01:21, 10.07it/s]epoch 3/100: 769it [01:21, 10.05it/s]epoch 3/100: 771it [01:21, 10.07it/s]epoch 3/100: 773it [01:21,  9.71it/s]epoch 3/100: 775it [01:21, 10.12it/s]epoch 3/100: 777it [01:22,  9.73it/s]epoch 3/100: 779it [01:22,  8.85it/s]epoch 3/100: 781it [01:22,  9.36it/s]epoch 3/100: 783it [01:22,  9.38it/s]epoch 3/100: 785it [01:22,  9.75it/s]epoch 3/100: 787it [01:23, 10.29it/s]epoch 3/100: 789it [01:23, 10.10it/s]epoch 3/100: 791it [01:23,  9.61it/s]epoch 3/100: 792it [01:23,  9.57it/s]epoch 3/100: 794it [01:23,  9.48it/s]epoch 3/100: 795it [01:24,  9.54it/s]epoch 3/100: 796it [01:24,  9.44it/s]epoch 3/100: 797it [01:24,  9.54it/s]epoch 3/100: 799it [01:24,  9.51it/s]epoch 3/100: 800it [01:24,  9.50it/s]epoch 3/100: 799it [01:25, 10.20it/s, loss=3.65]epoch 3/100: 800it [01:25,  9.50it/s, loss=3.5]epoch 3/100: 801it [01:25,  1.08it/s, loss=3.65]epoch 3/100: 801it [01:25,  3.15it/s, loss=3.5]epoch 3/100: 801it [01:26,  1.08it/s, loss=3.62]epoch 3/100: 801it [01:26,  3.15it/s, loss=3.85]epoch 3/100: 802it [01:26,  1.17it/s, loss=3.62]epoch 3/100: 802it [01:26,  2.74it/s, loss=3.85]epoch 3/100: 802it [01:26,  1.17it/s, loss=3.62]epoch 3/100: 802it [01:26,  2.74it/s, loss=3.7] epoch 3/100: 803it [01:26,  1.29it/s, loss=3.62]epoch 3/100: 803it [01:26,  2.54it/s, loss=3.7]epoch 3/100: 803it [01:26,  1.29it/s, loss=3.6] epoch 3/100: 803it [01:26,  2.54it/s, loss=3.59]epoch 3/100: 804it [01:26,  2.38it/s, loss=3.59]epoch 3/100: 804it [01:26,  1.40it/s, loss=3.6]epoch 3/100: 804it [01:27,  1.40it/s, loss=3.74]epoch 3/100: 804it [01:27,  2.38it/s, loss=3.77]epoch 3/100: 805it [01:27,  1.51it/s, loss=3.74]epoch 3/100: 805it [01:27,  2.26it/s, loss=3.77]epoch 3/100: 805it [01:27,  1.51it/s, loss=3.62]epoch 3/100: 805it [01:27,  2.26it/s, loss=3.69]epoch 3/100: 806it [01:27,  1.62it/s, loss=3.62]epoch 3/100: 806it [01:27,  2.20it/s, loss=3.69]epoch 3/100: 806it [01:28,  1.62it/s, loss=3.79]epoch 3/100: 806it [01:28,  2.20it/s, loss=3.59]epoch 3/100: 807it [01:28,  1.72it/s, loss=3.79]epoch 3/100: 807it [01:28,  2.15it/s, loss=3.59]epoch 3/100: 807it [01:28,  2.15it/s, loss=3.62]epoch 3/100: 807it [01:28,  1.72it/s, loss=3.72]epoch 3/100: 808it [01:28,  2.08it/s, loss=3.62]epoch 3/100: 808it [01:28,  1.77it/s, loss=3.72]epoch 3/100: 808it [01:29,  1.77it/s, loss=3.74]epoch 3/100: 808it [01:29,  2.08it/s, loss=3.78]epoch 3/100: 809it [01:29,  2.07it/s, loss=3.78]epoch 3/100: 809it [01:29,  1.84it/s, loss=3.74]epoch 3/100: 809it [01:29,  2.07it/s, loss=3.66]epoch 3/100: 809it [01:29,  1.84it/s, loss=3.72]epoch 3/100: 810it [01:29,  2.06it/s, loss=3.66]epoch 3/100: 810it [01:29,  1.89it/s, loss=3.72]epoch 3/100: 810it [01:30,  1.89it/s, loss=3.63]epoch 3/100: 810it [01:30,  2.06it/s, loss=3.93]epoch 3/100: 811it [01:30,  2.07it/s, loss=3.93]epoch 3/100: 811it [01:30,  1.95it/s, loss=3.63]epoch 3/100: 811it [01:30,  1.95it/s, loss=3.64]epoch 3/100: 811it [01:30,  2.07it/s, loss=3.8] epoch 3/100: 812it [01:30,  1.99it/s, loss=3.64]epoch 3/100: 812it [01:30,  2.08it/s, loss=3.8]epoch 3/100: 812it [01:31,  2.08it/s, loss=3.58]epoch 3/100: 812it [01:31,  1.99it/s, loss=3.77]epoch 3/100: 813it [01:31,  2.05it/s, loss=3.58]epoch 3/100: 813it [01:31,  1.99it/s, loss=3.77]epoch 3/100: 813it [01:31,  2.05it/s, loss=3.59]epoch 3/100: 813it [01:31,  1.99it/s, loss=3.67]epoch 3/100: 814it [01:31,  2.06it/s, loss=3.59]epoch 3/100: 814it [01:31,  2.01it/s, loss=3.67]epoch 3/100: 814it [01:32,  2.01it/s, loss=3.76]epoch 3/100: 814it [01:32,  2.06it/s, loss=3.88]epoch 3/100: 815it [01:32,  2.03it/s, loss=3.76]epoch 3/100: 815it [01:32,  2.06it/s, loss=3.88]epoch 3/100: 815it [01:32,  2.03it/s, loss=3.89]epoch 3/100: 815it [01:32,  2.06it/s, loss=3.9] epoch 3/100: 816it [01:32,  2.03it/s, loss=3.89]epoch 3/100: 816it [01:32,  2.05it/s, loss=3.9]epoch 3/100: 816it [01:33,  2.03it/s, loss=3.92]epoch 3/100: 816it [01:33,  2.05it/s, loss=3.75]epoch 3/100: 817it [01:33,  2.02it/s, loss=3.92]epoch 3/100: 817it [01:33,  2.03it/s, loss=3.75]epoch 3/100: 817it [01:33,  2.02it/s, loss=3.49]epoch 3/100: 817it [01:33,  2.03it/s, loss=3.6] epoch 3/100: 818it [01:33,  2.07it/s, loss=3.6]epoch 3/100: 818it [01:33,  2.06it/s, loss=3.49]epoch 3/100: 818it [01:34,  2.06it/s, loss=3.77]epoch 3/100: 818it [01:34,  2.07it/s, loss=3.71]epoch 3/100: 819it [01:34,  2.08it/s, loss=3.71]epoch 3/100: 819it [01:34,  2.08it/s, loss=3.77]epoch 3/100: 819it [01:34,  2.08it/s, loss=3.86]epoch 3/100: 819it [01:34,  2.08it/s, loss=3.74]epoch 3/100: 820it [01:34,  2.05it/s, loss=3.86]epoch 3/100: 820it [01:34,  2.06it/s, loss=3.74]epoch 3/100: 820it [01:35,  2.05it/s, loss=3.82]epoch 3/100: 820it [01:35,  2.06it/s, loss=3.65]epoch 3/100: 821it [01:35,  2.05it/s, loss=3.82]epoch 3/100: 821it [01:35,  2.06it/s, loss=3.65]epoch 3/100: 821it [01:35,  2.05it/s, loss=3.63]epoch 3/100: 821it [01:35,  2.06it/s, loss=3.62]epoch 3/100: 822it [01:35,  2.06it/s, loss=3.62]epoch 3/100: 822it [01:35,  2.05it/s, loss=3.63]epoch 3/100: 822it [01:36,  2.05it/s, loss=3.65]epoch 3/100: 822it [01:36,  2.06it/s, loss=3.65]epoch 3/100: 823it [01:36,  2.02it/s, loss=3.65]epoch 3/100: 823it [01:36,  2.02it/s, loss=3.65]epoch 3/100: 823it [01:36,  2.02it/s, loss=3.52]epoch 3/100: 823it [01:36,  2.02it/s, loss=3.69]epoch 3/100: 824it [01:36,  2.00it/s, loss=3.52]epoch 3/100: 824it [01:36,  2.00it/s, loss=3.69]epoch 3/100: 824it [01:37,  2.00it/s, loss=3.7] epoch 3/100: 824it [01:37,  2.00it/s, loss=3.55]
+val: 0it [00:00, ?it/s][A
+val: 0it [00:00, ?it/s][A
+val: 1it [00:01,  1.11s/it][A
+val: 1it [00:01,  1.15s/it][A
+val: 2it [00:01,  1.53it/s][A
+val: 2it [00:01,  1.43it/s][A
+val: 3it [00:01,  1.96it/s][A
+val: 3it [00:01,  1.82it/s][A
+val: 4it [00:02,  2.26it/s][A
+val: 4it [00:02,  2.14it/s][A
+val: 5it [00:02,  2.51it/s][A
+val: 5it [00:02,  2.34it/s][A
+val: 6it [00:02,  2.68it/s][A
+val: 6it [00:02,  2.54it/s][A
+val: 7it [00:03,  2.77it/s][A
+val: 7it [00:03,  2.64it/s][A
+val: 8it [00:03,  2.85it/s][A
+val: 8it [00:03,  2.72it/s][A
+val: 9it [00:03,  2.93it/s][A
+val: 9it [00:03,  2.79it/s][A
+val: 10it [00:04,  2.87it/s][A
+val: 10it [00:04,  2.83it/s][A
+val: 11it [00:04,  2.90it/s][A
+val: 11it [00:04,  2.80it/s][A
+val: 12it [00:04,  2.79it/s][A
+val: 12it [00:05,  2.81it/s][A
+val: 13it [00:05,  2.86it/s][A
+val: 13it [00:05,  2.84it/s][A
+val: 14it [00:05,  2.64it/s][A
+val: 14it [00:05,  2.86it/s][A
+val: 15it [00:05,  2.74it/s][A
+val: 15it [00:06,  2.84it/s][A
+val: 16it [00:06,  2.71it/s][A
+val: 16it [00:06,  2.87it/s][A
+val: 17it [00:06,  2.74it/s][A
+val: 17it [00:06,  2.89it/s][A
+val: 18it [00:07,  2.79it/s][A
+val: 18it [00:07,  2.94it/s][A
+val: 19it [00:07,  2.77it/s][A
+val: 19it [00:07,  2.95it/s][A
+val: 20it [00:07,  2.80it/s][A
+val: 20it [00:07,  2.95it/s][A
+val: 21it [00:08,  2.87it/s][A
+val: 21it [00:08,  2.96it/s][A
+val: 22it [00:08,  3.00it/s][A
+val: 22it [00:08,  2.90it/s][A
+val: 23it [00:08,  2.91it/s][A
+val: 23it [00:08,  2.93it/s][A
+val: 24it [00:09,  2.93it/s][A
+val: 24it [00:09,  2.95it/s][A
+val: 25it [00:09,  2.92it/s][A
+val: 25it [00:09,  2.77it/s][A
+val: 26it [00:09,  2.90it/s][A
+val: 26it [00:09,  2.83it/s][A
+val: 27it [00:10,  2.88it/s][A
+val: 27it [00:10,  2.87it/s][A
+val: 28it [00:10,  2.84it/s][A
+val: 28it [00:10,  2.68it/s][A
+val: 29it [00:10,  2.88it/s][A
+val: 29it [00:10,  2.73it/s][A
+val: 30it [00:11,  2.93it/s][A
+val: 30it [00:11,  2.79it/s][A
+val: 31it [00:11,  2.96it/s][A
+val: 31it [00:11,  2.80it/s][A
+val: 32it [00:11,  2.95it/s][A
+val: 32it [00:11,  2.90it/s][A
+val: 33it [00:12,  2.99it/s][A
+val: 33it [00:12,  2.94it/s][A
+val: 34it [00:12,  3.00it/s][A
+val: 34it [00:12,  2.95it/s][A
+val: 35it [00:12,  3.01it/s][A
+val: 35it [00:12,  2.96it/s][A
+val: 36it [00:13,  2.94it/s][A
+val: 36it [00:13,  2.88it/s][A
+val: 37it [00:13,  2.88it/s][A
+val: 37it [00:13,  2.93it/s][A
+val: 38it [00:13,  2.97it/s][A
+val: 38it [00:13,  2.73it/s][A
+val: 39it [00:14,  2.99it/s][A
+val: 39it [00:14,  2.77it/s][A
+val: 40it [00:14,  2.82it/s][A
+val: 40it [00:14,  2.90it/s][A
+val: 41it [00:14,  2.96it/s][A
+val: 41it [00:15,  2.69it/s][A
+val: 42it [00:15,  2.93it/s][A
+val: 42it [00:15,  2.76it/s][A
+val: 43it [00:15,  3.00it/s][A
+val: 43it [00:15,  2.81it/s][A
+val: 44it [00:15,  2.98it/s][A
+val: 44it [00:16,  2.88it/s][A
+val: 45it [00:16,  2.92it/s][A
+val: 45it [00:16,  2.85it/s][A
+val: 46it [00:16,  2.93it/s][A
+val: 46it [00:16,  2.92it/s][A
+val: 47it [00:17,  2.95it/s][A
+val: 47it [00:17,  2.92it/s][A
+val: 48it [00:17,  2.91it/s][A
+val: 48it [00:17,  2.90it/s][A
+val: 49it [00:17,  2.93it/s][A
+val: 49it [00:17,  2.88it/s][A
+val: 50it [00:18,  2.92it/s][A
+val: 50it [00:18,  2.92it/s][A
+val: 51it [00:18,  2.95it/s][A
+val: 51it [00:18,  2.94it/s][A
+val: 52it [00:18,  2.90it/s][A
+val: 52it [00:18,  2.97it/s][A
+val: 53it [00:19,  2.91it/s][A
+val: 53it [00:19,  2.94it/s][A
+val: 54it [00:19,  2.90it/s][A
+val: 54it [00:19,  2.80it/s][A
+val: 55it [00:19,  2.89it/s][A
+val: 55it [00:19,  2.83it/s][A
+val: 56it [00:20,  2.89it/s][A
+val: 56it [00:20,  2.86it/s][A
+val: 57it [00:20,  2.91it/s][A
+val: 57it [00:20,  2.86it/s][A
+val: 58it [00:20,  2.86it/s][A
+val: 58it [00:20,  2.86it/s][A
+val: 59it [00:21,  2.81it/s][A
+val: 59it [00:21,  2.89it/s][A
+val: 60it [00:21,  2.88it/s][A
+val: 60it [00:21,  2.92it/s][A
+val: 61it [00:21,  2.89it/s][A
+val: 61it [00:21,  2.94it/s][A
+val: 62it [00:22,  2.89it/s][A
+val: 62it [00:22,  2.88it/s][A
+val: 63it [00:22,  2.90it/s][A
+val: 63it [00:22,  2.89it/s][A
+val: 64it [00:22,  2.93it/s][A
+val: 64it [00:22,  2.92it/s][A
+val: 65it [00:23,  2.98it/s][A
+val: 65it [00:23,  2.96it/s][A
+val: 66it [00:23,  2.93it/s][A
+val: 66it [00:23,  2.97it/s][A
+val: 67it [00:23,  2.93it/s][A
+val: 67it [00:23,  2.96it/s][A
+val: 68it [00:24,  2.93it/s][A
+val: 68it [00:24,  2.94it/s][A
+val: 69it [00:24,  2.98it/s][A
+val: 69it [00:24,  2.92it/s][A
+val: 70it [00:24,  3.00it/s][A
+val: 70it [00:25,  2.95it/s][A
+val: 71it [00:25,  3.01it/s][A
+val: 71it [00:25,  2.97it/s][A
+val: 72it [00:25,  3.03it/s][A
+val: 72it [00:25,  2.88it/s][A
+val: 73it [00:25,  3.00it/s][A
+val: 73it [00:26,  2.91it/s][A
+val: 74it [00:26,  3.01it/s][A
+val: 74it [00:26,  2.91it/s][A
+val: 75it [00:26,  3.00it/s][A
+val: 75it [00:26,  2.92it/s][A
+val: 76it [00:26,  3.00it/s][A
+val: 76it [00:27,  2.90it/s][A
+val: 77it [00:27,  2.99it/s][A
+val: 77it [00:27,  2.86it/s][A
+val: 78it [00:27,  2.96it/s][A
+val: 78it [00:27,  2.89it/s][A
+                            [A
+                            [Aepoch 3/100: 824it [02:05,  2.00it/s, loss=3.55]epoch 3/100: 824it [02:05,  2.00it/s, best_val=3.63, loss=3.7, val=3.63]epoch 3/100: 825it [02:05,  8.90s/it, loss=3.55]epoch 3/100: 825it [02:05,  8.90s/it, best_val=3.63, loss=3.7, val=3.63]epoch 3/100: 825it [02:05,  8.90s/it, loss=3.68]                        epoch 3/100: 825it [02:05,  8.90s/it, loss=3.87]epoch 3/100: 826it [02:05,  6.39s/it, loss=3.87]epoch 3/100: 826it [02:05,  6.39s/it, loss=3.68]epoch 3/100: 826it [02:06,  6.39s/it, loss=3.97]epoch 3/100: 826it [02:06,  6.39s/it, loss=3.64]epoch 3/100: 827it [02:06,  4.62s/it, loss=3.97]epoch 3/100: 827it [02:06,  4.62s/it, loss=3.64]epoch 3/100: 827it [02:06,  4.62s/it, loss=3.67]epoch 3/100: 827it [02:06,  4.62s/it, loss=3.86]epoch 3/100: 828it [02:06,  3.38s/it, loss=3.67]epoch 3/100: 828it [02:06,  3.38s/it, loss=3.86]epoch 3/100: 828it [02:07,  3.38s/it, loss=3.69]epoch 3/100: 828it [02:07,  3.38s/it, loss=3.9] epoch 3/100: 829it [02:07,  2.52s/it, loss=3.69]epoch 3/100: 829it [02:07,  2.52s/it, loss=3.9]epoch 3/100: 829it [02:07,  2.52s/it, loss=3.75]epoch 3/100: 829it [02:07,  2.52s/it, loss=3.61]epoch 3/100: 830it [02:07,  1.91s/it, loss=3.75]epoch 3/100: 830it [02:07,  1.91s/it, loss=3.61]epoch 3/100: 830it [02:08,  1.91s/it, loss=3.94]epoch 3/100: 830it [02:08,  1.91s/it, loss=3.64]epoch 3/100: 831it [02:08,  1.49s/it, loss=3.94]epoch 3/100: 831it [02:08,  1.49s/it, loss=3.64]epoch 3/100: 831it [02:08,  1.49s/it, loss=3.65]epoch 3/100: 831it [02:08,  1.49s/it, loss=3.57]epoch 3/100: 832it [02:08,  1.19s/it, loss=3.65]epoch 3/100: 832it [02:08,  1.19s/it, loss=3.57]epoch 3/100: 832it [02:09,  1.19s/it, loss=3.71]epoch 3/100: 832it [02:09,  1.19s/it, loss=3.75]epoch 3/100: 833it [02:09,  1.02it/s, loss=3.71]epoch 3/100: 833it [02:09,  1.02it/s, loss=3.75]epoch 3/100: 833it [02:09,  1.02it/s, loss=3.67]epoch 3/100: 833it [02:09,  1.02it/s, loss=3.64]epoch 3/100: 834it [02:09,  1.19it/s, loss=3.67]epoch 3/100: 834it [02:09,  1.19it/s, loss=3.64]epoch 3/100: 834it [02:10,  1.19it/s, loss=3.7] epoch 3/100: 834it [02:10,  1.19it/s, loss=3.63]epoch 3/100: 835it [02:10,  1.36it/s, loss=3.7]epoch 3/100: 835it [02:10,  1.36it/s, loss=3.63]epoch 3/100: 835it [02:10,  1.36it/s, loss=4.04]epoch 3/100: 835it [02:10,  1.36it/s, loss=3.69]epoch 3/100: 836it [02:10,  1.52it/s, loss=4.04]epoch 3/100: 836it [02:10,  1.52it/s, loss=3.69]epoch 3/100: 836it [02:11,  1.52it/s, loss=3.57]epoch 3/100: 836it [02:11,  1.52it/s, loss=3.75]epoch 3/100: 837it [02:11,  1.62it/s, loss=3.57]epoch 3/100: 837it [02:11,  1.62it/s, loss=3.75]epoch 3/100: 837it [02:11,  1.62it/s, loss=3.67]epoch 3/100: 837it [02:11,  1.62it/s, loss=3.64]epoch 3/100: 838it [02:11,  1.69it/s, loss=3.67]epoch 3/100: 838it [02:11,  1.69it/s, loss=3.64]epoch 3/100: 838it [02:12,  1.69it/s, loss=3.86]epoch 3/100: 838it [02:12,  1.69it/s, loss=3.77]epoch 3/100: 839it [02:12,  1.78it/s, loss=3.86]epoch 3/100: 839it [02:12,  1.78it/s, loss=3.77]epoch 3/100: 839it [02:12,  1.78it/s, loss=3.77]epoch 3/100: 839it [02:12,  1.78it/s, loss=3.9] epoch 3/100: 840it [02:12,  1.83it/s, loss=3.77]epoch 3/100: 840it [02:12,  1.83it/s, loss=3.9]epoch 3/100: 840it [02:13,  1.83it/s, loss=3.73]epoch 3/100: 840it [02:13,  1.83it/s, loss=3.65]epoch 3/100: 841it [02:13,  1.87it/s, loss=3.73]epoch 3/100: 841it [02:13,  1.87it/s, loss=3.65]epoch 3/100: 841it [02:13,  1.87it/s, loss=3.8] epoch 3/100: 841it [02:13,  1.87it/s, loss=3.58]epoch 3/100: 842it [02:13,  1.91it/s, loss=3.8]epoch 3/100: 842it [02:13,  1.91it/s, loss=3.58]epoch 3/100: 842it [02:14,  1.91it/s, loss=3.62]epoch 3/100: 842it [02:14,  1.91it/s, loss=3.7]epoch 3/100: 843it [02:14,  1.92it/s, loss=3.62]epoch 3/100: 843it [02:14,  1.92it/s, loss=3.7]epoch 3/100: 843it [02:14,  1.92it/s, loss=3.7] epoch 3/100: 843it [02:14,  1.92it/s, loss=3.79]epoch 3/100: 844it [02:14,  1.91it/s, loss=3.7]epoch 3/100: 844it [02:14,  1.91it/s, loss=3.79]epoch 3/100: 844it [02:15,  1.91it/s, loss=3.56]epoch 3/100: 844it [02:15,  1.91it/s, loss=3.65]epoch 3/100: 845it [02:15,  1.93it/s, loss=3.56]epoch 3/100: 845it [02:15,  1.93it/s, loss=3.65]epoch 3/100: 845it [02:15,  1.93it/s, loss=3.87]epoch 3/100: 845it [02:15,  1.93it/s, loss=3.7] epoch 3/100: 846it [02:15,  1.96it/s, loss=3.7]epoch 3/100: 846it [02:15,  1.96it/s, loss=3.87]epoch 3/100: 846it [02:16,  1.96it/s, loss=3.52]epoch 3/100: 846it [02:16,  1.96it/s, loss=3.85]epoch 3/100: 847it [02:16,  1.98it/s, loss=3.52]epoch 3/100: 847it [02:16,  1.98it/s, loss=3.85]epoch 3/100: 847it [02:16,  1.98it/s, loss=3.86]epoch 3/100: 847it [02:16,  1.98it/s, loss=3.79]epoch 3/100: 848it [02:16,  2.00it/s, loss=3.86]epoch 3/100: 848it [02:16,  2.00it/s, loss=3.79]epoch 3/100: 848it [02:17,  2.00it/s, loss=3.66]epoch 3/100: 848it [02:17,  2.00it/s, loss=3.61]epoch 3/100: 849it [02:17,  2.01it/s, loss=3.66]epoch 3/100: 849it [02:17,  2.01it/s, loss=3.61]epoch 3/100: 849it [02:17,  2.01it/s, loss=3.74]epoch 3/100: 849it [02:17,  2.01it/s, loss=3.79]
+val: 0it [00:00, ?it/s][A
+val: 0it [00:00, ?it/s][A
+val: 1it [00:01,  1.24s/it][A
+val: 1it [00:01,  1.33s/it][A
+val: 2it [00:01,  1.42it/s][A
+val: 2it [00:01,  1.31it/s][A
+val: 3it [00:01,  1.79it/s][A
+val: 3it [00:02,  1.74it/s][A
+val: 4it [00:02,  2.12it/s][A
+val: 4it [00:02,  2.09it/s][A
+val: 5it [00:02,  2.40it/s][A
+val: 5it [00:02,  2.30it/s][A
+val: 6it [00:02,  2.59it/s][A
+val: 6it [00:03,  2.50it/s][A
+val: 7it [00:03,  2.70it/s][A
+val: 7it [00:03,  2.62it/s][A
+val: 8it [00:03,  2.80it/s][A
+val: 8it [00:03,  2.70it/s][A
+val: 9it [00:03,  2.88it/s][A
+val: 9it [00:04,  2.77it/s][A
+val: 10it [00:04,  2.84it/s][A
+val: 10it [00:04,  2.83it/s][A
+val: 11it [00:04,  2.88it/s][A
+val: 11it [00:04,  2.79it/s][A
+val: 12it [00:05,  2.79it/s][A
+val: 12it [00:05,  2.80it/s][A
+val: 13it [00:05,  2.86it/s][A
+val: 13it [00:05,  2.83it/s][A
+val: 14it [00:05,  2.79it/s][A
+val: 14it [00:05,  2.86it/s][A
+val: 15it [00:06,  2.88it/s][A
+val: 15it [00:06,  2.84it/s][A
+val: 16it [00:06,  2.84it/s][A
+val: 16it [00:06,  2.87it/s][A
+val: 17it [00:06,  2.87it/s][A
+val: 17it [00:06,  2.89it/s][A
+val: 18it [00:07,  2.91it/s][A
+val: 18it [00:07,  2.94it/s][A
+val: 19it [00:07,  2.90it/s][A
+val: 19it [00:07,  2.95it/s][A
+val: 20it [00:07,  2.93it/s][A
+val: 20it [00:07,  2.95it/s][A
+val: 21it [00:08,  2.95it/s][A
+val: 21it [00:08,  2.96it/s][A
+val: 22it [00:08,  2.96it/s][A
+val: 22it [00:08,  3.00it/s][A
+val: 23it [00:08,  2.96it/s][A
+val: 23it [00:08,  2.92it/s][A
+val: 24it [00:09,  2.95it/s][A
+val: 24it [00:09,  2.95it/s][A
+val: 25it [00:09,  2.79it/s][A
+val: 25it [00:09,  2.91it/s][A
+val: 26it [00:09,  2.83it/s][A
+val: 26it [00:09,  2.90it/s][A
+val: 27it [00:10,  2.86it/s][A
+val: 27it [00:10,  2.87it/s][A
+val: 28it [00:10,  2.82it/s][A
+val: 28it [00:10,  2.67it/s][A
+val: 29it [00:10,  2.86it/s][A
+val: 29it [00:11,  2.73it/s][A
+val: 30it [00:11,  2.90it/s][A
+val: 30it [00:11,  2.78it/s][A
+val: 31it [00:11,  2.93it/s][A
+val: 31it [00:11,  2.80it/s][A
+val: 32it [00:11,  2.94it/s][A
+val: 32it [00:12,  2.88it/s][A
+val: 33it [00:12,  2.97it/s][A
+val: 33it [00:12,  2.93it/s][A
+val: 34it [00:12,  2.99it/s][A
+val: 34it [00:12,  2.93it/s][A
+val: 35it [00:12,  2.99it/s][A
+val: 35it [00:13,  2.94it/s][A
+val: 36it [00:13,  2.92it/s][A
+val: 36it [00:13,  2.86it/s][A
+val: 37it [00:13,  2.86it/s][A
+val: 37it [00:13,  2.91it/s][A
+val: 38it [00:14,  2.72it/s][A
+val: 38it [00:14,  2.95it/s][A
+val: 39it [00:14,  2.77it/s][A
+val: 39it [00:14,  2.97it/s][A
+val: 40it [00:14,  2.82it/s][A
+val: 40it [00:14,  2.89it/s][A
+val: 41it [00:15,  2.69it/s][A
+val: 41it [00:15,  2.94it/s][A
+val: 42it [00:15,  2.75it/s][A
+val: 42it [00:15,  2.91it/s][A
+val: 43it [00:15,  2.80it/s][A
+val: 43it [00:15,  2.98it/s][A
+val: 44it [00:16,  2.87it/s][A
+val: 44it [00:16,  2.97it/s][A
+val: 45it [00:16,  2.84it/s][A
+val: 45it [00:16,  2.92it/s][A
+val: 46it [00:16,  2.91it/s][A
+val: 46it [00:16,  2.93it/s][A
+val: 47it [00:17,  2.93it/s][A
+val: 47it [00:17,  2.94it/s][A
+val: 48it [00:17,  2.91it/s][A
+val: 48it [00:17,  2.91it/s][A
+val: 49it [00:17,  2.89it/s][A
+val: 49it [00:17,  2.93it/s][A
+val: 50it [00:18,  2.92it/s][A
+val: 50it [00:18,  2.92it/s][A
+val: 51it [00:18,  2.94it/s][A
+val: 51it [00:18,  2.94it/s][A
+val: 52it [00:18,  2.97it/s][A
+val: 52it [00:18,  2.89it/s][A
+val: 53it [00:19,  2.94it/s][A
+val: 53it [00:19,  2.90it/s][A
+val: 54it [00:19,  2.88it/s][A
+val: 54it [00:19,  2.90it/s][A
+val: 55it [00:19,  2.90it/s][A
+val: 55it [00:19,  2.89it/s][A
+val: 56it [00:20,  2.90it/s][A
+val: 56it [00:20,  2.90it/s][A
+val: 57it [00:20,  2.88it/s][A
+val: 57it [00:20,  2.90it/s][A
+val: 58it [00:20,  2.87it/s][A
+val: 58it [00:21,  2.84it/s][A
+val: 59it [00:21,  2.88it/s][A
+val: 59it [00:21,  2.78it/s][A
+val: 60it [00:21,  2.91it/s][A
+val: 60it [00:21,  2.87it/s][A
+val: 61it [00:21,  2.92it/s][A
+val: 61it [00:22,  2.87it/s][A
+val: 62it [00:22,  2.86it/s][A
+val: 62it [00:22,  2.85it/s][A
+val: 63it [00:22,  2.86it/s][A
+val: 63it [00:22,  2.87it/s][A
+val: 64it [00:23,  2.90it/s][A
+val: 64it [00:23,  2.92it/s][A
+val: 65it [00:23,  2.93it/s][A
+val: 65it [00:23,  2.95it/s][A
+val: 66it [00:23,  2.94it/s][A
+val: 66it [00:23,  2.90it/s][A
+val: 67it [00:24,  2.92it/s][A
+val: 67it [00:24,  2.91it/s][A
+val: 68it [00:24,  2.89it/s][A
+val: 68it [00:24,  2.92it/s][A
+val: 69it [00:24,  2.87it/s][A
+val: 69it [00:24,  2.95it/s][A
+val: 70it [00:25,  2.91it/s][A
+val: 70it [00:25,  2.98it/s][A
+val: 71it [00:25,  2.94it/s][A
+val: 71it [00:25,  2.99it/s][A
+val: 72it [00:25,  3.01it/s][A
+val: 72it [00:25,  2.86it/s][A
+val: 73it [00:26,  2.98it/s][A
+val: 73it [00:26,  2.89it/s][A
+val: 74it [00:26,  3.00it/s][A
+val: 74it [00:26,  2.90it/s][A
+val: 75it [00:26,  2.99it/s][A
+val: 75it [00:26,  2.91it/s][A
+val: 76it [00:27,  2.98it/s][A
+val: 76it [00:27,  2.89it/s][A
+val: 77it [00:27,  2.97it/s][A
+val: 77it [00:27,  2.84it/s][A
+val: 78it [00:27,  2.94it/s][A
+val: 78it [00:27,  2.86it/s][A
+                            [A
+                            [Aepoch 3/100: 849it [02:45,  2.01it/s, loss=3.74]epoch 3/100: 849it [02:45,  2.01it/s, best_val=3.63, loss=3.79, val=3.63]epoch 3/100: 850it [02:45,  8.93s/it, loss=3.74]epoch 3/100: 850it [02:45,  8.93s/it, best_val=3.63, loss=3.79, val=3.63]epoch 3/100: 850it [02:46,  8.93s/it, loss=3.68]                         epoch 3/100: 850it [02:46,  8.93s/it, loss=3.75]epoch 3/100: 851it [02:46,  6.41s/it, loss=3.68]epoch 3/100: 851it [02:46,  6.41s/it, loss=3.75]epoch 3/100: 851it [02:47,  6.41s/it, loss=3.74]epoch 3/100: 851it [02:47,  6.41s/it, loss=3.63]epoch 3/100: 852it [02:47,  4.64s/it, loss=3.74]epoch 3/100: 852it [02:47,  4.64s/it, loss=3.63]epoch 3/100: 852it [02:47,  4.64s/it, loss=3.69]epoch 3/100: 852it [02:47,  4.64s/it, loss=3.82]epoch 3/100: 853it [02:47,  3.40s/it, loss=3.82]epoch 3/100: 853it [02:47,  3.40s/it, loss=3.69]epoch 3/100: 853it [02:48,  3.40s/it, loss=3.72]epoch 3/100: 853it [02:48,  3.40s/it, loss=3.61]epoch 3/100: 854it [02:48,  2.53s/it, loss=3.72]epoch 3/100: 854it [02:48,  2.53s/it, loss=3.61]epoch 3/100: 854it [02:48,  2.53s/it, loss=3.84]epoch 3/100: 855it [02:48,  1.92s/it, loss=3.84]epoch 3/100: 854it [02:48,  2.53s/it, loss=3.44]epoch 3/100: 855it [02:48,  1.92s/it, loss=3.44]epoch 3/100: 855it [02:49,  1.92s/it, loss=3.56]epoch 3/100: 855it [02:49,  1.92s/it, loss=3.85]epoch 3/100: 856it [02:49,  1.52s/it, loss=3.56]epoch 3/100: 856it [02:49,  1.52s/it, loss=3.85]epoch 3/100: 856it [02:49,  1.52s/it, loss=3.65]epoch 3/100: 856it [02:49,  1.52s/it, loss=3.81]epoch 3/100: 857it [02:49,  1.21s/it, loss=3.65]epoch 3/100: 857it [02:49,  1.21s/it, loss=3.81]epoch 3/100: 857it [02:50,  1.21s/it, loss=3.75]epoch 3/100: 857it [02:50,  1.21s/it, loss=3.59]epoch 3/100: 858it [02:50,  1.00s/it, loss=3.75]epoch 3/100: 858it [02:50,  1.00s/it, loss=3.59]epoch 3/100: 858it [02:50,  1.00s/it, loss=3.9] epoch 3/100: 858it [02:50,  1.00s/it, loss=3.62]epoch 3/100: 859it [02:50,  1.18it/s, loss=3.9]epoch 3/100: 859it [02:50,  1.18it/s, loss=3.62]epoch 3/100: 859it [02:51,  1.18it/s, loss=3.74]epoch 3/100: 859it [02:51,  1.18it/s, loss=3.79]epoch 3/100: 860it [02:51,  1.34it/s, loss=3.74]epoch 3/100: 860it [02:51,  1.34it/s, loss=3.79]epoch 3/100: 860it [02:51,  1.34it/s, loss=3.53]epoch 3/100: 860it [02:51,  1.34it/s, loss=3.45]epoch 3/100: 861it [02:51,  1.47it/s, loss=3.53]epoch 3/100: 861it [02:51,  1.47it/s, loss=3.45]epoch 3/100: 861it [02:52,  1.47it/s, loss=3.7] epoch 3/100: 861it [02:52,  1.47it/s, loss=3.76]epoch 3/100: 862it [02:52,  1.61it/s, loss=3.7]epoch 3/100: 862it [02:52,  1.61it/s, loss=3.76]epoch 3/100: 862it [02:52,  1.61it/s, loss=3.59]epoch 3/100: 862it [02:52,  1.61it/s, loss=3.5]epoch 3/100: 863it [02:52,  1.72it/s, loss=3.59]epoch 3/100: 863it [02:52,  1.72it/s, loss=3.5]epoch 3/100: 863it [02:53,  1.72it/s, loss=3.66]epoch 3/100: 863it [02:53,  1.72it/s, loss=3.7]epoch 3/100: 864it [02:53,  1.82it/s, loss=3.66]epoch 3/100: 864it [02:53,  1.82it/s, loss=3.7]epoch 3/100: 864it [02:53,  1.82it/s, loss=3.85]epoch 3/100: 864it [02:53,  1.82it/s, loss=3.85]epoch 3/100: 865it [02:53,  1.82it/s, loss=3.85]epoch 3/100: 865it [02:53,  1.82it/s, loss=3.85]epoch 3/100: 865it [02:54,  1.82it/s, loss=3.75]epoch 3/100: 865it [02:54,  1.82it/s, loss=3.61]epoch 3/100: 866it [02:54,  1.88it/s, loss=3.75]epoch 3/100: 866it [02:54,  1.88it/s, loss=3.61]epoch 3/100: 866it [02:54,  1.88it/s, loss=3.7] epoch 3/100: 866it [02:54,  1.88it/s, loss=3.75]epoch 3/100: 867it [02:54,  1.92it/s, loss=3.7]epoch 3/100: 867it [02:54,  1.92it/s, loss=3.75]epoch 3/100: 867it [02:55,  1.92it/s, loss=3.78]epoch 3/100: 867it [02:55,  1.92it/s, loss=3.86]epoch 3/100: 868it [02:55,  1.94it/s, loss=3.86]epoch 3/100: 868it [02:55,  1.94it/s, loss=3.78]epoch 3/100: 868it [02:55,  1.94it/s, loss=3.51]epoch 3/100: 868it [02:55,  1.94it/s, loss=3.58]epoch 3/100: 869it [02:55,  1.97it/s, loss=3.51]epoch 3/100: 869it [02:55,  1.97it/s, loss=3.58]epoch 3/100: 869it [02:56,  1.97it/s, loss=3.42]epoch 3/100: 869it [02:56,  1.97it/s, loss=3.67]epoch 3/100: 870it [02:56,  1.99it/s, loss=3.42]epoch 3/100: 870it [02:56,  1.99it/s, loss=3.67]epoch 3/100: 870it [02:56,  1.99it/s, loss=3.67]epoch 3/100: 870it [02:56,  1.99it/s, loss=3.47]epoch 3/100: 871it [02:56,  2.00it/s, loss=3.47]epoch 3/100: 871it [02:56,  2.00it/s, loss=3.67]epoch 3/100: 871it [02:57,  2.00it/s, loss=3.82]epoch 3/100: 871it [02:57,  2.00it/s, loss=3.77]epoch 3/100: 872it [02:57,  1.94it/s, loss=3.82]epoch 3/100: 872it [02:57,  1.94it/s, loss=3.77]epoch 3/100: 872it [02:57,  1.94it/s, loss=3.62]epoch 3/100: 872it [02:57,  1.94it/s, loss=3.77]epoch 3/100: 873it [02:57,  1.95it/s, loss=3.62]epoch 3/100: 873it [02:57,  1.95it/s, loss=3.77]epoch 3/100: 873it [02:58,  1.95it/s, loss=3.58]epoch 3/100: 873it [02:58,  1.95it/s, loss=3.88]epoch 3/100: 874it [02:58,  1.94it/s, loss=3.58]epoch 3/100: 874it [02:58,  1.94it/s, loss=3.88]epoch 3/100: 874it [02:58,  1.94it/s, loss=3.72]epoch 3/100: 874it [02:58,  1.94it/s, loss=3.99]
+val: 0it [00:00, ?it/s][A
+val: 0it [00:00, ?it/s][A
+val: 1it [00:01,  1.13s/it][A
+val: 1it [00:01,  1.17s/it][A
+val: 2it [00:01,  1.52it/s][A
+val: 2it [00:01,  1.41it/s][A
+val: 3it [00:01,  1.95it/s][A
+val: 3it [00:01,  1.81it/s][A
+val: 4it [00:02,  2.25it/s][A
+val: 4it [00:02,  2.11it/s][A
+val: 5it [00:02,  2.50it/s][A
+val: 5it [00:02,  2.27it/s][A
+val: 6it [00:02,  2.64it/s][A
+val: 6it [00:03,  2.44it/s][A
+val: 7it [00:03,  2.74it/s][A
+val: 7it [00:03,  2.52it/s][A
+val: 8it [00:03,  2.83it/s][A
+val: 8it [00:03,  2.59it/s][A
+val: 9it [00:03,  2.90it/s][A
+val: 10it [00:04,  2.83it/s][A
+val: 9it [00:04,  2.37it/s][A
+val: 11it [00:04,  2.87it/s][A
+val: 10it [00:04,  2.52it/s][A
+val: 12it [00:04,  2.78it/s][A
+val: 11it [00:04,  2.57it/s][A
+val: 13it [00:05,  2.85it/s][A
+val: 12it [00:05,  2.63it/s][A
+val: 14it [00:05,  2.76it/s][A
+val: 13it [00:05,  2.70it/s][A
+val: 15it [00:05,  2.86it/s][A
+val: 14it [00:06,  2.75it/s][A
+val: 16it [00:06,  2.82it/s][A
+val: 15it [00:06,  2.76it/s][A
+val: 17it [00:06,  2.85it/s][A
+val: 16it [00:06,  2.78it/s][A
+val: 18it [00:06,  2.89it/s][A
+val: 17it [00:07,  2.83it/s][A
+val: 19it [00:07,  2.89it/s][A
+val: 18it [00:07,  2.79it/s][A
+val: 20it [00:07,  2.92it/s][A
+val: 19it [00:07,  2.83it/s][A
+val: 21it [00:07,  2.95it/s][A
+val: 20it [00:08,  2.86it/s][A
+val: 22it [00:08,  2.94it/s][A
+val: 21it [00:08,  2.88it/s][A
+val: 23it [00:08,  2.94it/s][A
+val: 22it [00:08,  2.92it/s][A
+val: 24it [00:09,  2.94it/s][A
+val: 23it [00:09,  2.75it/s][A
+val: 25it [00:09,  2.79it/s][A
+val: 24it [00:09,  2.82it/s][A
+val: 26it [00:09,  2.83it/s][A
+val: 25it [00:09,  2.81it/s][A
+val: 27it [00:10,  2.86it/s][A
+val: 26it [00:10,  2.81it/s][A
+val: 28it [00:10,  2.83it/s][A
+val: 27it [00:10,  2.80it/s][A
+val: 29it [00:10,  2.87it/s][A
+val: 28it [00:11,  2.65it/s][A
+val: 30it [00:11,  2.91it/s][A
+val: 29it [00:11,  2.68it/s][A
+val: 31it [00:11,  2.94it/s][A
+val: 30it [00:11,  2.77it/s][A
+val: 32it [00:11,  2.94it/s][A
+val: 31it [00:12,  2.78it/s][A
+val: 33it [00:12,  2.98it/s][A
+val: 32it [00:12,  2.87it/s][A
+val: 34it [00:12,  2.99it/s][A
+val: 33it [00:12,  2.92it/s][A
+val: 35it [00:12,  2.98it/s][A
+val: 34it [00:13,  2.91it/s][A
+val: 36it [00:13,  2.90it/s][A
+val: 35it [00:13,  2.92it/s][A
+val: 37it [00:13,  2.84it/s][A
+val: 36it [00:13,  2.83it/s][A
+val: 38it [00:13,  2.70it/s][A
+val: 37it [00:14,  2.89it/s][A
+val: 39it [00:14,  2.75it/s][A
+val: 38it [00:14,  2.91it/s][A
+val: 40it [00:14,  2.80it/s][A
+val: 39it [00:14,  2.96it/s][A
+val: 41it [00:15,  2.68it/s][A
+val: 40it [00:15,  2.88it/s][A
+val: 42it [00:15,  2.74it/s][A
+val: 41it [00:15,  2.94it/s][A
+val: 43it [00:15,  2.80it/s][A
+val: 42it [00:15,  2.91it/s][A
+val: 44it [00:16,  2.87it/s][A
+val: 43it [00:16,  2.98it/s][A
+val: 45it [00:16,  2.85it/s][A
+val: 44it [00:16,  2.96it/s][A
+val: 46it [00:16,  2.91it/s][A
+val: 45it [00:16,  2.90it/s][A
+val: 47it [00:17,  2.92it/s][A
+val: 46it [00:17,  2.91it/s][A
+val: 48it [00:17,  2.89it/s][A
+val: 47it [00:17,  2.93it/s][A
+val: 49it [00:17,  2.88it/s][A
+val: 48it [00:17,  2.89it/s][A
+val: 50it [00:18,  2.92it/s][A
+val: 49it [00:18,  2.90it/s][A
+val: 51it [00:18,  2.93it/s][A
+val: 50it [00:18,  2.91it/s][A
+val: 52it [00:18,  2.96it/s][A
+val: 51it [00:18,  2.93it/s][A
+val: 53it [00:19,  2.94it/s][A
+val: 52it [00:19,  2.88it/s][A
+val: 54it [00:19,  2.90it/s][A
+val: 53it [00:19,  2.90it/s][A
+val: 55it [00:19,  2.91it/s][A
+val: 54it [00:19,  2.89it/s][A
+val: 56it [00:20,  2.90it/s][A
+val: 55it [00:20,  2.88it/s][A
+val: 57it [00:20,  2.88it/s][A
+val: 56it [00:20,  2.88it/s][A
+val: 58it [00:20,  2.87it/s][A
+val: 57it [00:20,  2.90it/s][A
+val: 59it [00:21,  2.89it/s][A
+val: 58it [00:21,  2.86it/s][A
+val: 60it [00:21,  2.91it/s][A
+val: 59it [00:21,  2.80it/s][A
+val: 61it [00:21,  2.93it/s][A
+val: 60it [00:22,  2.87it/s][A
+val: 62it [00:22,  2.89it/s][A
+val: 61it [00:22,  2.85it/s][A
+val: 63it [00:22,  2.88it/s][A
+val: 62it [00:22,  2.85it/s][A
+val: 64it [00:22,  2.91it/s][A
+val: 63it [00:23,  2.87it/s][A
+val: 65it [00:23,  2.95it/s][A
+val: 64it [00:23,  2.92it/s][A
+val: 66it [00:23,  2.97it/s][A
+val: 65it [00:23,  2.96it/s][A
+val: 67it [00:23,  2.96it/s][A
+val: 66it [00:24,  2.91it/s][A
+val: 68it [00:24,  2.94it/s][A
+val: 67it [00:24,  2.90it/s][A
+val: 69it [00:24,  2.92it/s][A
+val: 68it [00:24,  2.90it/s][A
+val: 70it [00:24,  2.94it/s][A
+val: 69it [00:25,  2.95it/s][A
+val: 71it [00:25,  2.98it/s][A
+val: 70it [00:25,  2.97it/s][A
+val: 72it [00:25,  2.89it/s][A
+val: 71it [00:25,  2.96it/s][A
+val: 73it [00:25,  2.92it/s][A
+val: 72it [00:26,  2.99it/s][A
+val: 74it [00:26,  2.92it/s][A
+val: 73it [00:26,  2.95it/s][A
+val: 75it [00:26,  2.94it/s][A
+val: 74it [00:26,  2.98it/s][A
+val: 76it [00:27,  2.90it/s][A
+val: 75it [00:27,  2.97it/s][A
+val: 77it [00:27,  2.85it/s][A
+val: 76it [00:27,  2.97it/s][A
+val: 78it [00:27,  2.88it/s][A
+val: 77it [00:27,  2.93it/s][A
+                            [A
+val: 78it [00:28,  2.93it/s][A
+                            [Aepoch 3/100: 874it [03:27,  1.94it/s, best_val=3.63, loss=3.99, val=3.63]epoch 3/100: 874it [03:27,  1.94it/s, loss=3.72]epoch 3/100: 875it [03:27,  9.03s/it, loss=3.72]epoch 3/100: 875it [03:27,  9.03s/it, best_val=3.63, loss=3.99, val=3.63]epoch 3/100: 875it [03:27,  9.03s/it, loss=3.81]                         epoch 3/100: 875it [03:27,  9.03s/it, loss=3.73]epoch 3/100: 876it [03:27,  6.47s/it, loss=3.81]epoch 3/100: 876it [03:27,  6.47s/it, loss=3.73]epoch 3/100: 876it [03:28,  6.47s/it, loss=3.52]epoch 3/100: 876it [03:28,  6.47s/it, loss=3.56]epoch 3/100: 877it [03:28,  4.68s/it, loss=3.52]epoch 3/100: 877it [03:28,  4.68s/it, loss=3.56]epoch 3/100: 877it [03:28,  4.68s/it, loss=3.58]epoch 3/100: 877it [03:28,  4.68s/it, loss=3.77]epoch 3/100: 878it [03:28,  3.43s/it, loss=3.58]epoch 3/100: 878it [03:28,  3.43s/it, loss=3.77]epoch 3/100: 878it [03:29,  3.43s/it, loss=3.74]epoch 3/100: 878it [03:29,  3.43s/it, loss=3.54]epoch 3/100: 879it [03:29,  2.55s/it, loss=3.74]epoch 3/100: 879it [03:29,  2.55s/it, loss=3.54]epoch 3/100: 879it [03:29,  2.55s/it, loss=3.64]epoch 3/100: 879it [03:29,  2.55s/it, loss=3.5] epoch 3/100: 880it [03:29,  1.93s/it, loss=3.64]epoch 3/100: 880it [03:29,  1.93s/it, loss=3.5]epoch 3/100: 880it [03:30,  1.93s/it, loss=3.66]epoch 3/100: 880it [03:30,  1.93s/it, loss=3.62]epoch 3/100: 881it [03:30,  1.50s/it, loss=3.66]epoch 3/100: 881it [03:30,  1.50s/it, loss=3.62]epoch 3/100: 881it [03:30,  1.50s/it, loss=3.8] epoch 3/100: 881it [03:30,  1.50s/it, loss=3.82]epoch 3/100: 882it [03:30,  1.20s/it, loss=3.8]epoch 3/100: 882it [03:30,  1.20s/it, loss=3.82]epoch 3/100: 882it [03:31,  1.20s/it, loss=3.5]epoch 3/100: 882it [03:31,  1.20s/it, loss=3.82]epoch 3/100: 883it [03:31,  1.01it/s, loss=3.5]epoch 3/100: 883it [03:31,  1.01it/s, loss=3.82]epoch 3/100: 883it [03:31,  1.01it/s, loss=3.68]epoch 3/100: 883it [03:31,  1.01it/s, loss=3.65]epoch 3/100: 884it [03:31,  1.17it/s, loss=3.68]epoch 3/100: 884it [03:31,  1.17it/s, loss=3.65]epoch 3/100: 884it [03:32,  1.17it/s, loss=3.74]epoch 3/100: 884it [03:32,  1.17it/s, loss=3.81]epoch 3/100: 885it [03:32,  1.31it/s, loss=3.74]epoch 3/100: 885it [03:32,  1.31it/s, loss=3.81]epoch 3/100: 885it [03:32,  1.31it/s, loss=3.92]epoch 3/100: 885it [03:32,  1.31it/s, loss=3.7] epoch 3/100: 886it [03:32,  1.47it/s, loss=3.92]epoch 3/100: 886it [03:32,  1.47it/s, loss=3.7]epoch 3/100: 886it [03:33,  1.47it/s, loss=3.81]epoch 3/100: 886it [03:33,  1.47it/s, loss=3.71]epoch 3/100: 887it [03:33,  1.60it/s, loss=3.81]epoch 3/100: 887it [03:33,  1.60it/s, loss=3.71]epoch 3/100: 887it [03:33,  1.60it/s, loss=3.8] epoch 3/100: 887it [03:33,  1.60it/s, loss=3.68]epoch 3/100: 888it [03:33,  1.69it/s, loss=3.8]epoch 3/100: 888it [03:33,  1.69it/s, loss=3.68]epoch 3/100: 888it [03:34,  1.69it/s, loss=3.62]epoch 3/100: 889it [03:34,  1.79it/s, loss=3.62]epoch 3/100: 888it [03:34,  1.69it/s, loss=3.63]epoch 3/100: 889it [03:34,  1.79it/s, loss=3.63]epoch 3/100: 889it [03:34,  1.79it/s, loss=3.72]epoch 3/100: 889it [03:34,  1.79it/s, loss=3.63]epoch 3/100: 890it [03:34,  1.84it/s, loss=3.72]epoch 3/100: 890it [03:34,  1.84it/s, loss=3.63]epoch 3/100: 890it [03:35,  1.84it/s, loss=3.86]epoch 3/100: 890it [03:35,  1.84it/s, loss=3.66]epoch 3/100: 891it [03:35,  1.87it/s, loss=3.86]epoch 3/100: 891it [03:35,  1.87it/s, loss=3.66]epoch 3/100: 891it [03:35,  1.87it/s, loss=3.53]epoch 3/100: 891it [03:35,  1.87it/s, loss=3.9] epoch 3/100: 892it [03:35,  1.88it/s, loss=3.53]epoch 3/100: 892it [03:35,  1.88it/s, loss=3.9]epoch 3/100: 892it [03:36,  1.88it/s, loss=3.71]epoch 3/100: 892it [03:36,  1.88it/s, loss=3.36]epoch 3/100: 893it [03:36,  1.88it/s, loss=3.71]epoch 3/100: 893it [03:36,  1.88it/s, loss=3.36]epoch 3/100: 893it [03:36,  1.88it/s, loss=3.83]epoch 3/100: 893it [03:36,  1.88it/s, loss=3.58]epoch 3/100: 894it [03:36,  1.90it/s, loss=3.83]epoch 3/100: 894it [03:36,  1.90it/s, loss=3.58]epoch 3/100: 894it [03:37,  1.90it/s, loss=3.83]epoch 3/100: 894it [03:37,  1.90it/s, loss=3.71]epoch 3/100: 895it [03:37,  1.94it/s, loss=3.83]epoch 3/100: 895it [03:37,  1.94it/s, loss=3.71]epoch 3/100: 895it [03:37,  1.94it/s, loss=3.53]epoch 3/100: 895it [03:37,  1.94it/s, loss=3.55]epoch 3/100: 896it [03:37,  1.93it/s, loss=3.53]epoch 3/100: 896it [03:37,  1.93it/s, loss=3.55]epoch 3/100: 896it [03:38,  1.93it/s, loss=3.64]epoch 3/100: 896it [03:38,  1.93it/s, loss=3.7] epoch 3/100: 897it [03:38,  1.93it/s, loss=3.64]epoch 3/100: 897it [03:38,  1.93it/s, loss=3.7]epoch 3/100: 897it [03:38,  1.93it/s, loss=3.7] epoch 3/100: 897it [03:38,  1.93it/s, loss=3.67]epoch 3/100: 898it [03:38,  1.95it/s, loss=3.7]epoch 3/100: 898it [03:38,  1.95it/s, loss=3.67]epoch 3/100: 898it [03:39,  1.95it/s, loss=3.66]epoch 3/100: 898it [03:39,  1.95it/s, loss=3.68]epoch 3/100: 899it [03:39,  1.92it/s, loss=3.66]epoch 3/100: 899it [03:39,  1.92it/s, loss=3.68]epoch 3/100: 899it [03:39,  1.92it/s, loss=3.63]epoch 3/100: 899it [03:39,  1.92it/s, loss=3.74]
+val: 0it [00:00, ?it/s][A
+val: 0it [00:00, ?it/s][A
+val: 1it [00:01,  1.15s/it][A
+val: 1it [00:01,  1.20s/it][A
+val: 2it [00:01,  1.50it/s][A
+val: 2it [00:01,  1.41it/s][A
+val: 3it [00:01,  1.93it/s][A
+val: 3it [00:01,  1.82it/s][A
+val: 4it [00:02,  2.24it/s][A
+val: 4it [00:02,  2.16it/s][A
+val: 5it [00:02,  2.50it/s][A
+val: 5it [00:02,  2.35it/s][A
+val: 6it [00:02,  2.66it/s][A
+val: 6it [00:02,  2.53it/s][A
+val: 7it [00:03,  2.76it/s][A
+val: 7it [00:03,  2.63it/s][A
+val: 8it [00:03,  2.85it/s][A
+val: 8it [00:03,  2.71it/s][A
+val: 9it [00:03,  2.91it/s][A
+val: 9it [00:03,  2.77it/s][A
+val: 10it [00:04,  2.83it/s][A
+val: 10it [00:04,  2.83it/s][A
+val: 11it [00:04,  2.87it/s][A
+val: 11it [00:04,  2.78it/s][A
+val: 12it [00:04,  2.79it/s][A
+val: 12it [00:05,  2.79it/s][A
+val: 13it [00:05,  2.86it/s][A
+val: 13it [00:05,  2.82it/s][A
+val: 14it [00:05,  2.77it/s][A
+val: 14it [00:05,  2.84it/s][A
+val: 15it [00:05,  2.85it/s][A
+val: 15it [00:06,  2.83it/s][A
+val: 16it [00:06,  2.82it/s][A
+val: 16it [00:06,  2.84it/s][A
+val: 17it [00:06,  2.85it/s][A
+val: 17it [00:06,  2.87it/s][A
+val: 18it [00:06,  2.89it/s][A
+val: 18it [00:07,  2.92it/s][A
+val: 19it [00:07,  2.88it/s][A
+val: 19it [00:07,  2.93it/s][A
+val: 20it [00:07,  2.91it/s][A
+val: 20it [00:07,  2.93it/s][A
+val: 21it [00:07,  2.94it/s][A
+val: 21it [00:08,  2.94it/s][A
+val: 22it [00:08,  2.95it/s][A
+val: 22it [00:08,  2.98it/s][A
+val: 23it [00:08,  2.94it/s][A
+val: 23it [00:08,  2.91it/s][A
+val: 24it [00:08,  2.95it/s][A
+val: 24it [00:09,  2.93it/s][A
+val: 25it [00:09,  2.80it/s][A
+val: 25it [00:09,  2.89it/s][A
+val: 26it [00:09,  2.84it/s][A
+val: 26it [00:09,  2.88it/s][A
+val: 27it [00:10,  2.86it/s][A
+val: 27it [00:10,  2.85it/s][A
+val: 28it [00:10,  2.83it/s][A
+val: 28it [00:10,  2.66it/s][A
+val: 29it [00:10,  2.86it/s][A
+val: 29it [00:11,  2.72it/s][A
+val: 30it [00:11,  2.91it/s][A
+val: 30it [00:11,  2.78it/s][A
+val: 31it [00:11,  2.92it/s][A
+val: 31it [00:11,  2.79it/s][A
+val: 32it [00:11,  2.93it/s][A
+val: 32it [00:12,  2.87it/s][A
+val: 33it [00:12,  2.97it/s][A
+val: 33it [00:12,  2.92it/s][A
+val: 34it [00:12,  2.99it/s][A
+val: 34it [00:12,  2.93it/s][A
+val: 35it [00:12,  2.99it/s][A
+val: 35it [00:13,  2.93it/s][A
+val: 36it [00:13,  2.90it/s][A
+val: 36it [00:13,  2.86it/s][A
+val: 37it [00:13,  2.81it/s][A
+val: 37it [00:13,  2.90it/s][A
+val: 38it [00:13,  2.65it/s][A
+val: 38it [00:14,  2.95it/s][A
+val: 39it [00:14,  2.69it/s][A
+val: 39it [00:14,  2.97it/s][A
+val: 40it [00:14,  2.76it/s][A
+val: 40it [00:14,  2.89it/s][A
+val: 41it [00:15,  2.65it/s][A
+val: 41it [00:15,  2.93it/s][A
+val: 42it [00:15,  2.72it/s][A
+val: 42it [00:15,  2.90it/s][A
+val: 43it [00:15,  2.78it/s][A
+val: 43it [00:15,  2.98it/s][A
+val: 44it [00:16,  2.85it/s][A
+val: 44it [00:16,  2.96it/s][A
+val: 45it [00:16,  2.84it/s][A
+val: 45it [00:16,  2.90it/s][A
+val: 46it [00:16,  2.91it/s][A
+val: 46it [00:16,  2.92it/s][A
+val: 47it [00:17,  2.93it/s][A
+val: 47it [00:17,  2.93it/s][A
+val: 48it [00:17,  2.91it/s][A
+val: 48it [00:17,  2.90it/s][A
+val: 49it [00:17,  2.89it/s][A
+val: 49it [00:17,  2.92it/s][A
+val: 50it [00:18,  2.92it/s][A
+val: 50it [00:18,  2.90it/s][A
+val: 51it [00:18,  2.94it/s][A
+val: 51it [00:18,  2.93it/s][A
+val: 52it [00:18,  2.97it/s][A
+val: 52it [00:18,  2.88it/s][A
+val: 53it [00:19,  2.95it/s][A
+val: 53it [00:19,  2.90it/s][A
+val: 54it [00:19,  2.90it/s][A
+val: 54it [00:19,  2.88it/s][A
+val: 55it [00:19,  2.91it/s][A
+val: 55it [00:19,  2.87it/s][A
+val: 56it [00:20,  2.91it/s][A
+val: 56it [00:20,  2.88it/s][A
+val: 57it [00:20,  2.89it/s][A
+val: 57it [00:20,  2.90it/s][A
+val: 58it [00:20,  2.88it/s][A
+val: 58it [00:20,  2.86it/s][A
+val: 59it [00:21,  2.89it/s][A
+val: 59it [00:21,  2.80it/s][A
+val: 60it [00:21,  2.91it/s][A
+val: 60it [00:21,  2.87it/s][A
+val: 61it [00:21,  2.93it/s][A
+val: 61it [00:22,  2.88it/s][A
+val: 62it [00:22,  2.88it/s][A
+val: 62it [00:22,  2.85it/s][A
+val: 63it [00:22,  2.87it/s][A
+val: 63it [00:22,  2.88it/s][A
+val: 64it [00:22,  2.89it/s][A
+val: 64it [00:23,  2.93it/s][A
+val: 65it [00:23,  2.93it/s][A
+val: 65it [00:23,  2.96it/s][A
+val: 66it [00:23,  2.94it/s][A
+val: 66it [00:23,  2.91it/s][A
+val: 67it [00:23,  2.93it/s][A
+val: 67it [00:24,  2.91it/s][A
+val: 68it [00:24,  2.91it/s][A
+val: 68it [00:24,  2.92it/s][A
+val: 69it [00:24,  2.88it/s][A
+val: 69it [00:24,  2.96it/s][A
+val: 70it [00:25,  2.91it/s][A
+val: 70it [00:25,  2.97it/s][A
+val: 71it [00:25,  2.94it/s][A
+val: 71it [00:25,  2.98it/s][A
+val: 72it [00:25,  2.85it/s][A
+val: 72it [00:25,  3.00it/s][A
+val: 73it [00:26,  2.89it/s][A
+val: 73it [00:26,  2.97it/s][A
+val: 74it [00:26,  2.89it/s][A
+val: 74it [00:26,  2.98it/s][A
+val: 75it [00:26,  2.91it/s][A
+val: 75it [00:26,  2.97it/s][A
+val: 76it [00:27,  2.97it/s][A
+val: 76it [00:27,  2.89it/s][A
+val: 77it [00:27,  2.96it/s][A
+val: 77it [00:27,  2.85it/s][A
+val: 78it [00:27,  2.94it/s][A
+val: 78it [00:27,  2.88it/s][A
+                            [A
+                            [Aepoch 3/100: 899it [04:07,  1.92it/s, loss=3.63]epoch 3/100: 899it [04:17,  1.92it/s, best_val=3.63, loss=3.74, val=3.63]epoch 3/100: 900it [04:17, 11.68s/it, loss=3.63]epoch 3/100: 900it [04:17, 11.68s/it, best_val=3.63, loss=3.74, val=3.63]epoch 3/100: 900it [04:17, 11.68s/it, loss=3.82]epoch 3/100: 900it [04:17, 11.68s/it, loss=3.66]                         epoch 3/100: 901it [04:17,  8.35s/it, loss=3.82]epoch 3/100: 901it [04:17,  8.35s/it, loss=3.66]epoch 3/100: 901it [04:18,  8.35s/it, loss=3.69]epoch 3/100: 901it [04:18,  8.35s/it, loss=3.64]epoch 3/100: 902it [04:18,  6.01s/it, loss=3.69]epoch 3/100: 902it [04:18,  6.01s/it, loss=3.64]epoch 3/100: 902it [04:18,  6.01s/it, loss=3.56]epoch 3/100: 902it [04:18,  6.01s/it, loss=3.88]epoch 3/100: 903it [04:18,  4.36s/it, loss=3.56]epoch 3/100: 903it [04:18,  4.36s/it, loss=3.88]epoch 3/100: 903it [04:19,  4.36s/it, loss=3.75]epoch 3/100: 903it [04:19,  4.36s/it, loss=3.8] epoch 3/100: 904it [04:19,  3.23s/it, loss=3.75]epoch 3/100: 904it [04:19,  3.23s/it, loss=3.8]epoch 3/100: 904it [04:19,  3.23s/it, loss=3.91]epoch 3/100: 904it [04:19,  3.23s/it, loss=3.78]epoch 3/100: 905it [04:19,  2.42s/it, loss=3.91]epoch 3/100: 905it [04:19,  2.42s/it, loss=3.78]epoch 3/100: 905it [04:20,  2.42s/it, loss=3.5] epoch 3/100: 905it [04:20,  2.42s/it, loss=3.65]epoch 3/100: 906it [04:20,  1.86s/it, loss=3.5]epoch 3/100: 906it [04:20,  1.86s/it, loss=3.65]epoch 3/100: 906it [04:20,  1.86s/it, loss=3.72]epoch 3/100: 906it [04:20,  1.86s/it, loss=3.63]epoch 3/100: 907it [04:20,  1.46s/it, loss=3.72]epoch 3/100: 907it [04:20,  1.46s/it, loss=3.63]epoch 3/100: 907it [04:21,  1.46s/it, loss=3.77]epoch 3/100: 907it [04:21,  1.46s/it, loss=3.77]epoch 3/100: 908it [04:21,  1.18s/it, loss=3.77]epoch 3/100: 908it [04:21,  1.18s/it, loss=3.77]epoch 3/100: 908it [04:21,  1.18s/it, loss=3.63]epoch 3/100: 908it [04:21,  1.18s/it, loss=3.56]epoch 3/100: 909it [04:21,  1.02it/s, loss=3.63]epoch 3/100: 909it [04:21,  1.02it/s, loss=3.56]epoch 3/100: 909it [04:22,  1.02it/s, loss=3.83]epoch 3/100: 909it [04:22,  1.02it/s, loss=3.93]epoch 3/100: 910it [04:22,  1.16it/s, loss=3.83]epoch 3/100: 910it [04:22,  1.16it/s, loss=3.93]epoch 3/100: 910it [04:23,  1.16it/s, loss=3.64]epoch 3/100: 910it [04:23,  1.16it/s, loss=3.71]epoch 3/100: 911it [04:23,  1.27it/s, loss=3.64]epoch 3/100: 911it [04:23,  1.27it/s, loss=3.71]epoch 3/100: 911it [04:23,  1.27it/s, loss=3.51]epoch 3/100: 911it [04:23,  1.27it/s, loss=3.75]epoch 3/100: 912it [04:23,  1.40it/s, loss=3.51]epoch 3/100: 912it [04:23,  1.40it/s, loss=3.75]epoch 3/100: 912it [04:24,  1.40it/s, loss=3.78]epoch 3/100: 912it [04:24,  1.40it/s, loss=3.88]epoch 3/100: 913it [04:24,  1.48it/s, loss=3.78]epoch 3/100: 913it [04:24,  1.48it/s, loss=3.88]epoch 3/100: 913it [04:24,  1.48it/s, loss=3.67]epoch 3/100: 913it [04:24,  1.48it/s, loss=3.68]epoch 3/100: 914it [04:24,  1.60it/s, loss=3.67]epoch 3/100: 914it [04:24,  1.60it/s, loss=3.68]epoch 3/100: 914it [04:25,  1.60it/s, loss=3.75]epoch 3/100: 914it [04:25,  1.60it/s, loss=3.64]epoch 3/100: 915it [04:25,  1.70it/s, loss=3.75]epoch 3/100: 915it [04:25,  1.70it/s, loss=3.64]epoch 3/100: 915it [04:25,  1.70it/s, loss=3.6] epoch 3/100: 915it [04:25,  1.70it/s, loss=3.64]epoch 3/100: 916it [04:25,  1.76it/s, loss=3.6]epoch 3/100: 916it [04:25,  1.76it/s, loss=3.64]epoch 3/100: 916it [04:26,  1.76it/s, loss=3.88]epoch 3/100: 916it [04:26,  1.76it/s, loss=3.66]epoch 3/100: 917it [04:26,  1.82it/s, loss=3.88]epoch 3/100: 917it [04:26,  1.82it/s, loss=3.66]epoch 3/100: 917it [04:26,  1.82it/s, loss=3.63]epoch 3/100: 917it [04:26,  1.82it/s, loss=3.67]epoch 3/100: 918it [04:26,  1.83it/s, loss=3.63]epoch 3/100: 918it [04:26,  1.83it/s, loss=3.67]epoch 3/100: 918it [04:27,  1.83it/s, loss=3.72]epoch 3/100: 918it [04:27,  1.83it/s, loss=3.52]epoch 3/100: 919it [04:27,  1.81it/s, loss=3.72]epoch 3/100: 919it [04:27,  1.81it/s, loss=3.52]epoch 3/100: 919it [04:27,  1.81it/s, loss=3.76]epoch 3/100: 919it [04:27,  1.81it/s, loss=3.81]epoch 3/100: 920it [04:27,  1.88it/s, loss=3.76]epoch 3/100: 920it [04:27,  1.88it/s, loss=3.81]epoch 3/100: 920it [04:28,  1.88it/s, loss=3.65]epoch 3/100: 920it [04:28,  1.88it/s, loss=3.73]epoch 3/100: 921it [04:28,  1.90it/s, loss=3.73]epoch 3/100: 921it [04:28,  1.90it/s, loss=3.65]epoch 3/100: 921it [04:28,  1.90it/s, loss=3.77]epoch 3/100: 921it [04:28,  1.90it/s, loss=3.68]epoch 3/100: 922it [04:28,  1.93it/s, loss=3.77]epoch 3/100: 922it [04:28,  1.93it/s, loss=3.68]epoch 3/100: 922it [04:29,  1.93it/s, loss=3.61]epoch 3/100: 922it [04:29,  1.93it/s, loss=3.92]epoch 3/100: 923it [04:29,  1.94it/s, loss=3.92]epoch 3/100: 923it [04:29,  1.94it/s, loss=3.61]epoch 3/100: 923it [04:29,  1.94it/s, loss=3.53]epoch 3/100: 923it [04:29,  1.94it/s, loss=3.81]epoch 3/100: 924it [04:29,  1.96it/s, loss=3.53]epoch 3/100: 924it [04:29,  1.96it/s, loss=3.81]epoch 3/100: 924it [04:30,  1.96it/s, loss=3.77]epoch 3/100: 924it [04:30,  1.96it/s, loss=3.46]
+val: 0it [00:00, ?it/s][A
+val: 0it [00:00, ?it/s][A
+val: 1it [00:01,  1.25s/it][A
+val: 1it [00:01,  1.25s/it][A
+val: 2it [00:01,  1.38it/s][A
+val: 2it [00:01,  1.37it/s][A
+val: 3it [00:01,  1.80it/s][A
+val: 3it [00:01,  1.77it/s][A
+val: 4it [00:02,  2.15it/s][A
+val: 4it [00:02,  2.06it/s][A
+val: 5it [00:02,  2.33it/s][A
+val: 5it [00:02,  2.31it/s][A
+val: 6it [00:02,  2.53it/s][A
+val: 6it [00:03,  2.46it/s][A
+val: 7it [00:03,  2.66it/s][A
+val: 7it [00:03,  2.56it/s][A
+val: 8it [00:03,  2.73it/s][A
+val: 8it [00:03,  2.64it/s][A
+val: 9it [00:04,  2.79it/s][A
+val: 9it [00:04,  2.72it/s][A
+val: 10it [00:04,  2.85it/s][A
+val: 10it [00:04,  2.65it/s][A
+val: 11it [00:04,  2.82it/s][A
+val: 11it [00:04,  2.71it/s][A
+val: 12it [00:05,  2.83it/s][A
+val: 12it [00:05,  2.66it/s][A
+val: 13it [00:05,  2.85it/s][A
+val: 13it [00:05,  2.75it/s][A
+val: 14it [00:05,  2.86it/s][A
+val: 14it [00:05,  2.69it/s][A
+val: 15it [00:06,  2.84it/s][A
+val: 15it [00:06,  2.79it/s][A
+val: 16it [00:06,  2.84it/s][A
+val: 16it [00:06,  2.78it/s][A
+val: 17it [00:06,  2.88it/s][A
+val: 17it [00:07,  2.79it/s][A
+val: 18it [00:07,  2.92it/s][A
+val: 18it [00:07,  2.84it/s][A
+val: 19it [00:07,  2.93it/s][A
+val: 19it [00:07,  2.84it/s][A
+val: 20it [00:07,  2.94it/s][A
+val: 20it [00:08,  2.86it/s][A
+val: 21it [00:08,  2.94it/s][A
+val: 21it [00:08,  2.90it/s][A
+val: 22it [00:08,  2.98it/s][A
+val: 22it [00:08,  2.90it/s][A
+val: 23it [00:08,  2.93it/s][A
+val: 23it [00:09,  2.91it/s][A
+val: 24it [00:09,  2.95it/s][A
+val: 24it [00:09,  2.90it/s][A
+val: 25it [00:09,  2.91it/s][A
+val: 25it [00:09,  2.74it/s][A
+val: 26it [00:09,  2.90it/s][A
+val: 26it [00:10,  2.79it/s][A
+val: 27it [00:10,  2.87it/s][A
+val: 27it [00:10,  2.81it/s][A
+val: 28it [00:10,  2.69it/s][A
+val: 28it [00:10,  2.78it/s][A
+val: 29it [00:10,  2.74it/s][A
+val: 29it [00:11,  2.81it/s][A
+val: 30it [00:11,  2.81it/s][A
+val: 30it [00:11,  2.86it/s][A
+val: 31it [00:11,  2.81it/s][A
+val: 31it [00:11,  2.89it/s][A
+val: 32it [00:12,  2.90it/s][A
+val: 32it [00:12,  2.87it/s][A
+val: 33it [00:12,  2.93it/s][A
+val: 33it [00:12,  2.91it/s][A
+val: 34it [00:12,  2.93it/s][A
+val: 34it [00:12,  2.93it/s][A
+val: 35it [00:13,  2.94it/s][A
+val: 35it [00:13,  2.94it/s][A
+val: 36it [00:13,  2.87it/s][A
+val: 36it [00:13,  2.87it/s][A
+val: 37it [00:13,  2.92it/s][A
+val: 37it [00:14,  2.81it/s][A
+val: 38it [00:14,  2.96it/s][A
+val: 39it [00:14,  3.00it/s][A
+val: 38it [00:14,  2.68it/s][A
+val: 40it [00:14,  2.91it/s][A
+val: 39it [00:14,  2.72it/s][A
+val: 41it [00:15,  2.96it/s][A
+val: 40it [00:15,  2.78it/s][A
+val: 42it [00:15,  2.92it/s][A
+val: 41it [00:15,  2.65it/s][A
+val: 43it [00:15,  2.99it/s][A
+val: 42it [00:15,  2.71it/s][A
+val: 44it [00:16,  2.97it/s][A
+val: 43it [00:16,  2.76it/s][A
+val: 45it [00:16,  2.91it/s][A
+val: 44it [00:16,  2.83it/s][A
+val: 46it [00:16,  2.92it/s][A
+val: 45it [00:16,  2.80it/s][A
+val: 47it [00:17,  2.94it/s][A
+val: 46it [00:17,  2.86it/s][A
+val: 48it [00:17,  2.90it/s][A
+val: 47it [00:17,  2.88it/s][A
+val: 49it [00:17,  2.91it/s][A
+val: 48it [00:17,  2.86it/s][A
+val: 50it [00:18,  2.92it/s][A
+val: 49it [00:18,  2.85it/s][A
+val: 51it [00:18,  2.94it/s][A
+val: 50it [00:18,  2.88it/s][A
+val: 52it [00:18,  2.89it/s][A
+val: 51it [00:18,  2.90it/s][A
+val: 53it [00:19,  2.90it/s][A
+val: 52it [00:19,  2.93it/s][A
+val: 54it [00:19,  2.89it/s][A
+val: 53it [00:19,  2.90it/s][A
+val: 55it [00:19,  2.87it/s][A
+val: 54it [00:20,  2.85it/s][A
+val: 56it [00:20,  2.88it/s][A
+val: 55it [00:20,  2.87it/s][A
+val: 57it [00:20,  2.90it/s][A
+val: 56it [00:20,  2.87it/s][A
+val: 58it [00:20,  2.82it/s][A
+val: 57it [00:21,  2.86it/s][A
+val: 59it [00:21,  2.73it/s][A
+val: 58it [00:21,  2.86it/s][A
+val: 60it [00:21,  2.80it/s][A
+val: 59it [00:21,  2.88it/s][A
+val: 61it [00:22,  2.78it/s][A
+val: 60it [00:22,  2.90it/s][A
+val: 62it [00:22,  2.76it/s][A
+val: 61it [00:22,  2.90it/s][A
+val: 63it [00:22,  2.77it/s][A
+val: 62it [00:22,  2.84it/s][A
+val: 64it [00:23,  2.85it/s][A
+val: 63it [00:23,  2.84it/s][A
+val: 65it [00:23,  2.91it/s][A
+val: 64it [00:23,  2.87it/s][A
+val: 66it [00:23,  2.88it/s][A
+val: 65it [00:23,  2.90it/s][A
+val: 67it [00:24,  2.88it/s][A
+val: 66it [00:24,  2.92it/s][A
+val: 68it [00:24,  2.88it/s][A
+val: 67it [00:24,  2.91it/s][A
+val: 69it [00:24,  2.93it/s][A
+val: 68it [00:24,  2.87it/s][A
+val: 70it [00:25,  2.96it/s][A
+val: 69it [00:25,  2.85it/s][A
+val: 71it [00:25,  2.97it/s][A
+val: 70it [00:25,  2.88it/s][A
+val: 72it [00:25,  3.00it/s][A
+val: 71it [00:25,  2.92it/s][A
+val: 73it [00:26,  2.98it/s][A
+val: 72it [00:26,  2.83it/s][A
+val: 74it [00:26,  3.00it/s][A
+val: 73it [00:26,  2.86it/s][A
+val: 75it [00:26,  2.99it/s][A
+val: 74it [00:26,  2.87it/s][A
+val: 76it [00:27,  2.99it/s][A
+val: 75it [00:27,  2.88it/s][A
+val: 77it [00:27,  2.98it/s][A
+val: 76it [00:27,  2.86it/s][A
+val: 78it [00:27,  2.98it/s][A
+                            [A
+val: 77it [00:28,  2.79it/s][A
+val: 78it [00:28,  2.82it/s][A
+                            [Aepoch 3/100: 924it [04:59,  1.96it/s, loss=3.77]epoch 3/100: 924it [04:59,  1.96it/s, best_val=3.63, loss=3.46, val=3.63]epoch 3/100: 925it [04:59,  9.13s/it, loss=3.77]epoch 3/100: 925it [04:59,  9.13s/it, best_val=3.63, loss=3.46, val=3.63]epoch 3/100: 925it [04:59,  9.13s/it, loss=3.7]                          epoch 3/100: 925it [04:59,  9.13s/it, loss=3.75]epoch 3/100: 926it [04:59,  6.54s/it, loss=3.7]epoch 3/100: 926it [04:59,  6.54s/it, loss=3.75]epoch 3/100: 926it [05:00,  6.54s/it, loss=3.84]epoch 3/100: 926it [05:00,  6.54s/it, loss=3.65]epoch 3/100: 927it [05:00,  4.72s/it, loss=3.84]epoch 3/100: 927it [05:00,  4.72s/it, loss=3.65]epoch 3/100: 927it [05:00,  4.72s/it, loss=3.74]epoch 3/100: 927it [05:00,  4.72s/it, loss=3.74]epoch 3/100: 928it [05:00,  3.46s/it, loss=3.74]epoch 3/100: 928it [05:00,  3.46s/it, loss=3.74]epoch 3/100: 928it [05:01,  3.46s/it, loss=3.58]epoch 3/100: 928it [05:01,  3.46s/it, loss=3.55]epoch 3/100: 929it [05:01,  2.57s/it, loss=3.58]epoch 3/100: 929it [05:01,  2.57s/it, loss=3.55]epoch 3/100: 929it [05:01,  2.57s/it, loss=3.63]epoch 3/100: 929it [05:01,  2.57s/it, loss=3.63]epoch 3/100: 930it [05:01,  1.95s/it, loss=3.63]epoch 3/100: 930it [05:01,  1.95s/it, loss=3.63]epoch 3/100: 930it [05:02,  1.95s/it, loss=3.59]epoch 3/100: 930it [05:02,  1.95s/it, loss=3.74]epoch 3/100: 931it [05:02,  1.53s/it, loss=3.59]epoch 3/100: 931it [05:02,  1.53s/it, loss=3.74]epoch 3/100: 931it [05:02,  1.53s/it, loss=3.73]epoch 3/100: 931it [05:02,  1.53s/it, loss=3.79]epoch 3/100: 932it [05:02,  1.22s/it, loss=3.73]epoch 3/100: 932it [05:02,  1.22s/it, loss=3.79]epoch 3/100: 932it [05:03,  1.22s/it, loss=3.59]epoch 3/100: 932it [05:03,  1.22s/it, loss=3.8] epoch 3/100: 933it [05:03,  1.01s/it, loss=3.59]epoch 3/100: 933it [05:03,  1.01s/it, loss=3.8]epoch 3/100: 933it [05:03,  1.01s/it, loss=3.74]epoch 3/100: 933it [05:03,  1.01s/it, loss=3.65]epoch 3/100: 934it [05:03,  1.17it/s, loss=3.74]epoch 3/100: 934it [05:03,  1.17it/s, loss=3.65]epoch 3/100: 934it [05:04,  1.17it/s, loss=3.66]epoch 3/100: 934it [05:04,  1.17it/s, loss=3.99]epoch 3/100: 935it [05:04,  1.35it/s, loss=3.99]epoch 3/100: 935it [05:04,  1.35it/s, loss=3.66]epoch 3/100: 935it [05:04,  1.35it/s, loss=3.7] epoch 3/100: 935it [05:04,  1.35it/s, loss=3.63]epoch 3/100: 936it [05:04,  1.48it/s, loss=3.7]epoch 3/100: 936it [05:04,  1.48it/s, loss=3.63]epoch 3/100: 936it [05:05,  1.48it/s, loss=3.53]epoch 3/100: 936it [05:05,  1.48it/s, loss=3.6]epoch 3/100: 937it [05:05,  1.61it/s, loss=3.53]epoch 3/100: 937it [05:05,  1.61it/s, loss=3.6]epoch 3/100: 937it [05:05,  1.61it/s, loss=3.81]epoch 3/100: 937it [05:05,  1.61it/s, loss=3.8]epoch 3/100: 938it [05:05,  1.72it/s, loss=3.81]epoch 3/100: 938it [05:05,  1.72it/s, loss=3.8]epoch 3/100: 938it [05:06,  1.72it/s, loss=3.72]epoch 3/100: 938it [05:06,  1.72it/s, loss=3.81]epoch 3/100: 939it [05:06,  1.77it/s, loss=3.72]epoch 3/100: 939it [05:06,  1.77it/s, loss=3.81]epoch 3/100: 939it [05:06,  1.77it/s, loss=3.73]epoch 3/100: 939it [05:06,  1.77it/s, loss=3.55]epoch 3/100: 940it [05:06,  1.84it/s, loss=3.73]epoch 3/100: 940it [05:06,  1.84it/s, loss=3.55]epoch 3/100: 940it [05:07,  1.84it/s, loss=3.74]epoch 3/100: 940it [05:07,  1.84it/s, loss=3.63]epoch 3/100: 941it [05:07,  1.89it/s, loss=3.63]epoch 3/100: 941it [05:07,  1.89it/s, loss=3.74]epoch 3/100: 941it [05:07,  1.89it/s, loss=3.82]epoch 3/100: 941it [05:07,  1.89it/s, loss=3.5] epoch 3/100: 942it [05:07,  1.93it/s, loss=3.82]epoch 3/100: 942it [05:07,  1.93it/s, loss=3.5]epoch 3/100: 942it [05:08,  1.93it/s, loss=3.52]epoch 3/100: 942it [05:08,  1.93it/s, loss=3.77]epoch 3/100: 943it [05:08,  1.93it/s, loss=3.52]epoch 3/100: 943it [05:08,  1.93it/s, loss=3.77]epoch 3/100: 943it [05:08,  1.93it/s, loss=3.78]epoch 3/100: 943it [05:08,  1.93it/s, loss=3.71]epoch 3/100: 944it [05:08,  1.95it/s, loss=3.71]epoch 3/100: 944it [05:08,  1.95it/s, loss=3.78]epoch 3/100: 944it [05:09,  1.95it/s, loss=3.59]epoch 3/100: 944it [05:09,  1.95it/s, loss=3.66]epoch 3/100: 945it [05:09,  1.96it/s, loss=3.59]epoch 3/100: 945it [05:09,  1.96it/s, loss=3.66]epoch 3/100: 945it [05:09,  1.96it/s, loss=3.87]epoch 3/100: 945it [05:09,  1.96it/s, loss=3.78]epoch 3/100: 946it [05:09,  1.96it/s, loss=3.87]epoch 3/100: 946it [05:09,  1.96it/s, loss=3.78]epoch 3/100: 946it [05:10,  1.96it/s, loss=3.5] epoch 3/100: 946it [05:10,  1.96it/s, loss=3.55]epoch 3/100: 947it [05:10,  1.98it/s, loss=3.5]epoch 3/100: 947it [05:10,  1.98it/s, loss=3.55]epoch 3/100: 947it [05:10,  1.98it/s, loss=3.63]epoch 3/100: 947it [05:10,  1.98it/s, loss=3.79]epoch 3/100: 948it [05:10,  1.97it/s, loss=3.63]epoch 3/100: 948it [05:10,  1.97it/s, loss=3.79]epoch 3/100: 948it [05:11,  1.97it/s, loss=3.77]epoch 3/100: 948it [05:11,  1.97it/s, loss=3.49]epoch 3/100: 949it [05:11,  1.89it/s, loss=3.77]epoch 3/100: 949it [05:11,  1.89it/s, loss=3.49]epoch 3/100: 949it [05:11,  1.89it/s, loss=3.81]epoch 3/100: 949it [05:11,  1.89it/s, loss=3.76]
+
+val: 0it [00:00, ?it/s][Aval: 0it [00:00, ?it/s][A
+val: 1it [00:01,  1.20s/it][A
+val: 1it [00:01,  1.20s/it][A
+val: 2it [00:01,  1.45it/s][A
+val: 2it [00:01,  1.39it/s][A
+val: 3it [00:01,  1.88it/s][A
+val: 3it [00:01,  1.79it/s][A
+val: 4it [00:02,  2.18it/s][A
+val: 4it [00:02,  2.12it/s][A
+val: 5it [00:02,  2.44it/s][A
+val: 5it [00:02,  2.31it/s][A
+val: 6it [00:02,  2.60it/s][A
+val: 6it [00:02,  2.50it/s][A
+val: 7it [00:03,  2.71it/s][A
+val: 7it [00:03,  2.60it/s][A
+val: 8it [00:03,  2.78it/s][A
+val: 8it [00:03,  2.68it/s][A
+val: 9it [00:03,  2.86it/s][A
+val: 9it [00:04,  2.74it/s][A
+val: 10it [00:04,  2.81it/s][A
+val: 10it [00:04,  2.79it/s][A
+val: 11it [00:04,  2.85it/s][A
+val: 11it [00:04,  2.77it/s][A
+val: 12it [00:04,  2.76it/s][A
+val: 12it [00:05,  2.79it/s][A
+val: 13it [00:05,  2.83it/s][A
+val: 13it [00:05,  2.80it/s][A
+val: 14it [00:05,  2.74it/s][A
+val: 14it [00:05,  2.82it/s][A
+val: 15it [00:06,  2.84it/s][A
+val: 15it [00:06,  2.81it/s][A
+val: 16it [00:06,  2.82it/s][A
+val: 16it [00:06,  2.84it/s][A
+val: 17it [00:06,  2.85it/s][A
+val: 17it [00:06,  2.87it/s][A
+val: 18it [00:07,  2.89it/s][A
+val: 18it [00:07,  2.88it/s][A
+val: 19it [00:07,  2.89it/s][A
+val: 19it [00:07,  2.90it/s][A
+val: 20it [00:07,  2.90it/s][A
+val: 20it [00:07,  2.92it/s][A
+val: 21it [00:08,  2.93it/s][A
+val: 21it [00:08,  2.93it/s][A
+val: 22it [00:08,  2.94it/s][A
+val: 22it [00:08,  2.97it/s][A
+val: 23it [00:08,  2.94it/s][A
+val: 23it [00:08,  2.90it/s][A
+val: 24it [00:09,  2.94it/s][A
+val: 24it [00:09,  2.93it/s][A
+val: 25it [00:09,  2.78it/s][A
+val: 25it [00:09,  2.89it/s][A
+val: 26it [00:09,  2.83it/s][A
+val: 26it [00:09,  2.86it/s][A
+val: 27it [00:10,  2.84it/s][A
+val: 27it [00:10,  2.84it/s][A
+val: 28it [00:10,  2.81it/s][A
+val: 28it [00:10,  2.67it/s][A
+val: 29it [00:10,  2.86it/s][A
+val: 29it [00:11,  2.70it/s][A
+val: 30it [00:11,  2.90it/s][A
+val: 30it [00:11,  2.78it/s][A
+val: 31it [00:11,  2.92it/s][A
+val: 31it [00:11,  2.79it/s][A
+val: 32it [00:11,  2.93it/s][A
+val: 32it [00:12,  2.88it/s][A
+val: 33it [00:12,  2.96it/s][A
+val: 33it [00:12,  2.92it/s][A
+val: 34it [00:12,  2.97it/s][A
+val: 34it [00:12,  2.92it/s][A
+val: 35it [00:12,  2.95it/s][A
+val: 35it [00:13,  2.93it/s][A
+val: 36it [00:13,  2.89it/s][A
+val: 36it [00:13,  2.83it/s][A
+val: 37it [00:13,  2.83it/s][A
+val: 37it [00:13,  2.88it/s][A
+val: 38it [00:14,  2.69it/s][A
+val: 38it [00:14,  2.93it/s][A
+val: 39it [00:14,  2.74it/s][A
+val: 39it [00:14,  2.98it/s][A
+val: 40it [00:14,  2.79it/s][A
+val: 40it [00:14,  2.89it/s][A
+val: 41it [00:15,  2.67it/s][A
+val: 41it [00:15,  2.94it/s][A
+val: 42it [00:15,  2.73it/s][A
+val: 42it [00:15,  2.90it/s][A
+val: 43it [00:15,  2.97it/s][A
+val: 43it [00:15,  2.79it/s][A
+val: 44it [00:16,  2.86it/s][A
+val: 44it [00:16,  2.95it/s][A
+val: 45it [00:16,  2.81it/s][A
+val: 45it [00:16,  2.87it/s][A
+val: 46it [00:16,  2.88it/s][A
+val: 46it [00:16,  2.89it/s][A
+val: 47it [00:17,  2.89it/s][A
+val: 47it [00:17,  2.91it/s][A
+val: 48it [00:17,  2.88it/s][A
+val: 48it [00:17,  2.88it/s][A
+val: 49it [00:17,  2.87it/s][A
+val: 49it [00:17,  2.90it/s][A
+val: 50it [00:18,  2.91it/s][A
+val: 50it [00:18,  2.92it/s][A
+val: 51it [00:18,  2.92it/s][A
+val: 51it [00:18,  2.94it/s][A
+val: 52it [00:18,  2.95it/s][A
+val: 52it [00:18,  2.87it/s][A
+val: 53it [00:19,  2.92it/s][A
+val: 53it [00:19,  2.88it/s][A
+val: 54it [00:19,  2.89it/s][A
+val: 54it [00:19,  2.88it/s][A
+val: 55it [00:19,  2.89it/s][A
+val: 55it [00:20,  2.86it/s][A
+val: 56it [00:20,  2.89it/s][A
+val: 56it [00:20,  2.85it/s][A
+val: 57it [00:20,  2.85it/s][A
+val: 57it [00:20,  2.87it/s][A
+val: 58it [00:21,  2.86it/s][A
+val: 58it [00:21,  2.84it/s][A
+val: 59it [00:21,  2.88it/s][A
+val: 59it [00:21,  2.78it/s][A
+val: 60it [00:21,  2.92it/s][A
+val: 60it [00:21,  2.86it/s][A
+val: 61it [00:22,  2.93it/s][A
+val: 61it [00:22,  2.86it/s][A
+val: 62it [00:22,  2.88it/s][A
+val: 62it [00:22,  2.86it/s][A
+val: 63it [00:22,  2.86it/s][A
+val: 63it [00:22,  2.87it/s][A
+val: 64it [00:23,  2.79it/s][A
+val: 64it [00:23,  2.92it/s][A
+val: 65it [00:23,  2.95it/s][A
+val: 65it [00:23,  2.82it/s][A
+val: 66it [00:23,  2.82it/s][A
+val: 66it [00:23,  2.90it/s][A
+val: 67it [00:24,  2.89it/s][A
+val: 67it [00:24,  2.79it/s][A
+val: 68it [00:24,  2.88it/s][A
+val: 68it [00:24,  2.76it/s][A
+val: 69it [00:24,  2.92it/s][A
+val: 69it [00:24,  2.73it/s][A
+val: 70it [00:25,  2.95it/s][A
+val: 70it [00:25,  2.76it/s][A
+val: 71it [00:25,  2.96it/s][A
+val: 71it [00:25,  2.77it/s][A
+val: 72it [00:25,  2.99it/s][A
+val: 72it [00:26,  2.73it/s][A
+val: 73it [00:26,  2.96it/s][A
+val: 73it [00:26,  2.79it/s][A
+val: 74it [00:26,  2.98it/s][A
+val: 74it [00:26,  2.82it/s][A
+val: 75it [00:26,  2.98it/s][A
+val: 75it [00:27,  2.85it/s][A
+val: 76it [00:27,  2.96it/s][A
+val: 76it [00:27,  2.82it/s][A
+val: 77it [00:27,  2.95it/s][A
+val: 77it [00:27,  2.79it/s][A
+val: 78it [00:27,  2.94it/s][A
+                            [A
+val: 78it [00:28,  2.83it/s][A
+                            [Aepoch 3/100: 949it [05:40,  1.89it/s, loss=3.81]epoch 3/100: 949it [05:40,  1.89it/s, best_val=3.63, loss=3.76, val=3.63]epoch 3/100: 950it [05:40,  9.04s/it, best_val=3.63, loss=3.76, val=3.63]epoch 3/100: 950it [05:40,  9.04s/it, loss=3.81]epoch 3/100: 950it [05:40,  9.04s/it, loss=3.66]                         epoch 3/100: 950it [05:40,  9.04s/it, loss=3.68]epoch 3/100: 951it [05:40,  6.48s/it, loss=3.66]epoch 3/100: 951it [05:40,  6.48s/it, loss=3.68]epoch 3/100: 951it [05:41,  6.48s/it, loss=3.89]epoch 3/100: 951it [05:41,  6.48s/it, loss=3.7] epoch 3/100: 952it [05:41,  4.69s/it, loss=3.89]epoch 3/100: 952it [05:41,  4.69s/it, loss=3.7]epoch 3/100: 952it [05:41,  4.69s/it, loss=3.68]epoch 3/100: 952it [05:41,  4.69s/it, loss=3.57]epoch 3/100: 953it [05:41,  3.44s/it, loss=3.68]epoch 3/100: 953it [05:41,  3.44s/it, loss=3.57]epoch 3/100: 953it [05:42,  3.44s/it, loss=3.39]epoch 3/100: 953it [05:42,  3.44s/it, loss=3.71]epoch 3/100: 954it [05:42,  2.56s/it, loss=3.39]epoch 3/100: 954it [05:42,  2.56s/it, loss=3.71]epoch 3/100: 954it [05:42,  2.56s/it, loss=3.72]epoch 3/100: 954it [05:42,  2.56s/it, loss=3.48]epoch 3/100: 955it [05:42,  1.95s/it, loss=3.72]epoch 3/100: 955it [05:42,  1.95s/it, loss=3.48]epoch 3/100: 955it [05:43,  1.95s/it, loss=3.77]epoch 3/100: 955it [05:43,  1.95s/it, loss=3.87]epoch 3/100: 956it [05:43,  1.52s/it, loss=3.77]epoch 3/100: 956it [05:43,  1.52s/it, loss=3.87]epoch 3/100: 956it [05:43,  1.52s/it, loss=3.82]epoch 3/100: 956it [05:43,  1.52s/it, loss=3.59]epoch 3/100: 957it [05:43,  1.21s/it, loss=3.82]epoch 3/100: 957it [05:43,  1.21s/it, loss=3.59]epoch 3/100: 957it [05:44,  1.21s/it, loss=3.8] epoch 3/100: 957it [05:44,  1.21s/it, loss=3.72]epoch 3/100: 958it [05:44,  1.00s/it, loss=3.8]epoch 3/100: 958it [05:44,  1.00s/it, loss=3.72]epoch 3/100: 958it [05:44,  1.00s/it, loss=3.61]epoch 3/100: 958it [05:44,  1.00s/it, loss=3.55]epoch 3/100: 959it [05:44,  1.16it/s, loss=3.61]epoch 3/100: 959it [05:44,  1.16it/s, loss=3.55]epoch 3/100: 959it [05:45,  1.16it/s, loss=3.92]epoch 3/100: 959it [05:45,  1.16it/s, loss=3.65]epoch 3/100: 960it [05:45,  1.33it/s, loss=3.92]epoch 3/100: 960it [05:45,  1.33it/s, loss=3.65]epoch 3/100: 960it [05:45,  1.33it/s, loss=3.76]epoch 3/100: 960it [05:45,  1.33it/s, loss=3.68]epoch 3/100: 961it [05:45,  1.45it/s, loss=3.76]epoch 3/100: 961it [05:45,  1.45it/s, loss=3.68]epoch 3/100: 961it [05:46,  1.45it/s, loss=3.69]epoch 3/100: 961it [05:46,  1.45it/s, loss=3.88]epoch 3/100: 962it [05:46,  1.57it/s, loss=3.69]epoch 3/100: 962it [05:46,  1.57it/s, loss=3.88]epoch 3/100: 962it [05:46,  1.57it/s, loss=3.57]epoch 3/100: 962it [05:46,  1.57it/s, loss=3.64]epoch 3/100: 963it [05:46,  1.69it/s, loss=3.57]epoch 3/100: 963it [05:46,  1.69it/s, loss=3.64]epoch 3/100: 963it [05:47,  1.69it/s, loss=3.77]epoch 3/100: 963it [05:47,  1.69it/s, loss=3.58]epoch 3/100: 964it [05:47,  1.78it/s, loss=3.58]epoch 3/100: 964it [05:47,  1.78it/s, loss=3.77]epoch 3/100: 964it [05:47,  1.78it/s, loss=3.84]epoch 3/100: 964it [05:47,  1.78it/s, loss=3.67]epoch 3/100: 965it [05:47,  1.83it/s, loss=3.84]epoch 3/100: 965it [05:47,  1.83it/s, loss=3.67]epoch 3/100: 965it [05:48,  1.83it/s, loss=3.62]epoch 3/100: 965it [05:48,  1.83it/s, loss=3.65]epoch 3/100: 966it [05:48,  1.88it/s, loss=3.65]epoch 3/100: 966it [05:48,  1.88it/s, loss=3.62]epoch 3/100: 966it [05:48,  1.88it/s, loss=3.71]epoch 3/100: 966it [05:48,  1.88it/s, loss=3.7] epoch 3/100: 967it [05:48,  1.91it/s, loss=3.71]epoch 3/100: 967it [05:48,  1.91it/s, loss=3.7]epoch 3/100: 967it [05:49,  1.91it/s, loss=3.76]epoch 3/100: 967it [05:49,  1.91it/s, loss=3.72]epoch 3/100: 968it [05:49,  1.91it/s, loss=3.76]epoch 3/100: 968it [05:49,  1.91it/s, loss=3.72]epoch 3/100: 968it [05:49,  1.91it/s, loss=4.02]epoch 3/100: 968it [05:49,  1.91it/s, loss=3.9] epoch 3/100: 969it [05:49,  1.91it/s, loss=4.02]epoch 3/100: 969it [05:49,  1.91it/s, loss=3.9]epoch 3/100: 969it [05:50,  1.91it/s, loss=3.69]epoch 3/100: 969it [05:50,  1.91it/s, loss=3.88]epoch 3/100: 970it [05:50,  1.95it/s, loss=3.69]epoch 3/100: 970it [05:50,  1.95it/s, loss=3.88]epoch 3/100: 970it [05:50,  1.95it/s, loss=3.61]epoch 3/100: 970it [05:50,  1.95it/s, loss=3.73]epoch 3/100: 971it [05:50,  1.96it/s, loss=3.61]epoch 3/100: 971it [05:50,  1.96it/s, loss=3.73]epoch 3/100: 971it [05:51,  1.96it/s, loss=3.6] epoch 3/100: 971it [05:51,  1.96it/s, loss=3.54]epoch 3/100: 972it [05:51,  1.94it/s, loss=3.6]epoch 3/100: 972it [05:51,  1.94it/s, loss=3.54]epoch 3/100: 972it [05:51,  1.94it/s, loss=3.66]epoch 3/100: 972it [05:51,  1.94it/s, loss=3.6]epoch 3/100: 973it [05:51,  1.95it/s, loss=3.66]epoch 3/100: 973it [05:51,  1.95it/s, loss=3.6]epoch 3/100: 973it [05:52,  1.95it/s, loss=3.55]epoch 3/100: 973it [05:52,  1.95it/s, loss=3.87]epoch 3/100: 974it [05:52,  1.93it/s, loss=3.55]epoch 3/100: 974it [05:52,  1.93it/s, loss=3.87]epoch 3/100: 974it [05:52,  1.93it/s, loss=3.71]epoch 3/100: 974it [05:52,  1.93it/s, loss=3.73]
+val: 0it [00:00, ?it/s][A
+val: 0it [00:00, ?it/s][A
+val: 1it [00:01,  1.05s/it][A
+val: 1it [00:01,  1.19s/it][A
+val: 2it [00:01,  1.59it/s][A
+val: 2it [00:01,  1.40it/s][A
+val: 3it [00:01,  2.00it/s][A
+val: 3it [00:01,  1.83it/s][A
+val: 4it [00:02,  2.29it/s][A
+val: 4it [00:02,  2.17it/s][A
+val: 5it [00:02,  2.54it/s][A
+val: 5it [00:02,  2.33it/s][A
+val: 6it [00:02,  2.69it/s][A
+val: 6it [00:02,  2.53it/s][A
+val: 7it [00:03,  2.77it/s][A
+val: 7it [00:03,  2.64it/s][A
+val: 8it [00:03,  2.85it/s][A
+val: 8it [00:03,  2.71it/s][A
+val: 9it [00:03,  2.91it/s][A
+val: 9it [00:03,  2.78it/s][A
+val: 10it [00:04,  2.85it/s][A
+val: 10it [00:04,  2.83it/s][A
+val: 11it [00:04,  2.87it/s][A
+val: 11it [00:04,  2.81it/s][A
+val: 12it [00:04,  2.77it/s][A
+val: 12it [00:05,  2.82it/s][A
+val: 13it [00:05,  2.84it/s][A
+val: 13it [00:05,  2.84it/s][A
+val: 14it [00:05,  2.74it/s][A
+val: 14it [00:05,  2.86it/s][A
+val: 15it [00:05,  2.83it/s][A
+val: 15it [00:06,  2.83it/s][A
+val: 16it [00:06,  2.82it/s][A
+val: 16it [00:06,  2.84it/s][A
+val: 17it [00:06,  2.85it/s][A
+val: 17it [00:06,  2.87it/s][A
+val: 18it [00:06,  2.89it/s][A
+val: 18it [00:07,  2.92it/s][A
+val: 19it [00:07,  2.87it/s][A
+val: 19it [00:07,  2.92it/s][A
+val: 20it [00:07,  2.89it/s][A
+val: 20it [00:07,  2.91it/s][A
+val: 21it [00:07,  2.92it/s][A
+val: 21it [00:08,  2.92it/s][A
+val: 22it [00:08,  2.92it/s][A
+val: 22it [00:08,  2.96it/s][A
+val: 23it [00:08,  2.93it/s][A
+val: 23it [00:08,  2.91it/s][A
+val: 24it [00:08,  2.93it/s][A
+val: 24it [00:09,  2.94it/s][A
+val: 25it [00:09,  2.75it/s][A
+val: 25it [00:09,  2.88it/s][A
+val: 26it [00:09,  2.80it/s][A
+val: 26it [00:09,  2.86it/s][A
+val: 27it [00:10,  2.83it/s][A
+val: 27it [00:10,  2.84it/s][A
+val: 28it [00:10,  2.80it/s][A
+val: 28it [00:10,  2.67it/s][A
+val: 29it [00:10,  2.85it/s][A
+val: 29it [00:11,  2.71it/s][A
+val: 30it [00:11,  2.89it/s][A
+val: 30it [00:11,  2.78it/s][A
+val: 31it [00:11,  2.92it/s][A
+val: 31it [00:11,  2.76it/s][A
+val: 32it [00:11,  2.92it/s][A
+val: 32it [00:12,  2.86it/s][A
+val: 33it [00:12,  2.96it/s][A
+val: 33it [00:12,  2.90it/s][A
+val: 34it [00:12,  2.97it/s][A
+val: 34it [00:12,  2.91it/s][A
+val: 35it [00:12,  2.97it/s][A
+val: 35it [00:13,  2.91it/s][A
+val: 36it [00:13,  2.90it/s][A
+val: 36it [00:13,  2.83it/s][A
+val: 37it [00:13,  2.84it/s][A
+val: 37it [00:13,  2.89it/s][A
+val: 38it [00:13,  2.68it/s][A
+val: 38it [00:14,  2.83it/s][A
+val: 39it [00:14,  2.72it/s][A
+val: 39it [00:14,  2.85it/s][A
+val: 40it [00:14,  2.78it/s][A
+val: 40it [00:14,  2.75it/s][A
+val: 41it [00:15,  2.65it/s][A
+val: 41it [00:15,  2.80it/s][A
+val: 42it [00:15,  2.71it/s][A
+val: 42it [00:15,  2.77it/s][A
+val: 43it [00:15,  2.77it/s][A
+val: 43it [00:15,  2.85it/s][A
+val: 44it [00:16,  2.84it/s][A
+val: 44it [00:16,  2.81it/s][A
+val: 45it [00:16,  2.82it/s][A
+val: 45it [00:16,  2.76it/s][A
+val: 46it [00:16,  2.88it/s][A
+val: 46it [00:16,  2.81it/s][A
+val: 47it [00:17,  2.90it/s][A
+val: 47it [00:17,  2.84it/s][A
+val: 48it [00:17,  2.87it/s][A
+val: 48it [00:17,  2.83it/s][A
+val: 49it [00:17,  2.86it/s][A
+val: 49it [00:18,  2.87it/s][A
+val: 50it [00:18,  2.89it/s][A
+val: 50it [00:18,  2.89it/s][A
+val: 51it [00:18,  2.90it/s][A
+val: 51it [00:18,  2.92it/s][A
+val: 52it [00:18,  2.94it/s][A
+val: 52it [00:19,  2.88it/s][A
+val: 53it [00:19,  2.91it/s][A
+val: 53it [00:19,  2.90it/s][A
+val: 54it [00:19,  2.87it/s][A
+val: 54it [00:19,  2.88it/s][A
+val: 55it [00:19,  2.86it/s][A
+val: 55it [00:20,  2.87it/s][A
+val: 56it [00:20,  2.86it/s][A
+val: 56it [00:20,  2.89it/s][A
+val: 57it [00:20,  2.85it/s][A
+val: 57it [00:20,  2.91it/s][A
+val: 58it [00:20,  2.85it/s][A
+val: 58it [00:21,  2.86it/s][A
+val: 59it [00:21,  2.88it/s][A
+val: 59it [00:21,  2.79it/s][A
+val: 60it [00:21,  2.91it/s][A
+val: 60it [00:21,  2.86it/s][A
+val: 61it [00:21,  2.92it/s][A
+val: 61it [00:22,  2.87it/s][A
+val: 62it [00:22,  2.86it/s][A
+val: 62it [00:22,  2.86it/s][A
+val: 63it [00:22,  2.85it/s][A
+val: 63it [00:22,  2.88it/s][A
+val: 64it [00:22,  2.88it/s][A
+val: 64it [00:23,  2.92it/s][A
+val: 65it [00:23,  2.92it/s][A
+val: 65it [00:23,  2.96it/s][A
+val: 66it [00:23,  2.93it/s][A
+val: 66it [00:23,  2.91it/s][A
+val: 67it [00:24,  2.92it/s][A
+val: 67it [00:24,  2.90it/s][A
+val: 68it [00:24,  2.91it/s][A
+val: 68it [00:24,  2.91it/s][A
+val: 69it [00:24,  2.89it/s][A
+val: 69it [00:24,  2.95it/s][A
+val: 70it [00:25,  2.92it/s][A
+val: 70it [00:25,  2.97it/s][A
+val: 71it [00:25,  2.94it/s][A
+val: 71it [00:25,  2.98it/s][A
+val: 72it [00:25,  2.85it/s][A
+val: 72it [00:25,  3.00it/s][A
+val: 73it [00:26,  2.88it/s][A
+val: 73it [00:26,  2.95it/s][A
+val: 74it [00:26,  2.88it/s][A
+val: 74it [00:26,  2.98it/s][A
+val: 75it [00:26,  2.90it/s][A
+val: 75it [00:26,  2.97it/s][A
+val: 76it [00:27,  2.88it/s][A
+val: 76it [00:27,  2.97it/s][A
+val: 77it [00:27,  2.83it/s][A
+val: 77it [00:27,  2.96it/s][A
+val: 78it [00:27,  2.86it/s][A
+val: 78it [00:27,  2.96it/s][A
+                            [A
+                            [Aepoch 3/100: 974it [06:21,  1.93it/s, best_val=3.63, loss=3.73, val=3.63]epoch 3/100: 975it [06:21,  8.97s/it, best_val=3.63, loss=3.73, val=3.63]epoch 3/100: 974it [06:21,  1.93it/s, loss=3.71]epoch 3/100: 975it [06:21,  8.97s/it, loss=3.71]epoch 3/100: 975it [06:21,  8.97s/it, loss=3.73]epoch 3/100: 975it [06:21,  8.97s/it, loss=3.83]                         epoch 3/100: 976it [06:21,  6.43s/it, loss=3.83]epoch 3/100: 976it [06:21,  6.43s/it, loss=3.73]epoch 3/100: 976it [06:22,  6.43s/it, loss=3.58]epoch 3/100: 976it [06:22,  6.43s/it, loss=3.74]epoch 3/100: 977it [06:22,  4.66s/it, loss=3.58]epoch 3/100: 977it [06:22,  4.66s/it, loss=3.74]epoch 3/100: 977it [06:22,  4.66s/it, loss=3.85]epoch 3/100: 977it [06:22,  4.66s/it, loss=3.72]epoch 3/100: 978it [06:22,  3.43s/it, loss=3.85]epoch 3/100: 978it [06:22,  3.43s/it, loss=3.72]epoch 3/100: 978it [06:23,  3.43s/it, loss=3.79]epoch 3/100: 978it [06:23,  3.43s/it, loss=3.79]epoch 3/100: 979it [06:23,  2.55s/it, loss=3.79]epoch 3/100: 979it [06:23,  2.55s/it, loss=3.79]epoch 3/100: 979it [06:23,  2.55s/it, loss=3.71]epoch 3/100: 979it [06:23,  2.55s/it, loss=3.49]epoch 3/100: 980it [06:23,  1.93s/it, loss=3.71]epoch 3/100: 980it [06:23,  1.93s/it, loss=3.49]epoch 3/100: 980it [06:24,  1.93s/it, loss=3.79]epoch 3/100: 980it [06:24,  1.93s/it, loss=3.49]epoch 3/100: 981it [06:24,  1.51s/it, loss=3.79]epoch 3/100: 981it [06:24,  1.51s/it, loss=3.49]epoch 3/100: 981it [06:24,  1.51s/it, loss=3.61]epoch 3/100: 981it [06:24,  1.51s/it, loss=3.75]epoch 3/100: 982it [06:24,  1.21s/it, loss=3.61]epoch 3/100: 982it [06:24,  1.21s/it, loss=3.75]epoch 3/100: 982it [06:25,  1.21s/it, loss=3.83]epoch 3/100: 982it [06:25,  1.21s/it, loss=3.71]epoch 3/100: 983it [06:25,  1.01s/it, loss=3.71]epoch 3/100: 983it [06:25,  1.01s/it, loss=3.83]epoch 3/100: 983it [06:25,  1.01s/it, loss=3.66]epoch 3/100: 983it [06:25,  1.01s/it, loss=3.56]epoch 3/100: 984it [06:25,  1.17it/s, loss=3.66]epoch 3/100: 984it [06:25,  1.17it/s, loss=3.56]epoch 3/100: 984it [06:26,  1.17it/s, loss=3.53]epoch 3/100: 984it [06:26,  1.17it/s, loss=3.69]epoch 3/100: 985it [06:26,  1.28it/s, loss=3.53]epoch 3/100: 985it [06:26,  1.28it/s, loss=3.69]epoch 3/100: 985it [06:26,  1.28it/s, loss=3.88]epoch 3/100: 985it [06:26,  1.28it/s, loss=3.56]epoch 3/100: 986it [06:26,  1.44it/s, loss=3.88]epoch 3/100: 986it [06:26,  1.44it/s, loss=3.56]epoch 3/100: 986it [06:27,  1.44it/s, loss=3.68]epoch 3/100: 986it [06:27,  1.44it/s, loss=3.68]epoch 3/100: 987it [06:27,  1.56it/s, loss=3.68]epoch 3/100: 987it [06:27,  1.56it/s, loss=3.68]epoch 3/100: 987it [06:27,  1.56it/s, loss=3.54]epoch 3/100: 987it [06:27,  1.56it/s, loss=3.58]epoch 3/100: 988it [06:27,  1.67it/s, loss=3.54]epoch 3/100: 988it [06:27,  1.67it/s, loss=3.58]epoch 3/100: 988it [06:28,  1.67it/s, loss=3.58]epoch 3/100: 988it [06:28,  1.67it/s, loss=3.43]epoch 3/100: 989it [06:28,  1.78it/s, loss=3.58]epoch 3/100: 989it [06:28,  1.78it/s, loss=3.43]epoch 3/100: 989it [06:28,  1.78it/s, loss=3.9] epoch 3/100: 989it [06:28,  1.78it/s, loss=3.69]epoch 3/100: 990it [06:28,  1.83it/s, loss=3.9]epoch 3/100: 990it [06:28,  1.83it/s, loss=3.69]epoch 3/100: 990it [06:29,  1.83it/s, loss=3.69]epoch 3/100: 990it [06:29,  1.83it/s, loss=3.77]epoch 3/100: 991it [06:29,  1.88it/s, loss=3.69]epoch 3/100: 991it [06:29,  1.88it/s, loss=3.77]epoch 3/100: 991it [06:29,  1.88it/s, loss=3.71]epoch 3/100: 991it [06:29,  1.88it/s, loss=3.66]epoch 3/100: 992it [06:29,  1.89it/s, loss=3.71]epoch 3/100: 992it [06:29,  1.89it/s, loss=3.66]epoch 3/100: 992it [06:30,  1.89it/s, loss=3.78]epoch 3/100: 992it [06:30,  1.89it/s, loss=3.82]epoch 3/100: 993it [06:30,  1.86it/s, loss=3.78]epoch 3/100: 993it [06:30,  1.86it/s, loss=3.82]epoch 3/100: 993it [06:31,  1.86it/s, loss=3.84]epoch 3/100: 993it [06:31,  1.86it/s, loss=3.75]epoch 3/100: 994it [06:31,  1.87it/s, loss=3.84]epoch 3/100: 994it [06:31,  1.87it/s, loss=3.75]epoch 3/100: 994it [06:31,  1.87it/s, loss=3.58]epoch 3/100: 994it [06:31,  1.87it/s, loss=3.83]epoch 3/100: 995it [06:31,  1.90it/s, loss=3.83]epoch 3/100: 995it [06:31,  1.90it/s, loss=3.58]epoch 3/100: 995it [06:32,  1.90it/s, loss=3.76]epoch 3/100: 995it [06:32,  1.90it/s, loss=3.67]epoch 3/100: 996it [06:32,  1.92it/s, loss=3.76]epoch 3/100: 996it [06:32,  1.92it/s, loss=3.67]epoch 3/100: 996it [06:32,  1.92it/s, loss=3.65]epoch 3/100: 996it [06:32,  1.92it/s, loss=3.8] epoch 3/100: 997it [06:32,  1.92it/s, loss=3.65]epoch 3/100: 997it [06:32,  1.92it/s, loss=3.8]epoch 3/100: 997it [06:33,  1.92it/s, loss=3.58]epoch 3/100: 997it [06:33,  1.92it/s, loss=3.74]epoch 3/100: 998it [06:33,  1.92it/s, loss=3.58]epoch 3/100: 998it [06:33,  1.92it/s, loss=3.74]epoch 3/100: 998it [06:33,  1.92it/s, loss=3.65]epoch 3/100: 998it [06:33,  1.92it/s, loss=3.58]epoch 3/100: 999it [06:33,  1.95it/s, loss=3.65]epoch 3/100: 999it [06:33,  1.95it/s, loss=3.58]epoch 3/100: 999it [06:34,  1.95it/s, loss=3.69]epoch 3/100: 999it [06:34,  1.95it/s, loss=3.94]
+val: 0it [00:00, ?it/s][A
+val: 0it [00:00, ?it/s][A
+val: 1it [00:01,  1.01s/it][A
+val: 1it [00:01,  1.18s/it][A
+val: 2it [00:01,  1.64it/s][A
+val: 2it [00:01,  1.43it/s][A
+val: 3it [00:01,  2.04it/s][A
+val: 3it [00:01,  1.84it/s][A
+val: 4it [00:02,  2.32it/s][A
+val: 4it [00:02,  2.18it/s][A
+val: 5it [00:02,  2.56it/s][A
+val: 5it [00:02,  2.36it/s][A
+val: 6it [00:02,  2.70it/s][A
+val: 6it [00:02,  2.53it/s][A
+val: 7it [00:03,  2.78it/s][A
+val: 7it [00:03,  2.65it/s][A
+val: 8it [00:03,  2.86it/s][A
+val: 8it [00:03,  2.72it/s][A
+val: 9it [00:03,  2.92it/s][A
+val: 9it [00:03,  2.78it/s][A
+val: 10it [00:04,  2.85it/s][A
+val: 10it [00:04,  2.82it/s][A
+val: 11it [00:04,  2.88it/s][A
+val: 11it [00:04,  2.80it/s][A
+val: 12it [00:04,  2.78it/s][A
+val: 12it [00:05,  2.81it/s][A
+val: 13it [00:05,  2.85it/s][A
+val: 13it [00:05,  2.83it/s][A
+val: 14it [00:05,  2.76it/s][A
+val: 14it [00:05,  2.83it/s][A
+val: 15it [00:05,  2.85it/s][A
+val: 15it [00:06,  2.82it/s][A
+val: 16it [00:06,  2.82it/s][A
+val: 16it [00:06,  2.85it/s][A
+val: 17it [00:06,  2.85it/s][A
+val: 17it [00:06,  2.88it/s][A
+val: 18it [00:06,  2.89it/s][A
+val: 18it [00:07,  2.92it/s][A
+val: 19it [00:07,  2.87it/s][A
+val: 19it [00:07,  2.91it/s][A
+val: 20it [00:07,  2.90it/s][A
+val: 20it [00:07,  2.92it/s][A
+val: 21it [00:07,  2.93it/s][A
+val: 21it [00:08,  2.93it/s][A
+val: 22it [00:08,  2.94it/s][A
+val: 22it [00:08,  2.98it/s][A
+val: 23it [00:08,  2.93it/s][A
+val: 23it [00:08,  2.93it/s][A
+val: 24it [00:08,  2.91it/s][A
+val: 24it [00:09,  2.95it/s][A
+val: 25it [00:09,  2.76it/s][A
+val: 25it [00:09,  2.89it/s][A
+val: 26it [00:09,  2.81it/s][A
+val: 26it [00:09,  2.86it/s][A
+val: 27it [00:09,  2.84it/s][A
+val: 27it [00:10,  2.85it/s][A
+val: 28it [00:10,  2.81it/s][A
+val: 28it [00:10,  2.68it/s][A
+val: 29it [00:10,  2.84it/s][A
+val: 29it [00:10,  2.73it/s][A
+val: 30it [00:11,  2.89it/s][A
+val: 30it [00:11,  2.80it/s][A
+val: 31it [00:11,  2.91it/s][A
+val: 31it [00:11,  2.80it/s][A
+val: 32it [00:11,  2.91it/s][A
+val: 32it [00:11,  2.89it/s][A
+val: 33it [00:12,  2.95it/s][A
+val: 33it [00:12,  2.91it/s][A
+val: 34it [00:12,  2.97it/s][A
+val: 34it [00:12,  2.91it/s][A
+val: 35it [00:12,  2.97it/s][A
+val: 35it [00:13,  2.93it/s][A
+val: 36it [00:13,  2.91it/s][A
+val: 36it [00:13,  2.86it/s][A
+val: 37it [00:13,  2.85it/s][A
+val: 37it [00:13,  2.91it/s][A
+val: 38it [00:13,  2.71it/s][A
+val: 38it [00:14,  2.95it/s][A
+val: 39it [00:14,  2.75it/s][A
+val: 39it [00:14,  2.99it/s][A
+val: 40it [00:14,  2.81it/s][A
+val: 40it [00:14,  2.90it/s][A
+val: 41it [00:14,  2.69it/s][A
+val: 41it [00:15,  2.95it/s][A
+val: 42it [00:15,  2.75it/s][A
+val: 42it [00:15,  2.89it/s][A
+val: 43it [00:15,  2.81it/s][A
+val: 43it [00:15,  2.97it/s][A
+val: 44it [00:15,  2.86it/s][A
+val: 44it [00:16,  2.95it/s][A
+val: 45it [00:16,  2.83it/s][A
+val: 45it [00:16,  2.90it/s][A
+val: 46it [00:16,  2.89it/s][A
+val: 46it [00:16,  2.91it/s][A
+val: 47it [00:16,  2.90it/s][A
+val: 47it [00:17,  2.93it/s][A
+val: 48it [00:17,  2.88it/s][A
+val: 48it [00:17,  2.89it/s][A
+val: 49it [00:17,  2.87it/s][A
+val: 49it [00:17,  2.91it/s][A
+val: 50it [00:18,  2.90it/s][A
+val: 50it [00:18,  2.93it/s][A
+val: 51it [00:18,  2.92it/s][A
+val: 51it [00:18,  2.95it/s][A
+val: 52it [00:18,  2.95it/s][A
+val: 52it [00:18,  2.87it/s][A
+val: 53it [00:19,  2.93it/s][A
+val: 53it [00:19,  2.88it/s][A
+val: 54it [00:19,  2.90it/s][A
+val: 54it [00:19,  2.88it/s][A
+val: 55it [00:19,  2.90it/s][A
+val: 55it [00:19,  2.87it/s][A
+val: 56it [00:20,  2.90it/s][A
+val: 56it [00:20,  2.88it/s][A
+val: 57it [00:20,  2.88it/s][A
+val: 57it [00:20,  2.90it/s][A
+val: 58it [00:20,  2.88it/s][A
+val: 58it [00:20,  2.85it/s][A
+val: 59it [00:21,  2.90it/s][A
+val: 59it [00:21,  2.80it/s][A
+val: 60it [00:21,  2.93it/s][A
+val: 60it [00:21,  2.88it/s][A
+val: 61it [00:21,  2.94it/s][A
+val: 61it [00:21,  2.88it/s][A
+val: 62it [00:22,  2.89it/s][A
+val: 62it [00:22,  2.87it/s][A
+val: 63it [00:22,  2.87it/s][A
+val: 63it [00:22,  2.89it/s][A
+val: 64it [00:22,  2.91it/s][A
+val: 64it [00:23,  2.93it/s][A
+val: 65it [00:23,  2.95it/s][A
+val: 65it [00:23,  2.95it/s][A
+val: 66it [00:23,  2.96it/s][A
+val: 66it [00:23,  2.90it/s][A
+val: 67it [00:23,  2.94it/s][A
+val: 67it [00:24,  2.89it/s][A
+val: 68it [00:24,  2.92it/s][A
+val: 68it [00:24,  2.90it/s][A
+val: 69it [00:24,  2.90it/s][A
+val: 69it [00:24,  2.94it/s][A
+val: 70it [00:24,  2.92it/s][A
+val: 70it [00:25,  2.97it/s][A
+val: 71it [00:25,  2.95it/s][A
+val: 71it [00:25,  2.98it/s][A
+val: 72it [00:25,  2.87it/s][A
+val: 72it [00:25,  3.00it/s][A
+val: 73it [00:25,  2.90it/s][A
+val: 73it [00:26,  2.98it/s][A
+val: 74it [00:26,  2.90it/s][A
+val: 74it [00:26,  2.99it/s][A
+val: 75it [00:26,  2.91it/s][A
+val: 75it [00:26,  2.98it/s][A
+val: 76it [00:26,  2.86it/s][A
+val: 76it [00:27,  2.97it/s][A
+val: 77it [00:27,  2.82it/s][A
+val: 77it [00:27,  2.96it/s][A
+val: 78it [00:27,  2.85it/s][A
+val: 78it [00:27,  2.96it/s][A
+                            [A
+                            [Aepoch 3/100: 999it [07:02,  1.95it/s, best_val=3.63, loss=3.94, val=3.63]epoch 3/100: 999it [07:02,  1.95it/s, loss=3.69]epoch 3/100: 1000it [07:02,  8.90s/it, loss=3.69]epoch 3/100: 1000it [07:02,  8.90s/it, best_val=3.63, loss=3.94, val=3.63]epoch 3/100: 1000it [07:02,  8.90s/it, loss=3.85]epoch 3/100: 1000it [07:02,  8.90s/it, loss=3.71]                         epoch 3/100: 1001it [07:02,  6.38s/it, loss=3.85]epoch 3/100: 1001it [07:02,  6.38s/it, loss=3.71]epoch 3/100: 1001it [07:03,  6.38s/it, loss=3.48]epoch 3/100: 1001it [07:03,  6.38s/it, loss=3.78]epoch 3/100: 1002it [07:03,  4.63s/it, loss=3.48]epoch 3/100: 1002it [07:03,  4.63s/it, loss=3.78]epoch 3/100: 1002it [07:03,  4.63s/it, loss=3.82]epoch 3/100: 1002it [07:03,  4.63s/it, loss=3.61]epoch 3/100: 1003it [07:03,  3.40s/it, loss=3.82]epoch 3/100: 1003it [07:03,  3.40s/it, loss=3.61]epoch 3/100: 1003it [07:04,  3.40s/it, loss=3.88]epoch 3/100: 1003it [07:04,  3.40s/it, loss=3.64]epoch 3/100: 1004it [07:04,  2.53s/it, loss=3.88]epoch 3/100: 1004it [07:04,  2.53s/it, loss=3.64]epoch 3/100: 1004it [07:04,  2.53s/it, loss=3.59]epoch 3/100: 1004it [07:04,  2.53s/it, loss=3.76]epoch 3/100: 1005it [07:04,  1.92s/it, loss=3.59]epoch 3/100: 1005it [07:04,  1.92s/it, loss=3.76]epoch 3/100: 1005it [07:05,  1.92s/it, loss=3.98]epoch 3/100: 1005it [07:05,  1.92s/it, loss=3.88]epoch 3/100: 1006it [07:05,  1.50s/it, loss=3.98]epoch 3/100: 1006it [07:05,  1.50s/it, loss=3.88]epoch 3/100: 1006it [07:05,  1.50s/it, loss=3.65]epoch 3/100: 1006it [07:05,  1.50s/it, loss=3.39]epoch 3/100: 1007it [07:05,  1.22s/it, loss=3.65]epoch 3/100: 1007it [07:05,  1.22s/it, loss=3.39]epoch 3/100: 1007it [07:06,  1.22s/it, loss=3.7] epoch 3/100: 1007it [07:06,  1.22s/it, loss=3.55]epoch 3/100: 1008it [07:06,  1.01s/it, loss=3.7]epoch 3/100: 1008it [07:06,  1.01s/it, loss=3.55]epoch 3/100: 1008it [07:06,  1.01s/it, loss=3.78]epoch 3/100: 1008it [07:06,  1.01s/it, loss=3.77]epoch 3/100: 1009it [07:06,  1.15it/s, loss=3.77]epoch 3/100: 1009it [07:06,  1.15it/s, loss=3.78]epoch 3/100: 1009it [07:07,  1.15it/s, loss=3.94]epoch 3/100: 1009it [07:07,  1.15it/s, loss=3.75]epoch 3/100: 1010it [07:07,  1.32it/s, loss=3.94]epoch 3/100: 1010it [07:07,  1.32it/s, loss=3.75]epoch 3/100: 1010it [07:07,  1.32it/s, loss=3.87]epoch 3/100: 1010it [07:07,  1.32it/s, loss=3.75]epoch 3/100: 1011it [07:07,  1.46it/s, loss=3.87]epoch 3/100: 1011it [07:07,  1.46it/s, loss=3.75]epoch 3/100: 1011it [07:08,  1.46it/s, loss=3.53]epoch 3/100: 1011it [07:08,  1.46it/s, loss=3.55]epoch 3/100: 1012it [07:08,  1.59it/s, loss=3.53]epoch 3/100: 1012it [07:08,  1.59it/s, loss=3.55]epoch 3/100: 1012it [07:08,  1.59it/s, loss=3.75]epoch 3/100: 1012it [07:08,  1.59it/s, loss=3.57]epoch 3/100: 1013it [07:08,  1.69it/s, loss=3.75]epoch 3/100: 1013it [07:08,  1.69it/s, loss=3.57]epoch 3/100: 1013it [07:09,  1.69it/s, loss=3.76]epoch 3/100: 1013it [07:09,  1.69it/s, loss=3.57]epoch 3/100: 1014it [07:09,  1.73it/s, loss=3.76]epoch 3/100: 1014it [07:09,  1.73it/s, loss=3.57]epoch 3/100: 1014it [07:09,  1.73it/s, loss=3.49]epoch 3/100: 1014it [07:09,  1.73it/s, loss=3.56]epoch 3/100: 1015it [07:09,  1.75it/s, loss=3.49]epoch 3/100: 1015it [07:09,  1.75it/s, loss=3.56]epoch 3/100: 1015it [07:10,  1.75it/s, loss=3.48]epoch 3/100: 1015it [07:10,  1.75it/s, loss=3.83]epoch 3/100: 1016it [07:10,  1.82it/s, loss=3.48]epoch 3/100: 1016it [07:10,  1.82it/s, loss=3.83]epoch 3/100: 1016it [07:10,  1.82it/s, loss=3.54]epoch 3/100: 1016it [07:10,  1.82it/s, loss=3.67]epoch 3/100: 1017it [07:10,  1.86it/s, loss=3.67]epoch 3/100: 1017it [07:10,  1.86it/s, loss=3.54]epoch 3/100: 1017it [07:11,  1.86it/s, loss=3.89]epoch 3/100: 1017it [07:11,  1.86it/s, loss=4.04]epoch 3/100: 1018it [07:11,  1.83it/s, loss=4.04]epoch 3/100: 1018it [07:11,  1.83it/s, loss=3.89]epoch 3/100: 1018it [07:11,  1.83it/s, loss=3.68]epoch 3/100: 1018it [07:11,  1.83it/s, loss=3.53]epoch 3/100: 1019it [07:11,  1.87it/s, loss=3.68]epoch 3/100: 1019it [07:11,  1.87it/s, loss=3.53]epoch 3/100: 1019it [07:12,  1.87it/s, loss=3.65]epoch 3/100: 1019it [07:12,  1.87it/s, loss=3.72]epoch 3/100: 1020it [07:12,  1.87it/s, loss=3.65]epoch 3/100: 1020it [07:12,  1.87it/s, loss=3.72]epoch 3/100: 1020it [07:13,  1.87it/s, loss=3.53]epoch 3/100: 1020it [07:13,  1.87it/s, loss=3.65]epoch 3/100: 1021it [07:13,  1.87it/s, loss=3.53]epoch 3/100: 1021it [07:13,  1.87it/s, loss=3.65]epoch 3/100: 1021it [07:13,  1.87it/s, loss=3.57]epoch 3/100: 1021it [07:13,  1.87it/s, loss=3.62]epoch 3/100: 1022it [07:13,  1.88it/s, loss=3.57]epoch 3/100: 1022it [07:13,  1.88it/s, loss=3.62]epoch 3/100: 1022it [07:14,  1.88it/s, loss=3.55]epoch 3/100: 1022it [07:14,  1.88it/s, loss=3.54]epoch 3/100: 1023it [07:14,  1.81it/s, loss=3.55]epoch 3/100: 1023it [07:14,  1.81it/s, loss=3.54]epoch 3/100: 1023it [07:14,  1.81it/s, loss=3.62]epoch 3/100: 1023it [07:14,  1.81it/s, loss=3.71]epoch 3/100: 1024it [07:14,  1.84it/s, loss=3.62]epoch 3/100: 1024it [07:14,  1.84it/s, loss=3.71]epoch 3/100: 1024it [07:15,  1.84it/s, loss=3.67]epoch 3/100: 1024it [07:15,  1.84it/s, loss=3.82]
+val: 0it [00:00, ?it/s][A
+val: 0it [00:00, ?it/s][A
+val: 1it [00:01,  1.05s/it][A
+val: 1it [00:01,  1.15s/it][A
+val: 2it [00:01,  1.59it/s][A
+val: 2it [00:01,  1.42it/s][A
+val: 3it [00:01,  2.00it/s][A
+val: 3it [00:01,  1.82it/s][A
+val: 4it [00:02,  2.28it/s][A
+val: 4it [00:02,  2.14it/s][A
+val: 5it [00:02,  2.50it/s][A
+val: 5it [00:02,  2.30it/s][A
+val: 6it [00:02,  2.65it/s][A
+val: 6it [00:02,  2.50it/s][A
+val: 7it [00:03,  2.70it/s][A
+val: 7it [00:03,  2.63it/s][A
+val: 8it [00:03,  2.75it/s][A
+val: 8it [00:03,  2.71it/s][A
+val: 9it [00:03,  2.80it/s][A
+val: 9it [00:03,  2.77it/s][A
+val: 10it [00:04,  2.76it/s][A
+val: 10it [00:04,  2.84it/s][A
+val: 11it [00:04,  2.79it/s][A
+val: 11it [00:04,  2.81it/s][A
+val: 12it [00:04,  2.71it/s][A
+val: 12it [00:05,  2.80it/s][A
+val: 13it [00:05,  2.79it/s][A
+val: 13it [00:05,  2.83it/s][A
+val: 14it [00:05,  2.71it/s][A
+val: 14it [00:05,  2.85it/s][A
+val: 15it [00:05,  2.81it/s][A
+val: 15it [00:06,  2.83it/s][A
+val: 16it [00:06,  2.77it/s][A
+val: 16it [00:06,  2.87it/s][A
+val: 17it [00:06,  2.80it/s][A
+val: 17it [00:06,  2.90it/s][A
+val: 18it [00:07,  2.86it/s][A
+val: 18it [00:07,  2.94it/s][A
+val: 19it [00:07,  2.85it/s][A
+val: 19it [00:07,  2.95it/s][A
+val: 20it [00:07,  2.88it/s][A
+val: 20it [00:07,  2.95it/s][A
+val: 21it [00:08,  2.91it/s][A
+val: 21it [00:08,  2.95it/s][A
+val: 22it [00:08,  2.92it/s][A
+val: 22it [00:08,  2.99it/s][A
+val: 23it [00:08,  2.90it/s][A
+val: 23it [00:08,  2.94it/s][A
+val: 24it [00:09,  2.91it/s][A
+val: 24it [00:09,  2.96it/s][A
+val: 25it [00:09,  2.92it/s][A
+val: 25it [00:09,  2.74it/s][A
+val: 26it [00:09,  2.90it/s][A
+val: 26it [00:09,  2.79it/s][A
+val: 27it [00:10,  2.82it/s][A
+val: 27it [00:10,  2.75it/s][A
+val: 28it [00:10,  2.78it/s][A
+val: 28it [00:10,  2.61it/s][A
+val: 29it [00:10,  2.81it/s][A
+val: 29it [00:11,  2.67it/s][A
+val: 30it [00:11,  2.86it/s][A
+val: 30it [00:11,  2.76it/s][A
+val: 31it [00:11,  2.89it/s][A
+val: 31it [00:11,  2.78it/s][A
+val: 32it [00:11,  2.87it/s][A
+val: 32it [00:12,  2.88it/s][A
+val: 33it [00:12,  2.92it/s][A
+val: 33it [00:12,  2.92it/s][A
+val: 34it [00:12,  2.94it/s][A
+val: 34it [00:12,  2.93it/s][A
+val: 35it [00:12,  2.94it/s][A
+val: 35it [00:13,  2.94it/s][A
+val: 36it [00:13,  2.87it/s][A
+val: 36it [00:13,  2.86it/s][A
+val: 37it [00:13,  2.81it/s][A
+val: 37it [00:13,  2.91it/s][A
+val: 38it [00:14,  2.92it/s][A
+val: 38it [00:14,  2.67it/s][A
+val: 39it [00:14,  2.97it/s][A
+val: 39it [00:14,  2.71it/s][A
+val: 40it [00:14,  2.89it/s][A
+val: 40it [00:14,  2.77it/s][A
+val: 41it [00:15,  2.94it/s][A
+val: 41it [00:15,  2.62it/s][A
+val: 42it [00:15,  2.91it/s][A
+val: 42it [00:15,  2.69it/s][A
+val: 43it [00:15,  2.98it/s][A
+val: 43it [00:15,  2.76it/s][A
+val: 44it [00:16,  2.96it/s][A
+val: 44it [00:16,  2.83it/s][A
+val: 45it [00:16,  2.91it/s][A
+val: 45it [00:16,  2.81it/s][A
+val: 46it [00:16,  2.92it/s][A
+val: 46it [00:16,  2.88it/s][A
+val: 47it [00:17,  2.94it/s][A
+val: 47it [00:17,  2.89it/s][A
+val: 48it [00:17,  2.91it/s][A
+val: 48it [00:17,  2.86it/s][A
+val: 49it [00:17,  2.92it/s][A
+val: 49it [00:17,  2.85it/s][A
+val: 50it [00:18,  2.93it/s][A
+val: 50it [00:18,  2.89it/s][A
+val: 51it [00:18,  2.95it/s][A
+val: 51it [00:18,  2.91it/s][A
+val: 52it [00:18,  2.90it/s][A
+val: 52it [00:18,  2.94it/s][A
+val: 53it [00:19,  2.91it/s][A
+val: 53it [00:19,  2.89it/s][A
+val: 54it [00:19,  2.90it/s][A
+val: 54it [00:19,  2.86it/s][A
+val: 55it [00:19,  2.89it/s][A
+val: 55it [00:20,  2.88it/s][A
+val: 56it [00:20,  2.90it/s][A
+val: 56it [00:20,  2.88it/s][A
+val: 57it [00:20,  2.91it/s][A
+val: 57it [00:20,  2.87it/s][A
+val: 58it [00:20,  2.87it/s][A
+val: 58it [00:21,  2.86it/s][A
+val: 59it [00:21,  2.82it/s][A
+val: 59it [00:21,  2.88it/s][A
+val: 60it [00:21,  2.89it/s][A
+val: 60it [00:21,  2.91it/s][A
+val: 61it [00:21,  2.89it/s][A
+val: 61it [00:22,  2.91it/s][A
+val: 62it [00:22,  2.87it/s][A
+val: 62it [00:22,  2.86it/s][A
+val: 63it [00:22,  2.90it/s][A
+val: 63it [00:22,  2.86it/s][A
+val: 64it [00:22,  2.94it/s][A
+val: 64it [00:23,  2.89it/s][A
+val: 65it [00:23,  2.97it/s][A
+val: 65it [00:23,  2.93it/s][A
+val: 66it [00:23,  2.90it/s][A
+val: 66it [00:23,  2.93it/s][A
+val: 67it [00:24,  2.90it/s][A
+val: 67it [00:24,  2.91it/s][A
+val: 68it [00:24,  2.91it/s][A
+val: 68it [00:24,  2.87it/s][A
+val: 69it [00:24,  2.95it/s][A
+val: 69it [00:24,  2.86it/s][A
+val: 70it [00:25,  2.95it/s][A
+val: 70it [00:25,  2.89it/s][A
+val: 71it [00:25,  2.96it/s][A
+val: 71it [00:25,  2.92it/s][A
+val: 72it [00:25,  2.99it/s][A
+val: 72it [00:25,  2.83it/s][A
+val: 73it [00:26,  2.96it/s][A
+val: 73it [00:26,  2.87it/s][A
+val: 74it [00:26,  2.98it/s][A
+val: 74it [00:26,  2.87it/s][A
+val: 75it [00:26,  2.97it/s][A
+val: 75it [00:26,  2.88it/s][A
+val: 76it [00:27,  2.97it/s][A
+val: 76it [00:27,  2.86it/s][A
+val: 77it [00:27,  2.96it/s][A
+val: 77it [00:27,  2.81it/s][A
+val: 78it [00:27,  2.96it/s][A
+                            [A
+val: 78it [00:28,  2.84it/s][A
+                            [Aepoch 3/100: 1024it [07:43,  1.84it/s, loss=3.67]epoch 3/100: 1024it [07:52,  1.84it/s, best_val=3.63, loss=3.82, val=3.63]epoch 3/100: 1025it [07:52, 11.58s/it, loss=3.67]epoch 3/100: 1025it [07:52, 11.58s/it, best_val=3.63, loss=3.82, val=3.63]epoch 3/100: 1025it [07:52, 11.58s/it, loss=3.71]epoch 3/100: 1025it [07:52, 11.58s/it, loss=3.63]                         epoch 3/100: 1026it [07:52,  8.29s/it, loss=3.71]epoch 3/100: 1026it [07:52,  8.29s/it, loss=3.63]epoch 3/100: 1026it [07:53,  8.29s/it, loss=3.71]epoch 3/100: 1026it [07:53,  8.29s/it, loss=3.6] epoch 3/100: 1027it [07:53,  5.96s/it, loss=3.71]epoch 3/100: 1027it [07:53,  5.96s/it, loss=3.6]epoch 3/100: 1027it [07:53,  5.96s/it, loss=3.74]epoch 3/100: 1028it [07:53,  4.33s/it, loss=3.74]epoch 3/100: 1027it [07:53,  5.96s/it, loss=3.69]epoch 3/100: 1028it [07:53,  4.33s/it, loss=3.69]epoch 3/100: 1028it [07:54,  4.33s/it, loss=3.71]epoch 3/100: 1028it [07:54,  4.33s/it, loss=3.64]epoch 3/100: 1029it [07:54,  3.19s/it, loss=3.71]epoch 3/100: 1029it [07:54,  3.19s/it, loss=3.64]epoch 3/100: 1029it [07:54,  3.19s/it, loss=3.59]epoch 3/100: 1029it [07:54,  3.19s/it, loss=3.61]epoch 3/100: 1030it [07:54,  2.42s/it, loss=3.59]epoch 3/100: 1030it [07:54,  2.42s/it, loss=3.61]epoch 3/100: 1030it [07:55,  2.42s/it, loss=3.68]epoch 3/100: 1030it [07:55,  2.42s/it, loss=3.73]epoch 3/100: 1031it [07:55,  1.85s/it, loss=3.68]epoch 3/100: 1031it [07:55,  1.85s/it, loss=3.73]epoch 3/100: 1031it [07:55,  1.85s/it, loss=3.95]epoch 3/100: 1031it [07:55,  1.85s/it, loss=3.59]epoch 3/100: 1032it [07:55,  1.45s/it, loss=3.95]epoch 3/100: 1032it [07:55,  1.45s/it, loss=3.59]epoch 3/100: 1032it [07:56,  1.45s/it, loss=3.83]epoch 3/100: 1032it [07:56,  1.45s/it, loss=3.6] epoch 3/100: 1033it [07:56,  1.17s/it, loss=3.83]epoch 3/100: 1033it [07:56,  1.17s/it, loss=3.6]epoch 3/100: 1033it [07:56,  1.17s/it, loss=3.86]epoch 3/100: 1033it [07:56,  1.17s/it, loss=3.87]epoch 3/100: 1034it [07:56,  1.03it/s, loss=3.87]epoch 3/100: 1034it [07:56,  1.03it/s, loss=3.86]epoch 3/100: 1034it [07:57,  1.03it/s, loss=3.72]epoch 3/100: 1034it [07:57,  1.03it/s, loss=3.59]epoch 3/100: 1035it [07:57,  1.19it/s, loss=3.72]epoch 3/100: 1035it [07:57,  1.19it/s, loss=3.59]epoch 3/100: 1035it [07:57,  1.19it/s, loss=3.62]epoch 3/100: 1035it [07:57,  1.19it/s, loss=3.53]epoch 3/100: 1036it [07:57,  1.35it/s, loss=3.62]epoch 3/100: 1036it [07:57,  1.35it/s, loss=3.53]epoch 3/100: 1036it [07:58,  1.35it/s, loss=3.52]epoch 3/100: 1036it [07:58,  1.35it/s, loss=3.46]epoch 3/100: 1037it [07:58,  1.49it/s, loss=3.52]epoch 3/100: 1037it [07:58,  1.49it/s, loss=3.46]epoch 3/100: 1037it [07:58,  1.49it/s, loss=3.64]epoch 3/100: 1037it [07:58,  1.49it/s, loss=3.53]epoch 3/100: 1038it [07:58,  1.62it/s, loss=3.64]epoch 3/100: 1038it [07:58,  1.62it/s, loss=3.53]epoch 3/100: 1038it [07:59,  1.62it/s, loss=3.5] epoch 3/100: 1038it [07:59,  1.62it/s, loss=3.6] epoch 3/100: 1039it [07:59,  1.70it/s, loss=3.5]epoch 3/100: 1039it [07:59,  1.70it/s, loss=3.6]epoch 3/100: 1039it [08:00,  1.70it/s, loss=3.9]epoch 3/100: 1039it [08:00,  1.70it/s, loss=3.65]epoch 3/100: 1040it [08:00,  1.72it/s, loss=3.9]epoch 3/100: 1040it [08:00,  1.72it/s, loss=3.65]epoch 3/100: 1040it [08:00,  1.72it/s, loss=3.86]epoch 3/100: 1040it [08:00,  1.72it/s, loss=3.76]epoch 3/100: 1041it [08:00,  1.78it/s, loss=3.86]epoch 3/100: 1041it [08:00,  1.78it/s, loss=3.76]epoch 3/100: 1041it [08:01,  1.78it/s, loss=3.79]epoch 3/100: 1041it [08:01,  1.78it/s, loss=3.6] epoch 3/100: 1042it [08:01,  1.81it/s, loss=3.79]epoch 3/100: 1042it [08:01,  1.81it/s, loss=3.6]epoch 3/100: 1042it [08:01,  1.81it/s, loss=3.98]epoch 3/100: 1042it [08:01,  1.81it/s, loss=3.57]epoch 3/100: 1043it [08:01,  1.84it/s, loss=3.98]epoch 3/100: 1043it [08:01,  1.84it/s, loss=3.57]epoch 3/100: 1043it [08:02,  1.84it/s, loss=3.91]epoch 3/100: 1043it [08:02,  1.84it/s, loss=3.73]epoch 3/100: 1044it [08:02,  1.89it/s, loss=3.91]epoch 3/100: 1044it [08:02,  1.89it/s, loss=3.73]epoch 3/100: 1044it [08:02,  1.89it/s, loss=3.96]epoch 3/100: 1044it [08:02,  1.89it/s, loss=3.55]epoch 3/100: 1045it [08:02,  1.92it/s, loss=3.96]epoch 3/100: 1045it [08:02,  1.92it/s, loss=3.55]epoch 3/100: 1045it [08:03,  1.92it/s, loss=3.58]epoch 3/100: 1045it [08:03,  1.92it/s, loss=3.69]epoch 3/100: 1046it [08:03,  1.86it/s, loss=3.58]epoch 3/100: 1046it [08:03,  1.86it/s, loss=3.69]epoch 3/100: 1046it [08:03,  1.86it/s, loss=3.67]epoch 3/100: 1046it [08:03,  1.86it/s, loss=3.73]epoch 3/100: 1047it [08:03,  1.90it/s, loss=3.67]epoch 3/100: 1047it [08:03,  1.90it/s, loss=3.73]epoch 3/100: 1047it [08:04,  1.90it/s, loss=3.76]epoch 3/100: 1047it [08:04,  1.90it/s, loss=3.59]epoch 3/100: 1048it [08:04,  1.89it/s, loss=3.76]epoch 3/100: 1048it [08:04,  1.89it/s, loss=3.59]epoch 3/100: 1048it [08:04,  1.89it/s, loss=3.71]epoch 3/100: 1048it [08:04,  1.89it/s, loss=3.57]epoch 3/100: 1049it [08:04,  1.90it/s, loss=3.71]epoch 3/100: 1049it [08:04,  1.90it/s, loss=3.57]epoch 3/100: 1049it [08:05,  1.90it/s, loss=3.61]epoch 3/100: 1049it [08:05,  1.90it/s, loss=3.66]
+val: 0it [00:00, ?it/s][A
+val: 0it [00:00, ?it/s][A
+val: 1it [00:01,  1.03s/it][A
+val: 1it [00:01,  1.21s/it][A
+val: 2it [00:01,  1.62it/s][A
+val: 2it [00:01,  1.36it/s][A
+val: 3it [00:01,  2.03it/s][A
+val: 3it [00:01,  1.75it/s][A
+val: 4it [00:02,  2.29it/s][A
+val: 4it [00:02,  2.08it/s][A
+val: 5it [00:02,  2.53it/s][A
+val: 6it [00:02,  2.68it/s][A
+val: 5it [00:02,  2.22it/s][A
+val: 7it [00:03,  2.78it/s][A
+val: 6it [00:03,  2.41it/s][A
+val: 8it [00:03,  2.86it/s][A
+val: 7it [00:03,  2.51it/s][A
+val: 9it [00:03,  2.91it/s][A
+val: 8it [00:03,  2.56it/s][A
+val: 10it [00:04,  2.84it/s][A
+val: 9it [00:04,  2.62it/s][A
+val: 11it [00:04,  2.88it/s][A
+val: 10it [00:04,  2.68it/s][A
+val: 12it [00:04,  2.78it/s][A
+val: 11it [00:04,  2.65it/s][A
+val: 13it [00:05,  2.84it/s][A
+val: 12it [00:05,  2.64it/s][A
+val: 14it [00:05,  2.76it/s][A
+val: 13it [00:05,  2.70it/s][A
+val: 15it [00:05,  2.85it/s][A
+val: 14it [00:05,  2.75it/s][A
+val: 16it [00:06,  2.81it/s][A
+val: 15it [00:06,  2.76it/s][A
+val: 17it [00:06,  2.82it/s][A
+val: 16it [00:06,  2.80it/s][A
+val: 18it [00:06,  2.87it/s][A
+val: 17it [00:07,  2.83it/s][A
+val: 19it [00:07,  2.87it/s][A
+val: 18it [00:07,  2.87it/s][A
+val: 20it [00:07,  2.90it/s][A
+val: 19it [00:07,  2.89it/s][A
+val: 21it [00:07,  2.93it/s][A
+val: 20it [00:08,  2.91it/s][A
+val: 22it [00:08,  2.93it/s][A
+val: 21it [00:08,  2.92it/s][A
+val: 23it [00:08,  2.93it/s][A
+val: 22it [00:08,  2.96it/s][A
+val: 24it [00:08,  2.94it/s][A
+val: 23it [00:09,  2.91it/s][A
+val: 25it [00:09,  2.78it/s][A
+val: 24it [00:09,  2.91it/s][A
+val: 26it [00:09,  2.83it/s][A
+val: 25it [00:09,  2.87it/s][A
+val: 27it [00:10,  2.85it/s][A
+val: 26it [00:10,  2.86it/s][A
+val: 28it [00:10,  2.82it/s][A
+val: 27it [00:10,  2.84it/s][A
+val: 29it [00:10,  2.86it/s][A
+val: 28it [00:10,  2.66it/s][A
+val: 30it [00:11,  2.87it/s][A
+val: 29it [00:11,  2.71it/s][A
+val: 31it [00:11,  2.91it/s][A
+val: 30it [00:11,  2.78it/s][A
+val: 32it [00:11,  2.90it/s][A
+val: 31it [00:11,  2.76it/s][A
+val: 33it [00:12,  2.95it/s][A
+val: 32it [00:12,  2.86it/s][A
+val: 34it [00:12,  2.97it/s][A
+val: 33it [00:12,  2.91it/s][A
+val: 35it [00:12,  2.98it/s][A
+val: 34it [00:12,  2.92it/s][A
+val: 36it [00:13,  2.91it/s][A
+val: 35it [00:13,  2.93it/s][A
+val: 37it [00:13,  2.85it/s][A
+val: 36it [00:13,  2.85it/s][A
+val: 38it [00:13,  2.71it/s][A
+val: 37it [00:14,  2.90it/s][A
+val: 39it [00:14,  2.75it/s][A
+val: 38it [00:14,  2.94it/s][A
+val: 40it [00:14,  2.79it/s][A
+val: 39it [00:14,  2.98it/s][A
+val: 41it [00:14,  2.68it/s][A
+val: 40it [00:15,  2.87it/s][A
+val: 42it [00:15,  2.74it/s][A
+val: 41it [00:15,  2.88it/s][A
+val: 43it [00:15,  2.80it/s][A
+val: 42it [00:15,  2.86it/s][A
+val: 44it [00:15,  2.86it/s][A
+val: 43it [00:16,  2.94it/s][A
+val: 45it [00:16,  2.84it/s][A
+val: 44it [00:16,  2.94it/s][A
+val: 46it [00:16,  2.91it/s][A
+val: 45it [00:16,  2.89it/s][A
+val: 47it [00:17,  2.90it/s][A
+val: 46it [00:17,  2.90it/s][A
+val: 48it [00:17,  2.87it/s][A
+val: 47it [00:17,  2.92it/s][A
+val: 49it [00:17,  2.87it/s][A
+val: 48it [00:17,  2.88it/s][A
+val: 50it [00:18,  2.90it/s][A
+val: 49it [00:18,  2.90it/s][A
+val: 51it [00:18,  2.91it/s][A
+val: 50it [00:18,  2.90it/s][A
+val: 52it [00:18,  2.94it/s][A
+val: 51it [00:18,  2.92it/s][A
+val: 53it [00:19,  2.93it/s][A
+val: 52it [00:19,  2.87it/s][A
+val: 54it [00:19,  2.90it/s][A
+val: 53it [00:19,  2.88it/s][A
+val: 55it [00:19,  2.90it/s][A
+val: 54it [00:19,  2.88it/s][A
+val: 56it [00:20,  2.90it/s][A
+val: 55it [00:20,  2.87it/s][A
+val: 57it [00:20,  2.88it/s][A
+val: 56it [00:20,  2.87it/s][A
+val: 58it [00:20,  2.87it/s][A
+val: 57it [00:20,  2.89it/s][A
+val: 59it [00:21,  2.89it/s][A
+val: 58it [00:21,  2.85it/s][A
+val: 60it [00:21,  2.92it/s][A
+val: 59it [00:21,  2.79it/s][A
+val: 61it [00:21,  2.92it/s][A
+val: 60it [00:21,  2.87it/s][A
+val: 62it [00:22,  2.86it/s][A
+val: 61it [00:22,  2.87it/s][A
+val: 63it [00:22,  2.87it/s][A
+val: 62it [00:22,  2.86it/s][A
+val: 64it [00:22,  2.89it/s][A
+val: 63it [00:23,  2.86it/s][A
+val: 65it [00:23,  2.94it/s][A
+val: 64it [00:23,  2.91it/s][A
+val: 66it [00:23,  2.94it/s][A
+val: 65it [00:23,  2.95it/s][A
+val: 67it [00:23,  2.94it/s][A
+val: 66it [00:24,  2.90it/s][A
+val: 68it [00:24,  2.88it/s][A
+val: 67it [00:24,  2.89it/s][A
+val: 69it [00:24,  2.87it/s][A
+val: 68it [00:24,  2.90it/s][A
+val: 70it [00:24,  2.90it/s][A
+val: 69it [00:25,  2.94it/s][A
+val: 71it [00:25,  2.94it/s][A
+val: 70it [00:25,  2.97it/s][A
+val: 72it [00:25,  2.83it/s][A
+val: 71it [00:25,  2.97it/s][A
+val: 73it [00:26,  2.87it/s][A
+val: 72it [00:26,  2.99it/s][A
+val: 74it [00:26,  2.87it/s][A
+val: 73it [00:26,  2.96it/s][A
+val: 75it [00:26,  2.89it/s][A
+val: 74it [00:26,  2.98it/s][A
+val: 76it [00:27,  2.88it/s][A
+val: 75it [00:27,  2.97it/s][A
+val: 77it [00:27,  2.84it/s][A
+val: 76it [00:27,  2.97it/s][A
+val: 78it [00:27,  2.87it/s][A
+val: 77it [00:27,  2.96it/s][A
+                            [A
+val: 78it [00:28,  2.94it/s][A
+                            [Aepoch 3/100: 1049it [08:33,  1.90it/s, best_val=3.63, loss=3.66, val=3.63]epoch 3/100: 1049it [08:33,  1.90it/s, loss=3.61]epoch 3/100: 1050it [08:33,  9.03s/it, best_val=3.63, loss=3.66, val=3.63]epoch 3/100: 1050it [08:33,  9.03s/it, loss=3.61]epoch 3/100: 1050it [08:34,  9.03s/it, loss=3.78]                         epoch 3/100: 1050it [08:34,  9.03s/it, loss=3.49]epoch 3/100: 1051it [08:34,  6.48s/it, loss=3.78]epoch 3/100: 1051it [08:34,  6.48s/it, loss=3.49]epoch 3/100: 1051it [08:34,  6.48s/it, loss=3.64]epoch 3/100: 1051it [08:34,  6.48s/it, loss=3.98]epoch 3/100: 1052it [08:34,  4.68s/it, loss=3.64]epoch 3/100: 1052it [08:34,  4.68s/it, loss=3.98]epoch 3/100: 1052it [08:35,  4.68s/it, loss=3.81]epoch 3/100: 1052it [08:35,  4.68s/it, loss=3.56]epoch 3/100: 1053it [08:35,  3.43s/it, loss=3.81]epoch 3/100: 1053it [08:35,  3.43s/it, loss=3.56]epoch 3/100: 1053it [08:35,  3.43s/it, loss=3.59]epoch 3/100: 1053it [08:35,  3.43s/it, loss=3.63]epoch 3/100: 1054it [08:35,  2.55s/it, loss=3.59]epoch 3/100: 1054it [08:35,  2.55s/it, loss=3.63]epoch 3/100: 1054it [08:36,  2.55s/it, loss=3.66]epoch 3/100: 1054it [08:36,  2.55s/it, loss=3.85]epoch 3/100: 1055it [08:36,  1.94s/it, loss=3.66]epoch 3/100: 1055it [08:36,  1.94s/it, loss=3.85]epoch 3/100: 1055it [08:36,  1.94s/it, loss=3.72]epoch 3/100: 1055it [08:36,  1.94s/it, loss=3.61]epoch 3/100: 1056it [08:36,  1.55s/it, loss=3.72]epoch 3/100: 1056it [08:36,  1.55s/it, loss=3.61]epoch 3/100: 1056it [08:37,  1.55s/it, loss=3.46]epoch 3/100: 1056it [08:37,  1.55s/it, loss=3.6] epoch 3/100: 1057it [08:37,  1.24s/it, loss=3.46]epoch 3/100: 1057it [08:37,  1.24s/it, loss=3.6]epoch 3/100: 1057it [08:37,  1.24s/it, loss=3.82]epoch 3/100: 1057it [08:37,  1.24s/it, loss=3.73]epoch 3/100: 1058it [08:37,  1.03s/it, loss=3.82]epoch 3/100: 1058it [08:37,  1.03s/it, loss=3.73]epoch 3/100: 1058it [08:38,  1.03s/it, loss=3.79]epoch 3/100: 1058it [08:38,  1.03s/it, loss=3.69]epoch 3/100: 1059it [08:38,  1.14it/s, loss=3.79]epoch 3/100: 1059it [08:38,  1.14it/s, loss=3.69]epoch 3/100: 1059it [08:38,  1.14it/s, loss=3.74]epoch 3/100: 1059it [08:38,  1.14it/s, loss=3.69]epoch 3/100: 1060it [08:38,  1.31it/s, loss=3.69]epoch 3/100: 1060it [08:38,  1.31it/s, loss=3.74]epoch 3/100: 1060it [08:39,  1.31it/s, loss=3.86]epoch 3/100: 1060it [08:39,  1.31it/s, loss=3.73]epoch 3/100: 1061it [08:39,  1.45it/s, loss=3.86]epoch 3/100: 1061it [08:39,  1.45it/s, loss=3.73]epoch 3/100: 1061it [08:39,  1.45it/s, loss=3.59]epoch 3/100: 1061it [08:39,  1.45it/s, loss=3.72]epoch 3/100: 1062it [08:39,  1.54it/s, loss=3.59]epoch 3/100: 1062it [08:39,  1.54it/s, loss=3.72]epoch 3/100: 1062it [08:40,  1.54it/s, loss=3.68]epoch 3/100: 1062it [08:40,  1.54it/s, loss=3.48]epoch 3/100: 1063it [08:40,  1.65it/s, loss=3.68]epoch 3/100: 1063it [08:40,  1.65it/s, loss=3.48]epoch 3/100: 1063it [08:40,  1.65it/s, loss=3.78]epoch 3/100: 1063it [08:40,  1.65it/s, loss=3.81]epoch 3/100: 1064it [08:40,  1.72it/s, loss=3.78]epoch 3/100: 1064it [08:40,  1.72it/s, loss=3.81]epoch 3/100: 1064it [08:41,  1.72it/s, loss=3.59]epoch 3/100: 1064it [08:41,  1.72it/s, loss=3.79]epoch 3/100: 1065it [08:41,  1.79it/s, loss=3.59]epoch 3/100: 1065it [08:41,  1.79it/s, loss=3.79]epoch 3/100: 1065it [08:41,  1.79it/s, loss=3.6] epoch 3/100: 1065it [08:41,  1.79it/s, loss=3.48]epoch 3/100: 1066it [08:41,  1.86it/s, loss=3.6]epoch 3/100: 1066it [08:41,  1.86it/s, loss=3.48]epoch 3/100: 1066it [08:42,  1.86it/s, loss=3.47]epoch 3/100: 1066it [08:42,  1.86it/s, loss=3.71]epoch 3/100: 1067it [08:42,  1.89it/s, loss=3.71]epoch 3/100: 1067it [08:42,  1.89it/s, loss=3.47]epoch 3/100: 1067it [08:42,  1.89it/s, loss=3.88]epoch 3/100: 1067it [08:42,  1.89it/s, loss=3.73]epoch 3/100: 1068it [08:42,  1.89it/s, loss=3.88]epoch 3/100: 1068it [08:42,  1.89it/s, loss=3.73]epoch 3/100: 1068it [08:43,  1.89it/s, loss=3.61]epoch 3/100: 1068it [08:43,  1.89it/s, loss=3.87]epoch 3/100: 1069it [08:43,  1.92it/s, loss=3.61]epoch 3/100: 1069it [08:43,  1.92it/s, loss=3.87]epoch 3/100: 1069it [08:44,  1.92it/s, loss=3.88]epoch 3/100: 1069it [08:44,  1.92it/s, loss=3.52]epoch 3/100: 1070it [08:44,  1.93it/s, loss=3.52]epoch 3/100: 1070it [08:44,  1.93it/s, loss=3.88]epoch 3/100: 1070it [08:44,  1.93it/s, loss=3.78]epoch 3/100: 1070it [08:44,  1.93it/s, loss=3.55]epoch 3/100: 1071it [08:44,  1.92it/s, loss=3.78]epoch 3/100: 1071it [08:44,  1.92it/s, loss=3.55]epoch 3/100: 1071it [08:45,  1.92it/s, loss=3.48]epoch 3/100: 1071it [08:45,  1.92it/s, loss=3.62]epoch 3/100: 1072it [08:45,  1.94it/s, loss=3.48]epoch 3/100: 1072it [08:45,  1.94it/s, loss=3.62]epoch 3/100: 1072it [08:45,  1.94it/s, loss=3.5] epoch 3/100: 1072it [08:45,  1.94it/s, loss=3.51]epoch 3/100: 1073it [08:45,  1.95it/s, loss=3.5]epoch 3/100: 1073it [08:45,  1.95it/s, loss=3.51]epoch 3/100: 1073it [08:46,  1.95it/s, loss=3.61]epoch 3/100: 1073it [08:46,  1.95it/s, loss=3.72]epoch 3/100: 1074it [08:46,  1.85it/s, loss=3.61]epoch 3/100: 1074it [08:46,  1.85it/s, loss=3.72]epoch 3/100: 1074it [08:46,  1.85it/s, loss=3.72]epoch 3/100: 1074it [08:46,  1.85it/s, loss=3.54]
+
+val: 0it [00:00, ?it/s][Aval: 0it [00:00, ?it/s][A
+val: 1it [00:00,  1.02it/s][A
+val: 1it [00:01,  1.21s/it][A
+val: 2it [00:01,  1.67it/s][A
+val: 2it [00:01,  1.40it/s][A
+val: 3it [00:01,  2.08it/s][A
+val: 3it [00:01,  1.82it/s][A
+val: 4it [00:01,  2.35it/s][A
+val: 4it [00:02,  2.15it/s][A
+val: 5it [00:02,  2.58it/s][A
+val: 5it [00:02,  2.33it/s][A
+val: 6it [00:02,  2.72it/s][A
+val: 6it [00:02,  2.53it/s][A
+val: 7it [00:02,  2.81it/s][A
+val: 7it [00:03,  2.64it/s][A
+val: 8it [00:03,  2.85it/s][A
+val: 9it [00:03,  2.90it/s][A
+val: 8it [00:03,  2.69it/s][A
+val: 9it [00:04,  2.75it/s][A
+val: 10it [00:04,  2.84it/s][A
+val: 10it [00:04,  2.81it/s][A
+val: 11it [00:04,  2.88it/s][A
+val: 11it [00:04,  2.78it/s][A
+val: 12it [00:04,  2.79it/s][A
+val: 13it [00:05,  2.85it/s][A
+val: 12it [00:05,  2.78it/s][A
+val: 13it [00:05,  2.80it/s][A
+val: 14it [00:05,  2.77it/s][A
+val: 14it [00:05,  2.83it/s][A
+val: 15it [00:05,  2.87it/s][A
+val: 15it [00:06,  2.81it/s][A
+val: 16it [00:06,  2.84it/s][A
+val: 17it [00:06,  2.87it/s][A
+val: 16it [00:06,  2.84it/s][A
+val: 18it [00:06,  2.90it/s][A
+val: 17it [00:06,  2.85it/s][A
+val: 18it [00:07,  2.90it/s][A
+val: 19it [00:07,  2.89it/s][A
+val: 19it [00:07,  2.91it/s][A
+val: 20it [00:07,  2.91it/s][A
+val: 21it [00:07,  2.95it/s][A
+val: 20it [00:07,  2.93it/s][A
+val: 22it [00:08,  2.95it/s][A
+val: 21it [00:08,  2.93it/s][A
+val: 22it [00:08,  2.97it/s][A
+val: 23it [00:08,  2.95it/s][A
+val: 24it [00:08,  2.94it/s][A
+val: 23it [00:08,  2.92it/s][A
+val: 24it [00:09,  2.92it/s][A
+val: 25it [00:09,  2.78it/s][A
+val: 25it [00:09,  2.88it/s][A
+val: 26it [00:09,  2.83it/s][A
+val: 26it [00:09,  2.86it/s][A
+val: 27it [00:09,  2.86it/s][A
+val: 27it [00:10,  2.84it/s][A
+val: 28it [00:10,  2.82it/s][A
+val: 29it [00:10,  2.86it/s][A
+val: 28it [00:10,  2.66it/s][A
+val: 30it [00:10,  2.90it/s][A
+val: 29it [00:11,  2.70it/s][A
+val: 31it [00:11,  2.93it/s][A
+val: 30it [00:11,  2.78it/s][A
+val: 32it [00:11,  2.93it/s][A
+val: 31it [00:11,  2.77it/s][A
+val: 33it [00:11,  2.97it/s][A
+val: 32it [00:12,  2.86it/s][A
+val: 34it [00:12,  2.98it/s][A
+val: 33it [00:12,  2.90it/s][A
+val: 35it [00:12,  2.98it/s][A
+val: 34it [00:12,  2.91it/s][A
+val: 36it [00:12,  2.91it/s][A
+val: 35it [00:13,  2.92it/s][A
+val: 37it [00:13,  2.85it/s][A
+val: 36it [00:13,  2.84it/s][A
+val: 38it [00:13,  2.69it/s][A
+val: 37it [00:13,  2.89it/s][A
+val: 38it [00:14,  2.94it/s][A
+val: 39it [00:14,  2.74it/s][A
+val: 39it [00:14,  2.98it/s][A
+val: 40it [00:14,  2.79it/s][A
+val: 40it [00:14,  2.87it/s][A
+val: 41it [00:14,  2.67it/s][A
+val: 41it [00:15,  2.93it/s][A
+val: 42it [00:15,  2.73it/s][A
+val: 42it [00:15,  2.90it/s][A
+val: 43it [00:15,  2.79it/s][A
+val: 43it [00:15,  2.97it/s][A
+val: 44it [00:15,  2.86it/s][A
+val: 44it [00:16,  2.95it/s][A
+val: 45it [00:16,  2.84it/s][A
+val: 45it [00:16,  2.90it/s][A
+val: 46it [00:16,  2.89it/s][A
+val: 46it [00:16,  2.90it/s][A
+val: 47it [00:16,  2.89it/s][A
+val: 47it [00:17,  2.92it/s][A
+val: 48it [00:17,  2.87it/s][A
+val: 48it [00:17,  2.89it/s][A
+val: 49it [00:17,  2.86it/s][A
+val: 49it [00:17,  2.91it/s][A
+val: 50it [00:17,  2.90it/s][A
+val: 50it [00:18,  2.89it/s][A
+val: 51it [00:18,  2.92it/s][A
+val: 51it [00:18,  2.92it/s][A
+val: 52it [00:18,  2.95it/s][A
+val: 52it [00:18,  2.87it/s][A
+val: 53it [00:18,  2.93it/s][A
+val: 53it [00:19,  2.88it/s][A
+val: 54it [00:19,  2.89it/s][A
+val: 54it [00:19,  2.87it/s][A
+val: 55it [00:19,  2.89it/s][A
+val: 55it [00:19,  2.86it/s][A
+val: 56it [00:20,  2.90it/s][A
+val: 56it [00:20,  2.88it/s][A
+val: 57it [00:20,  2.88it/s][A
+val: 57it [00:20,  2.89it/s][A
+val: 58it [00:20,  2.88it/s][A
+val: 58it [00:21,  2.84it/s][A
+val: 59it [00:21,  2.88it/s][A
+val: 60it [00:21,  2.92it/s][A
+val: 59it [00:21,  2.78it/s][A
+val: 60it [00:21,  2.86it/s][A
+val: 61it [00:21,  2.93it/s][A
+val: 61it [00:22,  2.86it/s][A
+val: 62it [00:22,  2.88it/s][A
+val: 62it [00:22,  2.85it/s][A
+val: 63it [00:22,  2.85it/s][A
+val: 63it [00:22,  2.86it/s][A
+val: 64it [00:22,  2.89it/s][A
+val: 64it [00:23,  2.90it/s][A
+val: 65it [00:23,  2.93it/s][A
+val: 65it [00:23,  2.94it/s][A
+val: 66it [00:23,  2.94it/s][A
+val: 67it [00:23,  2.93it/s][A
+val: 66it [00:23,  2.87it/s][A
+val: 68it [00:24,  2.91it/s][A
+val: 67it [00:24,  2.87it/s][A
+val: 68it [00:24,  2.88it/s][A
+val: 69it [00:24,  2.89it/s][A
+val: 69it [00:24,  2.92it/s][A
+val: 70it [00:24,  2.91it/s][A
+val: 70it [00:25,  2.95it/s][A
+val: 71it [00:25,  2.94it/s][A
+val: 71it [00:25,  2.96it/s][A
+val: 72it [00:25,  2.86it/s][A
+val: 72it [00:25,  2.98it/s][A
+val: 73it [00:25,  2.88it/s][A
+val: 73it [00:26,  2.95it/s][A
+val: 74it [00:26,  2.89it/s][A
+val: 74it [00:26,  2.97it/s][A
+val: 75it [00:26,  2.90it/s][A
+val: 75it [00:26,  2.96it/s][A
+val: 76it [00:26,  2.88it/s][A
+val: 76it [00:27,  2.95it/s][A
+val: 77it [00:27,  2.83it/s][A
+val: 77it [00:27,  2.95it/s][A
+val: 78it [00:27,  2.87it/s][A
+                            [A
+val: 78it [00:27,  2.92it/s][A
+                            [Aepoch 3/100: 1074it [09:14,  1.85it/s, best_val=3.63, loss=3.54, val=3.63]epoch 3/100: 1074it [09:14,  1.85it/s, loss=3.72]epoch 3/100: 1075it [09:14,  8.98s/it, best_val=3.63, loss=3.54, val=3.63]epoch 3/100: 1075it [09:14,  8.98s/it, loss=3.72]epoch 3/100: 1075it [09:15,  8.98s/it, loss=3.86]epoch 3/100: 1075it [09:15,  8.98s/it, loss=3.76]                         epoch 3/100: 1076it [09:15,  6.45s/it, loss=3.76]epoch 3/100: 1076it [09:15,  6.45s/it, loss=3.86]epoch 3/100: 1076it [09:15,  6.45s/it, loss=3.84]epoch 3/100: 1076it [09:15,  6.45s/it, loss=3.69]epoch 3/100: 1077it [09:15,  4.68s/it, loss=3.84]epoch 3/100: 1077it [09:15,  4.68s/it, loss=3.69]epoch 3/100: 1077it [09:16,  4.68s/it, loss=3.8] epoch 3/100: 1077it [09:16,  4.68s/it, loss=3.67]epoch 3/100: 1078it [09:16,  3.43s/it, loss=3.8]epoch 3/100: 1078it [09:16,  3.43s/it, loss=3.67]epoch 3/100: 1078it [09:16,  3.43s/it, loss=3.73]epoch 3/100: 1078it [09:16,  3.43s/it, loss=3.81]epoch 3/100: 1079it [09:16,  2.55s/it, loss=3.73]epoch 3/100: 1079it [09:16,  2.55s/it, loss=3.81]epoch 3/100: 1079it [09:17,  2.55s/it, loss=3.69]epoch 3/100: 1079it [09:17,  2.55s/it, loss=3.84]epoch 3/100: 1080it [09:17,  1.94s/it, loss=3.69]epoch 3/100: 1080it [09:17,  1.94s/it, loss=3.84]epoch 3/100: 1080it [09:17,  1.94s/it, loss=3.71]epoch 3/100: 1080it [09:17,  1.94s/it, loss=3.71]epoch 3/100: 1081it [09:17,  1.50s/it, loss=3.71]epoch 3/100: 1081it [09:17,  1.50s/it, loss=3.71]epoch 3/100: 1081it [09:18,  1.50s/it, loss=3.55]epoch 3/100: 1081it [09:18,  1.50s/it, loss=3.96]epoch 3/100: 1082it [09:18,  1.23s/it, loss=3.55]epoch 3/100: 1082it [09:18,  1.23s/it, loss=3.96]epoch 3/100: 1082it [09:18,  1.23s/it, loss=3.78]epoch 3/100: 1082it [09:18,  1.23s/it, loss=3.55]epoch 3/100: 1083it [09:18,  1.01s/it, loss=3.78]epoch 3/100: 1083it [09:18,  1.01s/it, loss=3.55]epoch 3/100: 1083it [09:19,  1.01s/it, loss=3.58]epoch 3/100: 1083it [09:19,  1.01s/it, loss=3.68]epoch 3/100: 1084it [09:19,  1.17it/s, loss=3.58]epoch 3/100: 1084it [09:19,  1.17it/s, loss=3.68]epoch 3/100: 1084it [09:20,  1.17it/s, loss=3.72]epoch 3/100: 1084it [09:20,  1.17it/s, loss=3.71]epoch 3/100: 1085it [09:20,  1.32it/s, loss=3.71]epoch 3/100: 1085it [09:20,  1.32it/s, loss=3.72]epoch 3/100: 1085it [09:20,  1.32it/s, loss=3.64]epoch 3/100: 1085it [09:20,  1.32it/s, loss=3.65]epoch 3/100: 1086it [09:20,  1.47it/s, loss=3.64]epoch 3/100: 1086it [09:20,  1.47it/s, loss=3.65]epoch 3/100: 1086it [09:21,  1.47it/s, loss=3.62]epoch 3/100: 1086it [09:21,  1.47it/s, loss=3.65]epoch 3/100: 1087it [09:21,  1.59it/s, loss=3.65]epoch 3/100: 1087it [09:21,  1.59it/s, loss=3.62]epoch 3/100: 1087it [09:21,  1.59it/s, loss=3.72]epoch 3/100: 1087it [09:21,  1.59it/s, loss=3.74]epoch 3/100: 1088it [09:21,  1.65it/s, loss=3.74]epoch 3/100: 1088it [09:21,  1.65it/s, loss=3.72]epoch 3/100: 1088it [09:22,  1.65it/s, loss=3.54]epoch 3/100: 1088it [09:22,  1.65it/s, loss=3.69]epoch 3/100: 1089it [09:22,  1.75it/s, loss=3.69]epoch 3/100: 1089it [09:22,  1.75it/s, loss=3.54]epoch 3/100: 1089it [09:22,  1.75it/s, loss=3.72]epoch 3/100: 1089it [09:22,  1.75it/s, loss=3.51]epoch 3/100: 1090it [09:22,  1.79it/s, loss=3.72]epoch 3/100: 1090it [09:22,  1.79it/s, loss=3.51]epoch 3/100: 1090it [09:23,  1.79it/s, loss=3.52]epoch 3/100: 1090it [09:23,  1.79it/s, loss=3.7] epoch 3/100: 1091it [09:23,  1.83it/s, loss=3.52]epoch 3/100: 1091it [09:23,  1.83it/s, loss=3.7]epoch 3/100: 1091it [09:23,  1.83it/s, loss=3.86]epoch 3/100: 1091it [09:23,  1.83it/s, loss=3.62]epoch 3/100: 1092it [09:23,  1.87it/s, loss=3.62]epoch 3/100: 1092it [09:23,  1.87it/s, loss=3.86]epoch 3/100: 1092it [09:24,  1.87it/s, loss=3.79]epoch 3/100: 1092it [09:24,  1.87it/s, loss=3.54]epoch 3/100: 1093it [09:24,  1.66it/s, loss=3.79]epoch 3/100: 1093it [09:24,  1.66it/s, loss=3.54]epoch 3/100: 1093it [09:24,  1.66it/s, loss=3.57]epoch 3/100: 1093it [09:24,  1.66it/s, loss=3.87]epoch 3/100: 1094it [09:24,  1.75it/s, loss=3.57]epoch 3/100: 1094it [09:24,  1.75it/s, loss=3.87]epoch 3/100: 1094it [09:25,  1.75it/s, loss=3.64]epoch 3/100: 1094it [09:25,  1.75it/s, loss=3.53]epoch 3/100: 1095it [09:25,  1.81it/s, loss=3.64]epoch 3/100: 1095it [09:25,  1.81it/s, loss=3.53]epoch 3/100: 1095it [09:25,  1.81it/s, loss=3.83]epoch 3/100: 1095it [09:25,  1.81it/s, loss=3.72]epoch 3/100: 1096it [09:25,  1.85it/s, loss=3.83]epoch 3/100: 1096it [09:25,  1.85it/s, loss=3.72]epoch 3/100: 1096it [09:26,  1.85it/s, loss=3.57]epoch 3/100: 1096it [09:26,  1.85it/s, loss=3.73]epoch 3/100: 1097it [09:26,  1.89it/s, loss=3.73]epoch 3/100: 1097it [09:26,  1.89it/s, loss=3.57]epoch 3/100: 1097it [09:26,  1.89it/s, loss=3.77]epoch 3/100: 1097it [09:26,  1.89it/s, loss=3.49]epoch 3/100: 1098it [09:26,  1.92it/s, loss=3.49]epoch 3/100: 1098it [09:26,  1.92it/s, loss=3.77]epoch 3/100: 1098it [09:27,  1.92it/s, loss=3.86]epoch 3/100: 1098it [09:27,  1.92it/s, loss=3.46]epoch 3/100: 1099it [09:27,  1.91it/s, loss=3.86]epoch 3/100: 1099it [09:27,  1.91it/s, loss=3.46]epoch 3/100: 1099it [09:27,  1.91it/s, loss=3.7] epoch 3/100: 1099it [09:27,  1.91it/s, loss=3.61]
+
+val: 0it [00:00, ?it/s][Aval: 0it [00:00, ?it/s][A
+val: 1it [00:01,  1.12s/it][A
+val: 1it [00:01,  1.13s/it][A
+val: 2it [00:01,  1.50it/s][A
+val: 2it [00:01,  1.48it/s][A
+val: 3it [00:01,  1.90it/s][A
+val: 3it [00:01,  1.90it/s][A
+val: 4it [00:02,  2.22it/s][A
+val: 4it [00:02,  2.14it/s][A
+val: 5it [00:02,  2.41it/s][A
+val: 5it [00:02,  2.39it/s][A
+val: 6it [00:02,  2.59it/s][A
+val: 6it [00:02,  2.57it/s][A
+val: 7it [00:03,  2.70it/s][A
+val: 7it [00:03,  2.68it/s][A
+val: 8it [00:03,  2.79it/s][A
+val: 8it [00:03,  2.75it/s][A
+val: 9it [00:03,  2.84it/s][A
+val: 9it [00:03,  2.81it/s][A
+val: 10it [00:04,  2.85it/s][A
+val: 10it [00:04,  2.80it/s][A
+val: 11it [00:04,  2.85it/s][A
+val: 11it [00:04,  2.82it/s][A
+val: 12it [00:04,  2.82it/s][A
+val: 12it [00:04,  2.74it/s][A
+val: 13it [00:05,  2.84it/s][A
+val: 13it [00:05,  2.81it/s][A
+val: 14it [00:05,  2.85it/s][A
+val: 14it [00:05,  2.72it/s][A
+val: 15it [00:05,  2.84it/s][A
+val: 15it [00:06,  2.82it/s][A
+val: 16it [00:06,  2.87it/s][A
+val: 16it [00:06,  2.80it/s][A
+val: 17it [00:06,  2.90it/s][A
+val: 17it [00:06,  2.82it/s][A
+val: 18it [00:06,  2.94it/s][A
+val: 18it [00:07,  2.87it/s][A
+val: 19it [00:07,  2.95it/s][A
+val: 19it [00:07,  2.87it/s][A
+val: 20it [00:07,  2.95it/s][A
+val: 20it [00:07,  2.87it/s][A
+val: 21it [00:08,  2.95it/s][A
+val: 21it [00:08,  2.91it/s][A
+val: 22it [00:08,  2.99it/s][A
+val: 22it [00:08,  2.91it/s][A
+val: 23it [00:08,  2.94it/s][A
+val: 23it [00:08,  2.92it/s][A
+val: 24it [00:09,  2.96it/s][A
+val: 24it [00:09,  2.93it/s][A
+val: 25it [00:09,  2.92it/s][A
+val: 25it [00:09,  2.77it/s][A
+val: 26it [00:09,  2.90it/s][A
+val: 26it [00:09,  2.82it/s][A
+val: 27it [00:10,  2.86it/s][A
+val: 27it [00:10,  2.82it/s][A
+val: 28it [00:10,  2.67it/s][A
+val: 28it [00:10,  2.78it/s][A
+val: 29it [00:10,  2.72it/s][A
+val: 29it [00:10,  2.83it/s][A
+val: 30it [00:11,  2.79it/s][A
+val: 30it [00:11,  2.88it/s][A
+val: 31it [00:11,  2.79it/s][A
+val: 31it [00:11,  2.91it/s][A
+val: 32it [00:11,  2.88it/s][A
+val: 32it [00:11,  2.91it/s][A
+val: 33it [00:12,  2.92it/s][A
+val: 33it [00:12,  2.95it/s][A
+val: 34it [00:12,  2.92it/s][A
+val: 34it [00:12,  2.97it/s][A
+val: 35it [00:12,  2.93it/s][A
+val: 35it [00:12,  2.98it/s][A
+val: 36it [00:13,  2.85it/s][A
+val: 36it [00:13,  2.88it/s][A
+val: 37it [00:13,  2.88it/s][A
+val: 37it [00:13,  2.82it/s][A
+val: 38it [00:13,  2.92it/s][A
+val: 38it [00:14,  2.69it/s][A
+val: 39it [00:14,  2.97it/s][A
+val: 39it [00:14,  2.74it/s][A
+val: 40it [00:14,  2.89it/s][A
+val: 40it [00:14,  2.79it/s][A
+val: 41it [00:14,  2.94it/s][A
+val: 41it [00:15,  2.67it/s][A
+val: 42it [00:15,  2.91it/s][A
+val: 42it [00:15,  2.74it/s][A
+val: 43it [00:15,  2.98it/s][A
+val: 43it [00:15,  2.79it/s][A
+val: 44it [00:15,  2.96it/s][A
+val: 44it [00:16,  2.86it/s][A
+val: 45it [00:16,  2.90it/s][A
+val: 45it [00:16,  2.81it/s][A
+val: 46it [00:16,  2.92it/s][A
+val: 46it [00:16,  2.87it/s][A
+val: 47it [00:17,  2.94it/s][A
+val: 47it [00:17,  2.89it/s][A
+val: 48it [00:17,  2.90it/s][A
+val: 48it [00:17,  2.87it/s][A
+val: 49it [00:17,  2.91it/s][A
+val: 49it [00:17,  2.86it/s][A
+val: 50it [00:18,  2.92it/s][A
+val: 50it [00:18,  2.89it/s][A
+val: 51it [00:18,  2.94it/s][A
+val: 51it [00:18,  2.91it/s][A
+val: 52it [00:18,  2.89it/s][A
+val: 52it [00:18,  2.94it/s][A
+val: 53it [00:19,  2.90it/s][A
+val: 53it [00:19,  2.91it/s][A
+val: 54it [00:19,  2.88it/s][A
+val: 54it [00:19,  2.87it/s][A
+val: 55it [00:19,  2.87it/s][A
+val: 55it [00:20,  2.88it/s][A
+val: 56it [00:20,  2.89it/s][A
+val: 56it [00:20,  2.88it/s][A
+val: 57it [00:20,  2.90it/s][A
+val: 57it [00:20,  2.86it/s][A
+val: 58it [00:20,  2.85it/s][A
+val: 58it [00:21,  2.85it/s][A
+val: 59it [00:21,  2.80it/s][A
+val: 59it [00:21,  2.87it/s][A
+val: 60it [00:21,  2.88it/s][A
+val: 60it [00:21,  2.90it/s][A
+val: 61it [00:21,  2.87it/s][A
+val: 61it [00:22,  2.92it/s][A
+val: 62it [00:22,  2.87it/s][A
+val: 62it [00:22,  2.87it/s][A
+val: 63it [00:22,  2.89it/s][A
+val: 63it [00:22,  2.86it/s][A
+val: 64it [00:22,  2.93it/s][A
+val: 64it [00:23,  2.89it/s][A
+val: 65it [00:23,  2.96it/s][A
+val: 65it [00:23,  2.93it/s][A
+val: 66it [00:23,  2.91it/s][A
+val: 66it [00:23,  2.94it/s][A
+val: 67it [00:23,  2.90it/s][A
+val: 67it [00:24,  2.93it/s][A
+val: 68it [00:24,  2.91it/s][A
+val: 68it [00:24,  2.91it/s][A
+val: 69it [00:24,  2.93it/s][A
+val: 69it [00:24,  2.88it/s][A
+val: 70it [00:24,  2.96it/s][A
+val: 70it [00:25,  2.91it/s][A
+val: 71it [00:25,  2.97it/s][A
+val: 71it [00:25,  2.94it/s][A
+val: 72it [00:25,  3.00it/s][A
+val: 72it [00:25,  2.81it/s][A
+val: 73it [00:25,  2.96it/s][A
+val: 73it [00:26,  2.85it/s][A
+val: 74it [00:26,  2.98it/s][A
+val: 75it [00:26,  2.97it/s][A
+val: 74it [00:26,  2.87it/s][A
+val: 76it [00:26,  2.97it/s][A
+val: 75it [00:26,  2.89it/s][A
+val: 77it [00:27,  2.96it/s][A
+val: 76it [00:27,  2.87it/s][A
+val: 78it [00:27,  2.96it/s][A
+val: 77it [00:27,  2.83it/s][A
+                            [A
+val: 78it [00:28,  2.86it/s][A
+                            [Aepoch 3/100: 1099it [09:56,  1.91it/s, loss=3.7]epoch 3/100: 1099it [09:56,  1.91it/s, best_val=3.63, loss=3.61, val=3.63]epoch 3/100: 1100it [09:56,  9.00s/it, best_val=3.63, loss=3.61, val=3.63]epoch 3/100: 1100it [09:56,  9.00s/it, loss=3.7]epoch 3/100: 1100it [09:56,  9.00s/it, loss=3.72]                         epoch 3/100: 1100it [09:56,  9.00s/it, loss=3.69]epoch 3/100: 1101it [09:56,  6.45s/it, loss=3.72]epoch 3/100: 1101it [09:56,  6.45s/it, loss=3.69]epoch 3/100: 1101it [09:57,  6.45s/it, loss=3.42]epoch 3/100: 1101it [09:57,  6.45s/it, loss=3.75]epoch 3/100: 1102it [09:57,  4.67s/it, loss=3.42]epoch 3/100: 1102it [09:57,  4.67s/it, loss=3.75]epoch 3/100: 1102it [09:57,  4.67s/it, loss=3.84]epoch 3/100: 1102it [09:57,  4.67s/it, loss=3.82]epoch 3/100: 1103it [09:57,  3.42s/it, loss=3.84]epoch 3/100: 1103it [09:57,  3.42s/it, loss=3.82]epoch 3/100: 1103it [09:58,  3.42s/it, loss=3.79]epoch 3/100: 1103it [09:58,  3.42s/it, loss=3.65]epoch 3/100: 1104it [09:58,  2.54s/it, loss=3.79]epoch 3/100: 1104it [09:58,  2.54s/it, loss=3.65]epoch 3/100: 1104it [09:58,  2.54s/it, loss=3.66]epoch 3/100: 1104it [09:58,  2.54s/it, loss=3.53]epoch 3/100: 1105it [09:58,  1.94s/it, loss=3.66]epoch 3/100: 1105it [09:58,  1.94s/it, loss=3.53]epoch 3/100: 1105it [09:59,  1.94s/it, loss=3.7] epoch 3/100: 1105it [09:59,  1.94s/it, loss=3.54]epoch 3/100: 1106it [09:59,  1.50s/it, loss=3.7]epoch 3/100: 1106it [09:59,  1.50s/it, loss=3.54]epoch 3/100: 1106it [09:59,  1.50s/it, loss=3.91]epoch 3/100: 1106it [09:59,  1.50s/it, loss=3.6] epoch 3/100: 1107it [09:59,  1.21s/it, loss=3.91]epoch 3/100: 1107it [09:59,  1.21s/it, loss=3.6]epoch 3/100: 1107it [10:00,  1.21s/it, loss=3.65]epoch 3/100: 1107it [10:00,  1.21s/it, loss=3.65]epoch 3/100: 1108it [10:00,  1.00s/it, loss=3.65]epoch 3/100: 1108it [10:00,  1.00s/it, loss=3.65]epoch 3/100: 1108it [10:00,  1.00s/it, loss=3.77]epoch 3/100: 1108it [10:00,  1.00s/it, loss=3.9] epoch 3/100: 1109it [10:00,  1.17it/s, loss=3.77]epoch 3/100: 1109it [10:00,  1.17it/s, loss=3.9]epoch 3/100: 1109it [10:01,  1.17it/s, loss=3.71]epoch 3/100: 1109it [10:01,  1.17it/s, loss=3.7]epoch 3/100: 1110it [10:01,  1.32it/s, loss=3.71]epoch 3/100: 1110it [10:01,  1.32it/s, loss=3.7]epoch 3/100: 1110it [10:01,  1.32it/s, loss=3.72]epoch 3/100: 1110it [10:01,  1.32it/s, loss=3.68]epoch 3/100: 1111it [10:01,  1.45it/s, loss=3.72]epoch 3/100: 1111it [10:01,  1.45it/s, loss=3.68]epoch 3/100: 1111it [10:02,  1.45it/s, loss=3.78]epoch 3/100: 1112it [10:02,  1.58it/s, loss=3.78]epoch 3/100: 1111it [10:02,  1.45it/s, loss=3.58]epoch 3/100: 1112it [10:02,  1.57it/s, loss=3.58]epoch 3/100: 1112it [10:02,  1.58it/s, loss=3.57]epoch 3/100: 1112it [10:02,  1.57it/s, loss=3.48]epoch 3/100: 1113it [10:02,  1.64it/s, loss=3.57]epoch 3/100: 1113it [10:02,  1.64it/s, loss=3.48]epoch 3/100: 1113it [10:03,  1.64it/s, loss=3.71]epoch 3/100: 1113it [10:03,  1.64it/s, loss=3.79]epoch 3/100: 1114it [10:03,  1.74it/s, loss=3.71]epoch 3/100: 1114it [10:03,  1.74it/s, loss=3.79]epoch 3/100: 1114it [10:03,  1.74it/s, loss=3.7] epoch 3/100: 1114it [10:03,  1.74it/s, loss=3.88]epoch 3/100: 1115it [10:03,  1.81it/s, loss=3.7]epoch 3/100: 1115it [10:03,  1.81it/s, loss=3.88]epoch 3/100: 1115it [10:04,  1.81it/s, loss=3.67]epoch 3/100: 1115it [10:04,  1.81it/s, loss=3.79]epoch 3/100: 1116it [10:04,  1.87it/s, loss=3.67]epoch 3/100: 1116it [10:04,  1.87it/s, loss=3.79]epoch 3/100: 1116it [10:04,  1.87it/s, loss=3.8] epoch 3/100: 1116it [10:04,  1.87it/s, loss=3.68]epoch 3/100: 1117it [10:04,  1.88it/s, loss=3.8]epoch 3/100: 1117it [10:04,  1.88it/s, loss=3.68]epoch 3/100: 1117it [10:05,  1.88it/s, loss=3.68]epoch 3/100: 1117it [10:05,  1.88it/s, loss=3.97]epoch 3/100: 1118it [10:05,  1.91it/s, loss=3.68]epoch 3/100: 1118it [10:05,  1.91it/s, loss=3.97]epoch 3/100: 1118it [10:05,  1.91it/s, loss=3.77]epoch 3/100: 1118it [10:05,  1.91it/s, loss=3.89]epoch 3/100: 1119it [10:05,  1.90it/s, loss=3.77]epoch 3/100: 1119it [10:05,  1.90it/s, loss=3.89]epoch 3/100: 1119it [10:06,  1.90it/s, loss=3.5] epoch 3/100: 1120it [10:06,  1.93it/s, loss=3.5]epoch 3/100: 1119it [10:06,  1.90it/s, loss=3.69]epoch 3/100: 1120it [10:06,  1.93it/s, loss=3.69]epoch 3/100: 1120it [10:06,  1.93it/s, loss=3.8]epoch 3/100: 1120it [10:06,  1.93it/s, loss=3.6] epoch 3/100: 1121it [10:06,  1.95it/s, loss=3.8]epoch 3/100: 1121it [10:06,  1.95it/s, loss=3.6]epoch 3/100: 1121it [10:07,  1.95it/s, loss=3.64]epoch 3/100: 1121it [10:07,  1.95it/s, loss=3.76]epoch 3/100: 1122it [10:07,  1.95it/s, loss=3.64]epoch 3/100: 1122it [10:07,  1.95it/s, loss=3.76]epoch 3/100: 1122it [10:07,  1.95it/s, loss=3.86]epoch 3/100: 1122it [10:07,  1.95it/s, loss=3.61]epoch 3/100: 1123it [10:07,  1.97it/s, loss=3.86]epoch 3/100: 1123it [10:07,  1.97it/s, loss=3.61]epoch 3/100: 1123it [10:08,  1.97it/s, loss=3.85]epoch 3/100: 1123it [10:08,  1.97it/s, loss=3.71]epoch 3/100: 1124it [10:08,  1.97it/s, loss=3.85]epoch 3/100: 1124it [10:08,  1.97it/s, loss=3.71]epoch 3/100: 1124it [10:08,  1.97it/s, loss=3.62]epoch 3/100: 1124it [10:08,  1.97it/s, loss=3.88]
+val: 0it [00:00, ?it/s][A
+val: 0it [00:00, ?it/s][A
+val: 1it [00:01,  1.10s/it][A
+val: 1it [00:01,  1.25s/it][A
+val: 2it [00:01,  1.54it/s][A
