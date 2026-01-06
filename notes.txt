@@ -1,0 +1,38 @@
+huggingface problems -- hard to change to local download parquet files, or else i would keep getting parquet filenotfound error in the middle of training
+initially training stopped improving after 3 ish epochs with a high best_val of 3.63 ish
+at end of epoch 2 it was at 3.64 loss
+
+
+COMMIT titled "shuffle after each epoch, fix dtype btwn encoder decoder, more lora modules"
+i added shuffling to data between epochs, change lora trainable parameters from [q_proj, k_proj] --> [q,k,o,v_proj]
+also, before encoder was bf16 decoder wasfp32
+changed it to encoder fp32, decoder base is fp32 but trainable params are bf16
+best val loss was 3.38, val patience set to 10, stopped at [epoch 3/100: 1274it] --> torchrun9.log
+pcd_data-shuffle_dtype-resolve_expanded-lora_val-3.38.pt
+considerable better than before, at very end of epoch 2 it was at 3.39 loss
+
+
+
+only change to above is , instead of using patched vectors, change to 0 (ablate) as a diagnostic
+definitely makes some difference - after ~ 2 epochs + 250 steps, this version was loss 4.71 VS prev version of 3.46
+
+
+read layer 13 -- torchrun10.log, basically no diff
+
+
+read layer 9, remove aux loss -- torchrun11.log, again basically no diff in terms of best_val based on steps
+
+
+read layer 9, w/ aux loss, more lora layers (all attention + mlp), only slightly better
+yet it seemed to end at same best_val loss value --torchrun12.log, torchrun13.log
+
+gonna try upping to llama 3.2 3b instruct, layer 14 (it has 28 layers total)
+same as directly above, all lora layers possible, regular aux loss
+
+
+check if it rly is 16 tokens or not 
+try:
+read later layer
+more lora modules
+more data input
+auxiliary loss hyperparams

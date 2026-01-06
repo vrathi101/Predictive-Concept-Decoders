@@ -96,7 +96,7 @@ token = os.environ.get("HF_TOKEN")
 if token:
     login(token=token)
 
-def load_model_and_tokenizer(model_name="meta-llama/Llama-3.2-1B-Instruct", attn_implementation="sdpa", mode="eval", **kwargs):
+def load_model_and_tokenizer(model_name="meta-llama/Llama-3.2-3B-Instruct", attn_implementation="sdpa", mode="eval", **kwargs):
     """Load model and tokenizer with standard setup.
 
     Returns:
@@ -432,7 +432,8 @@ lora_cfg = LoraConfig(
     lora_dropout=0.05,
     bias="none",
     task_type="CAUSAL_LM",
-    target_modules=["q_proj", "k_proj", "v_proj", "o_proj"]
+    target_modules=["q_proj", "k_proj", "v_proj", "o_proj",
+                   "gate_proj", "up_proj", "down_proj"]
 )
 decoder = get_peft_model(decoder_base, lora_cfg).to(device).bfloat16().train()
 
@@ -462,7 +463,7 @@ optim = torch.optim.AdamW(
 )
 start_cropped_pos = len_prefix + cropped_len // 3
 end_cropped_pos = start_cropped_pos + cropped_len // 3
-layer = 8
+layer = 15
 batch_size=64
 dummy = tokenizer(
     " X" * (cropped_len // 3),
@@ -512,7 +513,6 @@ val_loader   = DataLoader(pcd_val_ds,   batch_size=64, num_workers=0, pin_memory
 patch_state = {"vecs": None, "calls": 0}
 def patch_resid_stream_hook(idx):
     def hook(module, inp, out):
-        patch_state["calls"] += 1
         h = out.clone()
         h[:, idx, :] = patch_state["vecs"].to(h.dtype)
         return h
@@ -597,7 +597,7 @@ count_steps = 0
 
 stop_training = False
 
-CKPT_PATH = "best_checkpoint_aux.pt"
+CKPT_PATH = "chk-lora-modules.pt"
 
 
 def load_ckpt_if_exists():
@@ -714,7 +714,7 @@ def do_train_full(start_epoch=0, start_step=1):
                                 "seen_tokens": seen_tokens,
                                 "inactive_concepts_tracker": inactive_concepts_tracker
                             },
-                            "pcd_data-shuffle_dtype-resolve_expanded-lora.pt",
+                            "pcd_3B_layer15_all-lora-modules.pt",
                         )
         
                     else:
@@ -722,7 +722,6 @@ def do_train_full(start_epoch=0, start_step=1):
                         if curr_bad >= patience:
                             stop_training = True
 
-                    print("hook calls:", patch_state["calls"])
                     pbar.set_postfix(loss=float(loss.item()), val=float(val_mean), best_val=float(best_val))
                 else:
                     pbar.set_postfix(loss=float(loss.item()))
