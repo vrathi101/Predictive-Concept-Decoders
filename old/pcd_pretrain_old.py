@@ -1,24 +1,8 @@
+# pip install --no-cache-dir -U "transformers>=4.51.0" accelerate datasets torch pandas tqdm nnsight huggingface_hub peft
+# pip install --no-cache-dir typing-extensions --upgrade
+# pip uninstall -y torchvision
+
 import os
-# os.environ["PIP_CACHE_DIR"] = "/workspace/.cache/pip"
-# os.environ["HF_HOME"] = "/workspace/.cache/huggingface"
-# os.environ["TOKENIZERS_PARALLELISM"] = "false"
-import os
-
-os.environ["HF_HOME"] = "/root/.cache/huggingface"
-os.environ["HF_HUB_CACHE"] = "/root/.cache/huggingface/hub"
-os.environ["HF_DATASETS_CACHE"] = "/root/.cache/huggingface/datasets"
-os.environ["TRANSFORMERS_CACHE"] = "/root/.cache/huggingface/transformers"
-os.environ["PIP_CACHE_DIR"] = "/root/.cache/pip"
-os.environ["TOKENIZERS_PARALLELISM"] = "false"
-
-
-import sys
-sys.path.append('.')
-
-# !pip install --no-cache-dir -U "transformers>=4.51.0" accelerate datasets torch pandas tqdm nnsight huggingface_hub peft
-# !pip install --no-cache-dir typing-extensions --upgrade
-# !pip uninstall -y torchvision
-
 import json
 import re
 import random
@@ -32,7 +16,16 @@ from peft import LoraConfig, get_peft_model
 from tqdm import tqdm
 from itertools import islice
 from datasets import load_dataset, Dataset
-from transformers import AutoTokenizer, AutoModelForCausalLM  # other option: Qwen/Qwen2.5-0.5B-Instruct
+from huggingface_hub import hf_hub_download, login
+from transformers import AutoTokenizer, AutoModelForCausalLM
+
+
+os.environ["HF_HOME"] = "/root/.cache/huggingface"
+os.environ["HF_HUB_CACHE"] = "/root/.cache/huggingface/hub"
+os.environ["HF_DATASETS_CACHE"] = "/root/.cache/huggingface/datasets"
+os.environ["TRANSFORMERS_CACHE"] = "/root/.cache/huggingface/transformers"
+os.environ["PIP_CACHE_DIR"] = "/root/.cache/pip"
+os.environ["TOKENIZERS_PARALLELISM"] = "false"
 
 local_rank = int(os.environ["LOCAL_RANK"])
 torch.cuda.set_device(local_rank)
@@ -42,28 +35,9 @@ dist.init_process_group(backend="nccl")
 rank = dist.get_rank()
 world_size = dist.get_world_size()
 
-
-# K = 4  # e.g. 4 ~ quarter-ish, 8 ~ half-ish, 15 = all
-
-# BASE = "hf://datasets/HuggingFaceFW/fineweb/sample/10BT"
-# DATA_FILES = [f"{BASE}/{i:03d}_00000.parquet" for i in range(K)]
-
-# fineweb_stream = load_dataset(
-#     "parquet",
-#     data_files=DATA_FILES,
-#     split="train",
-#     streaming=True,
-# ).shuffle(buffer_size=100_000, seed=42)
-from huggingface_hub import hf_hub_download
-
 # FineWeb sample/10BT has 15 shards: 000..014  (total ~30.6GB)
-FINEWEB_REV = "9bb295ddab0e05d785b879661af7260fed5140fc"  # pin for stability (optional but recommended)
-
-# Pick how many shards to cache locally:
-# quarter-ish:
+FINEWEB_REV = "9bb295ddab0e05d785b879661af7260fed5140fc"
 FILE_IDS = list(range(4))
-# half-ish: FILE_IDS = list(range(8))
-# all:      FILE_IDS = list(range(15))
 
 def fineweb_local_parquets(file_ids, local_only: bool):
     return [
@@ -77,24 +51,17 @@ def fineweb_local_parquets(file_ids, local_only: bool):
         for i in file_ids
     ]
 
-
 if rank == 0:
-    _ = fineweb_local_parquets(FILE_IDS, local_only=False)  # does the download
+    _ = fineweb_local_parquets(FILE_IDS, local_only=False)
 
 dist.barrier(device_ids=[local_rank])
 
-LOCAL_PARQUETS = fineweb_local_parquets(FILE_IDS, local_only=True)  # everyone stays offline now
-
-
-
-# from huggingface_hub import notebook_login
-# notebook_login()
-from huggingface_hub import login
-import os
+LOCAL_PARQUETS = fineweb_local_parquets(FILE_IDS, local_only=True)
 
 token = os.environ.get("HF_TOKEN")
 if token:
     login(token=token)
+
 
 def load_model_and_tokenizer(model_name="meta-llama/Llama-3.2-3B-Instruct", attn_implementation="sdpa", mode="eval", **kwargs):
     """Load model and tokenizer with standard setup.
@@ -131,6 +98,7 @@ def load_model_and_tokenizer(model_name="meta-llama/Llama-3.2-3B-Instruct", attn
 
     return model, tokenizer, config
 
+
 def load_data(dataset_name="HuggingFaceFW/fineweb", split="train", streaming=True, first_k=int(1e5), buffer_frac=0.1, val_frac=0.05):
     ds_stream = load_dataset(
         dataset_name,
@@ -142,6 +110,7 @@ def load_data(dataset_name="HuggingFaceFW/fineweb", split="train", streaming=Tru
     ds_train = ds_stream.take(first_k)
     ds_val = ds_stream.skip(first_k).take(int(first_k * val_frac))
     return ds_train, ds_val
+
 
 def get_cropped_text_ids(dataset, tokenizer, prefix_ids, cropped_len=48):
     for item in dataset:
@@ -156,6 +125,7 @@ def get_cropped_text_ids(dataset, tokenizer, prefix_ids, cropped_len=48):
             start = rng.randint(0, len(text_ids) - cropped_len)
             selected_ids = text_ids[start:start + cropped_len]
             yield prefix_ids + selected_ids
+
 
 subject, tokenizer, config = load_model_and_tokenizer()
 subject = subject.to(device)
@@ -230,48 +200,6 @@ rng = random.Random(42)
 
 # resid[0].float().cpu().numpy()[:10]
 
-# class CroppedTokenDataset(IterableDataset):
-#     def __init__(self, hf_dataset, tokenizer, prefix_ids, cropped_len=48, mode="train",
-#                  total_samples=None, skip_samples=0):
-#         self.ds = hf_dataset
-#         self.tokenizer = tokenizer
-#         self.prefix = torch.tensor(prefix_ids, dtype=torch.long)
-#         self.cropped_len = cropped_len
-#         self.mode = mode
-#         self.total_samples = total_samples
-#         self.skip_samples = skip_samples
-
-#     def __iter__(self):
-#         info = get_worker_info()
-#         wid = 0 if info is None else info.id
-#         nw  = 1 if info is None else info.num_workers
-
-#         rank = int(os.environ["RANK"])
-#         world = int(os.environ["WORLD_SIZE"])
-
-#         num_shards = world * nw
-#         shard_index = rank * nw + wid
-
-#         ds = self.ds.shard(num_shards=num_shards, index=shard_index)
-
-#         # Split AFTER sharding (important)
-#         if self.skip_samples:
-#             ds = ds.skip(self.skip_samples // num_shards)
-#         if self.total_samples is not None:
-#             ds = ds.take(self.total_samples // num_shards)
-
-#         g = torch.Generator()
-#         g.manual_seed(0)
-
-#         for item in ds:
-#             text_ids = self.tokenizer(item["text"], return_tensors=None, add_special_tokens=False)["input_ids"]
-#             if len(text_ids) >= self.cropped_len:
-#                 if self.mode == "train":
-#                     start = int(torch.randint(0, len(text_ids) - self.cropped_len + 1, (1,), generator=g).item())
-#                 else:
-#                     start = 0
-#                 cropped = torch.tensor(text_ids[start:start + self.cropped_len], dtype=torch.long)
-#                 yield torch.cat([self.prefix, cropped], dim=0)
 class CroppedTokenDataset(IterableDataset):
     def __init__(
         self,
@@ -324,7 +252,6 @@ class CroppedTokenDataset(IterableDataset):
         if self.mode == "train":
             ds = ds.shuffle(buffer_size=self.shuffle_buffer, seed=seed)
 
-
         stream = islice(ds, skip_local, None)
 
         g = torch.Generator()
@@ -356,8 +283,6 @@ class CroppedTokenDataset(IterableDataset):
                 break
 
 
-
-
 class Encoder(nn.Module):
     def __init__(self, d_in=2048, multiplier=8, top_k=16):
         super().__init__()
@@ -385,7 +310,7 @@ class Encoder(nn.Module):
         out = self.w_emb(masked_y)  # (B, 16, d_in)
         return out, idx
 
-# def get_resid_stream_vector(layer, input_ids, prefix_ids, cropped_len):
+# def get_resid_stream_vector_slow(layer, input_ids, prefix_ids, cropped_len):
 #     with nnsight_model.trace(input_ids):
 #         resid = nnsight_model.model.layers[layer].output[:]
 #         start = len(prefix_ids) + cropped_len // 3
@@ -393,16 +318,16 @@ class Encoder(nn.Module):
 #         out = resid[:, start:end, :].save()
 #         return out
 
-def get_resid_stream_vector(model, input_ids, layer, start, end, attention_mask=None):
-    out = model(
-        input_ids=input_ids,
-        attention_mask=attention_mask,
-        output_hidden_states=True,
-        return_dict=True,
-        use_cache=False
-    )
-    resid = out.hidden_states[layer + 1]
-    return resid[:, start:end, :]
+# def get_resid_stream_vector(model, input_ids, layer, start, end, attention_mask=None):
+#     out = model(
+#         input_ids=input_ids,
+#         attention_mask=attention_mask,
+#         output_hidden_states=True,
+#         return_dict=True,
+#         use_cache=False
+#     )
+#     resid = out.hidden_states[layer + 1]
+#     return resid[:, start:end, :]
 
 def get_resid_stream_vector_efficient(model, input_ids, layer, start, end, attention_mask=None):
     saved = {}
@@ -423,11 +348,10 @@ def get_resid_stream_vector_efficient(model, input_ids, layer, start, end, atten
     finally:
         h.remove()
 
-# test = get_resid_stream_vector(subject, torch.tensor([[2040,3520]], device="cuda"),3,0,5 )
 
 decoder_base, _, _ = load_model_and_tokenizer(mode="train")
 lora_cfg = LoraConfig(
-    r=8,
+    r=16,
     lora_alpha=32,
     lora_dropout=0.05,
     bias="none",
@@ -447,13 +371,6 @@ encoder = Encoder(d_in=d_model, multiplier=d_model_multiplier, top_k=16).to(devi
 
 decoder = DDP(decoder, device_ids=[local_rank], output_device=local_rank)
 encoder = DDP(encoder, device_ids=[local_rank], output_device=local_rank)
-
-# A = decoder.base_model.model.model.layers[0].self_attn.q_proj.lora_A["default"].weight.detach()
-# B = decoder.base_model.model.model.layers[0].self_attn.q_proj.lora_B["default"].weight.detach()
-
-# print("A mean/std:", A.mean().item(), A.std().item())
-# print("B mean/std:", B.mean().item(), B.std().item())
-# print("B all zero:", (B == 0).all().item())
 
 
 optim = torch.optim.AdamW(
@@ -582,12 +499,6 @@ best_val = float("inf")
 handle = decoder.module.base_model.model.model.embed_tokens.register_forward_hook(
     patch_resid_stream_hook(patch_idx)
 )
-m = decoder.module.base_model.model.model.embed_tokens
-print("num forward hooks:", len(m._forward_hooks))
-print("hook ids:", list(m._forward_hooks.keys())[:5])
-print("handle id:", handle.id)
-print("handle present:", handle.id in m._forward_hooks)
-
 
 every_n_steps = 25
 inactive_concepts_n_steps = 50
@@ -619,20 +530,17 @@ def load_ckpt_if_exists():
     encoder.module.load_state_dict(ckpt["encoder"])
     decoder.module.load_state_dict(ckpt["decoder"])
 
-    # optimizer (must be after models are loaded)
     optim.load_state_dict(ckpt["optim"])
     for st in optim.state.values():
         for k, v in st.items():
             if torch.is_tensor(v):
                 st[k] = v.to(device)
 
-    # counters / trackers
     best_val = ckpt["best_val"]
     curr_bad = ckpt["curr_bad"]
     seen_tokens = ckpt["seen_tokens"]
     inactive_concepts_tracker = ckpt["inactive_concepts_tracker"]
 
-    # this one is a tensor on GPU
     concepts_last_occ_by_seen_tokens.copy_(ckpt["concepts_last_occ_by_seen_tokens"].to(device))
 
     start_epoch = int(ckpt["epoch"])
@@ -714,7 +622,7 @@ def do_train_full(start_epoch=0, start_step=1):
                                 "seen_tokens": seen_tokens,
                                 "inactive_concepts_tracker": inactive_concepts_tracker
                             },
-                            "pcd_3B_layer15_all-lora-modules.pt",
+                            "pcd_3B_layer15_all-lora-modules_rank16.pt",
                         )
         
                     else:

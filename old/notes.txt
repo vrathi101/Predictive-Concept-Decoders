@@ -26,8 +26,18 @@ read layer 9, remove aux loss -- torchrun11.log, again basically no diff in term
 read layer 9, w/ aux loss, more lora layers (all attention + mlp), only slightly better
 yet it seemed to end at same best_val loss value --torchrun12.log, torchrun13.log
 
-gonna try upping to llama 3.2 3b instruct, layer 14 (it has 28 layers total)
+
+gonna try upping to llama 3.2 3b instruct, layer 15 (it has 28 layers total)
 same as directly above, all lora layers possible, regular aux loss
+torchrun15.log -- unsurprisingly increasing the size of the model considerable improves performance
+less than 1 epoch it hit 3.27 val loss, step 1500 ish its 3.24
+
+
+changing rank to 16, lora alpha was alr 32 from before but i had rank to 8 which might hv been bad b/c then the alpha/r ratio was 4 instead of 2 which may have been high
+run stopped [epoch 2/100: 3749it here] -->  val of 3.08
+turns out seems like not much diff from prev run, as
+at this ppoint [epoch 1/100: 1674it] both runs hit val of 3.22/3.23
+torchrun16.log
 
 
 check if it rly is 16 tokens or not 

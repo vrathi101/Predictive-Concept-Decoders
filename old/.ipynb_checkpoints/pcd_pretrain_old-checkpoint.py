@@ -1,14 +1,8 @@
+# pip install --no-cache-dir -U "transformers>=4.51.0" accelerate datasets torch pandas tqdm nnsight huggingface_hub peft
+# pip install --no-cache-dir typing-extensions --upgrade
+# pip uninstall -y torchvision
+
 import os
-os.environ["PIP_CACHE_DIR"] = "/workspace/.cache/pip"
-os.environ["HF_HOME"] = "/workspace/.cache/huggingface"
-
-import sys
-sys.path.append('.')
-
-# !pip install --no-cache-dir -U "transformers>=4.51.0" accelerate datasets torch pandas tqdm nnsight huggingface_hub peft
-# !pip install --no-cache-dir typing-extensions --upgrade
-# !pip uninstall -y torchvision
-
 import json
 import re
 import random
@@ -20,27 +14,56 @@ from torch.utils.data import IterableDataset, DataLoader, get_worker_info
 # from nnsight import LanguageModel
 from peft import LoraConfig, get_peft_model
 from tqdm import tqdm
+from itertools import islice
 from datasets import load_dataset, Dataset
-from transformers import AutoTokenizer, AutoModelForCausalLM  # other option: Qwen/Qwen2.5-0.5B-Instruct
+from huggingface_hub import hf_hub_download, login
+from transformers import AutoTokenizer, AutoModelForCausalLM
 
-dist.init_process_group(backend="nccl")
+
+os.environ["HF_HOME"] = "/root/.cache/huggingface"
+os.environ["HF_HUB_CACHE"] = "/root/.cache/huggingface/hub"
+os.environ["HF_DATASETS_CACHE"] = "/root/.cache/huggingface/datasets"
+os.environ["TRANSFORMERS_CACHE"] = "/root/.cache/huggingface/transformers"
+os.environ["PIP_CACHE_DIR"] = "/root/.cache/pip"
+os.environ["TOKENIZERS_PARALLELISM"] = "false"
+
 local_rank = int(os.environ["LOCAL_RANK"])
-rank = int(os.environ["RANK"])
-world_size = int(os.environ["WORLD_SIZE"])
-
 torch.cuda.set_device(local_rank)
 device = torch.device(f"cuda:{local_rank}")
 
-# from huggingface_hub import notebook_login
-# notebook_login()
-from huggingface_hub import login
-import os
+dist.init_process_group(backend="nccl")
+rank = dist.get_rank()
+world_size = dist.get_world_size()
+
+# FineWeb sample/10BT has 15 shards: 000..014  (total ~30.6GB)
+FINEWEB_REV = "9bb295ddab0e05d785b879661af7260fed5140fc"
+FILE_IDS = list(range(4))
+
+def fineweb_local_parquets(file_ids, local_only: bool):
+    return [
+        hf_hub_download(
+            repo_id="HuggingFaceFW/fineweb",
+            repo_type="dataset",
+            filename=f"sample/10BT/{i:03d}_00000.parquet",
+            revision=FINEWEB_REV,
+            local_files_only=local_only,
+        )
+        for i in file_ids
+    ]
+
+if rank == 0:
+    _ = fineweb_local_parquets(FILE_IDS, local_only=False)
+
+dist.barrier(device_ids=[local_rank])
+
+LOCAL_PARQUETS = fineweb_local_parquets(FILE_IDS, local_only=True)
 
 token = os.environ.get("HF_TOKEN")
 if token:
     login(token=token)
 
-def load_model_and_tokenizer(model_name="meta-llama/Llama-3.2-1B-Instruct", attn_implementation="sdpa", mode="eval", **kwargs):
+
+def load_model_and_tokenizer(model_name="meta-llama/Llama-3.2-3B-Instruct", attn_implementation="sdpa", mode="eval", **kwargs):
     """Load model and tokenizer with standard setup.
 
     Returns:
@@ -75,6 +98,7 @@ def load_model_and_tokenizer(model_name="meta-llama/Llama-3.2-1B-Instruct", attn
 
     return model, tokenizer, config
 
+
 def load_data(dataset_name="HuggingFaceFW/fineweb", split="train", streaming=True, first_k=int(1e5), buffer_frac=0.1, val_frac=0.05):
     ds_stream = load_dataset(
         dataset_name,
@@ -86,6 +110,7 @@ def load_data(dataset_name="HuggingFaceFW/fineweb", split="train", streaming=Tru
     ds_train = ds_stream.take(first_k)
     ds_val = ds_stream.skip(first_k).take(int(first_k * val_frac))
     return ds_train, ds_val
+
 
 def get_cropped_text_ids(dataset, tokenizer, prefix_ids, cropped_len=48):
     for item in dataset:
@@ -100,6 +125,7 @@ def get_cropped_text_ids(dataset, tokenizer, prefix_ids, cropped_len=48):
             start = rng.randint(0, len(text_ids) - cropped_len)
             selected_ids = text_ids[start:start + cropped_len]
             yield prefix_ids + selected_ids
+
 
 subject, tokenizer, config = load_model_and_tokenizer()
 subject = subject.to(device)
@@ -177,8 +203,7 @@ rng = random.Random(42)
 class CroppedTokenDataset(IterableDataset):
     def __init__(
         self,
-        dataset_name,
-        dataset_config,
+        data_files,
         tokenizer,
         prefix_ids,
         cropped_len=48,
@@ -188,8 +213,7 @@ class CroppedTokenDataset(IterableDataset):
         seed=42,
         shuffle_buffer=50_000,
     ):
-        self.dataset_name = dataset_name
-        self.dataset_config = dataset_config
+        self.data_files = data_files
         self.tokenizer = tokenizer
         self.prefix = torch.tensor(prefix_ids, dtype=torch.long)
         self.cropped_len = cropped_len
@@ -198,57 +222,65 @@ class CroppedTokenDataset(IterableDataset):
         self.skip_samples = skip_samples
         self.seed = seed
         self.shuffle_buffer = shuffle_buffer
+        self.epoch = 0
+
+    def set_epoch(self, epoch):
+        self.epoch = int(epoch)
 
     def __iter__(self):
-        info = get_worker_info()
-        wid = 0 if info is None else info.id
-        nw  = 1 if info is None else info.num_workers
+        # DDP rank/world
+        rank = int(os.environ.get("RANK", "0"))
+        world = int(os.environ.get("WORLD_SIZE", "1"))
+        
+        epoch = getattr(self, "epoch", 0)
+        seed = self.seed + 10_000 * epoch + rank
 
-        rank = int(os.environ["RANK"])
-        world = int(os.environ["WORLD_SIZE"])
+        take_local = self.total_samples // world
+        skip_local = self.skip_samples // world
 
-        num_shards = world * nw
-        shard_index = rank * nw + wid
+        local_files = self.data_files[(rank + epoch) % world :: world]
+        if len(local_files) == 0:
+            return
 
         ds = load_dataset(
-            self.dataset_name,
-            name=self.dataset_config,
+            "parquet",
+            data_files=local_files,
             split="train",
             streaming=True,
         )
 
-        # shard FIRST so each worker/process reads different data
-        ds = ds.shard(num_shards=num_shards, index=shard_index)
+        if self.mode == "train":
+            ds = ds.shuffle(buffer_size=self.shuffle_buffer, seed=seed)
 
-        # shuffle within shard (cheap + avoids everyone touching the same broken files)
-        ds = ds.shuffle(buffer_size=self.shuffle_buffer, seed=self.seed)
-
-        # local counts (simple + stable)
-        skip_local = self.skip_samples // num_shards
-        take_local = self.total_samples // num_shards
-
-        it = iter(ds)
-        for _ in range(skip_local):
-            next(it)
+        stream = islice(ds, skip_local, None)
 
         g = torch.Generator()
-        g.manual_seed(self.seed + shard_index)
+        g.manual_seed(seed)
 
         emitted = 0
-        while emitted < take_local:
-            item = next(it)
-            text_ids = self.tokenizer(item["text"], return_tensors=None, add_special_tokens=False)["input_ids"]
+        for item in stream:
+            text_ids = self.tokenizer(
+                item["text"],
+                return_tensors=None,
+                add_special_tokens=False
+            )["input_ids"]
+
             if len(text_ids) < self.cropped_len:
                 continue
 
             if self.mode == "train":
-                start = int(torch.randint(0, len(text_ids) - self.cropped_len + 1, (1,), generator=g).item())
+                start = int(torch.randint(
+                    0, len(text_ids) - self.cropped_len + 1, (1,), generator=g
+                ).item())
             else:
                 start = 0
 
             cropped = torch.tensor(text_ids[start:start + self.cropped_len], dtype=torch.long)
-            emitted += 1
             yield torch.cat([self.prefix, cropped], dim=0)
+
+            emitted += 1
+            if emitted >= take_local:
+                break
 
 
 class Encoder(nn.Module):
@@ -278,7 +310,7 @@ class Encoder(nn.Module):
         out = self.w_emb(masked_y)  # (B, 16, d_in)
         return out, idx
 
-# def get_resid_stream_vector(layer, input_ids, prefix_ids, cropped_len):
+# def get_resid_stream_vector_slow(layer, input_ids, prefix_ids, cropped_len):
 #     with nnsight_model.trace(input_ids):
 #         resid = nnsight_model.model.layers[layer].output[:]
 #         start = len(prefix_ids) + cropped_len // 3
@@ -286,16 +318,16 @@ class Encoder(nn.Module):
 #         out = resid[:, start:end, :].save()
 #         return out
 
-def get_resid_stream_vector(model, input_ids, layer, start, end, attention_mask=None):
-    out = model(
-        input_ids=input_ids,
-        attention_mask=attention_mask,
-        output_hidden_states=True,
-        return_dict=True,
-        use_cache=False
-    )
-    resid = out.hidden_states[layer + 1]
-    return resid[:, start:end, :]
+# def get_resid_stream_vector(model, input_ids, layer, start, end, attention_mask=None):
+#     out = model(
+#         input_ids=input_ids,
+#         attention_mask=attention_mask,
+#         output_hidden_states=True,
+#         return_dict=True,
+#         use_cache=False
+#     )
+#     resid = out.hidden_states[layer + 1]
+#     return resid[:, start:end, :]
 
 def get_resid_stream_vector_efficient(model, input_ids, layer, start, end, attention_mask=None):
     saved = {}
@@ -316,32 +348,30 @@ def get_resid_stream_vector_efficient(model, input_ids, layer, start, end, atten
     finally:
         h.remove()
 
-# test = get_resid_stream_vector(subject, torch.tensor([[2040,3520]], device="cuda"),3,0,5 )
 
 decoder_base, _, _ = load_model_and_tokenizer(mode="train")
 lora_cfg = LoraConfig(
-    r=8,
+    r=16,
     lora_alpha=32,
     lora_dropout=0.05,
     bias="none",
     task_type="CAUSAL_LM",
-    target_modules=["q_proj", "k_proj"]
+    target_modules=["q_proj", "k_proj", "v_proj", "o_proj",
+                   "gate_proj", "up_proj", "down_proj"]
 )
-decoder = get_peft_model(decoder_base, lora_cfg).to(device).train()
+decoder = get_peft_model(decoder_base, lora_cfg).to(device).bfloat16().train()
+
+for name, p in decoder.named_parameters():
+    if "lora_" in name:
+        p.data = p.data.float()
 
 d_model = decoder.config.hidden_size
 d_model_multiplier = 8
-encoder = Encoder(d_in=d_model, multiplier=d_model_multiplier, top_k=16).to(device).to(torch.bfloat16).train()
+encoder = Encoder(d_in=d_model, multiplier=d_model_multiplier, top_k=16).to(device).train()
 
 decoder = DDP(decoder, device_ids=[local_rank], output_device=local_rank)
 encoder = DDP(encoder, device_ids=[local_rank], output_device=local_rank)
 
-# A = decoder.base_model.model.model.layers[0].self_attn.q_proj.lora_A["default"].weight.detach()
-# B = decoder.base_model.model.model.layers[0].self_attn.q_proj.lora_B["default"].weight.detach()
-
-# print("A mean/std:", A.mean().item(), A.std().item())
-# print("B mean/std:", B.mean().item(), B.std().item())
-# print("B all zero:", (B == 0).all().item())
 
 optim = torch.optim.AdamW(
     list(encoder.parameters()) + list(decoder.parameters()),
@@ -350,7 +380,7 @@ optim = torch.optim.AdamW(
 )
 start_cropped_pos = len_prefix + cropped_len // 3
 end_cropped_pos = start_cropped_pos + cropped_len // 3
-layer = 8
+layer = 15
 batch_size=64
 dummy = tokenizer(
     " X" * (cropped_len // 3),
@@ -368,42 +398,36 @@ concepts_last_occ_by_seen_tokens = torch.full(
 seen_tokens = 0
 inactive_concepts_tracker = []
 
-
-
-TRAIN_SAMPLES = 500_000
 VAL_SAMPLES   = 10_000
-
-DATASET = "HuggingFaceFW/fineweb"
-CONFIG  = "sample-10BT" 
+TRAIN_SAMPLES = 500_000
 
 pcd_train_ds = CroppedTokenDataset(
-    dataset_name=DATASET,
-    dataset_config=CONFIG,
+    data_files=LOCAL_PARQUETS,
     tokenizer=tokenizer,
     prefix_ids=prefix_ids,
     cropped_len=48,
     mode="train",
     total_samples=TRAIN_SAMPLES,
     skip_samples=VAL_SAMPLES,
-    seed=42,
 )
 
 pcd_val_ds = CroppedTokenDataset(
-    dataset_name=DATASET,
-    dataset_config=CONFIG,
+    data_files=LOCAL_PARQUETS,
     tokenizer=tokenizer,
     prefix_ids=prefix_ids,
     cropped_len=48,
     mode="val",
     total_samples=VAL_SAMPLES,
     skip_samples=0,
-    seed=42,
 )
 
-train_loader = DataLoader(pcd_train_ds, batch_size=64, num_workers=4, pin_memory=True, drop_last=True)
-val_loader   = DataLoader(pcd_val_ds,   batch_size=64, num_workers=2, pin_memory=True, drop_last=True)
 
-patch_state = {"vecs": None}
+
+train_loader = DataLoader(pcd_train_ds, batch_size=64, num_workers=0, pin_memory=True, drop_last=True)
+val_loader   = DataLoader(pcd_val_ds,   batch_size=64, num_workers=0, pin_memory=True, drop_last=True)
+
+
+patch_state = {"vecs": None, "calls": 0}
 def patch_resid_stream_hook(idx):
     def hook(module, inp, out):
         h = out.clone()
@@ -419,6 +443,7 @@ def train_step(subject_model, batch, layer, start_pos, end_pos,
             subject_model, batch, layer, start_pos, end_pos
         ).to(device)  # (B, 16, d_model)
 
+    encoder_in = encoder_in.float()
     encoder_out, idx = encoder(encoder_in)
     suffix = batch[:, -16:]
     decoder_in = torch.cat([dummy, suffix], dim=-1)
@@ -467,7 +492,7 @@ def train_step(subject_model, batch, layer, start_pos, end_pos,
     return ce_loss + aux_loss, num_inactive
 
 num_epochs = 100
-patience = 5
+patience = 10
 curr_bad = 0
 best_val = float("inf")
 
@@ -483,14 +508,58 @@ count_steps = 0
 
 stop_training = False
 
-def do_train_full():
+CKPT_PATH = "chk-lora-modules.pt"
+
+
+def load_ckpt_if_exists():
+    global seen_tokens, best_val, curr_bad, inactive_concepts_tracker
+
+    if rank == 0 and os.path.exists(CKPT_PATH):
+        ckpt = torch.load(CKPT_PATH, map_location="cpu")
+    else:
+        ckpt = None
+        
+    obj_list = [ckpt]
+    dist.broadcast_object_list(obj_list, src=0)
+    ckpt = obj_list[0]
+
+    if ckpt is None:
+        return 0, 1  # start_epoch, start_step
+
+    # models
+    encoder.module.load_state_dict(ckpt["encoder"])
+    decoder.module.load_state_dict(ckpt["decoder"])
+
+    optim.load_state_dict(ckpt["optim"])
+    for st in optim.state.values():
+        for k, v in st.items():
+            if torch.is_tensor(v):
+                st[k] = v.to(device)
+
+    best_val = ckpt["best_val"]
+    curr_bad = ckpt["curr_bad"]
+    seen_tokens = ckpt["seen_tokens"]
+    inactive_concepts_tracker = ckpt["inactive_concepts_tracker"]
+
+    concepts_last_occ_by_seen_tokens.copy_(ckpt["concepts_last_occ_by_seen_tokens"].to(device))
+
+    start_epoch = int(ckpt["epoch"])
+    start_step  = int(ckpt["step"]) + 1  # continue after saved step
+    return start_epoch, start_step
+
+
+def do_train_full(start_epoch=0, start_step=1):
     global global_step, count_steps, total_inactive_concepts
     global seen_tokens, best_val, curr_bad, stop_training
     
-    for epoch in range(num_epochs):
+    for epoch in range(start_epoch, num_epochs):
+        train_loader.dataset.set_epoch(epoch)
     
         pbar = tqdm(enumerate(train_loader, start=1), desc=f"epoch {epoch+1}/{num_epochs}")
         for step, train_batch in pbar:
+            if epoch == start_epoch and step < start_step:
+                continue
+                
             global_step += 1
     
             train_batch = train_batch.to(device, non_blocking=True)
@@ -553,14 +622,14 @@ def do_train_full():
                                 "seen_tokens": seen_tokens,
                                 "inactive_concepts_tracker": inactive_concepts_tracker
                             },
-                            "best_checkpoint_aux.pt",
+                            "pcd_3B_layer15_all-lora-modules_rank16.pt",
                         )
         
                     else:
                         curr_bad += 1
                         if curr_bad >= patience:
                             stop_training = True
-    
+
                     pbar.set_postfix(loss=float(loss.item()), val=float(val_mean), best_val=float(best_val))
                 else:
                     pbar.set_postfix(loss=float(loss.item()))
@@ -582,4 +651,6 @@ def do_train_full():
     dist.destroy_process_group()
 
 if __name__ == "__main__":
-    do_train_full()
+    start_epoch, start_step = load_ckpt_if_exists()
+    dist.barrier(device_ids=[local_rank])
+    do_train_full(start_epoch, start_step)
