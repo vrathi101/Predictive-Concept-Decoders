@@ -11,3 +11,6 @@ B/c of time constraints I skipped a few steps, like 1. "[filtering] for consiste
 I think that without mixing in some pretraining data, my set up for fine-tuning might not fully encourage learning for the patched vectors as the loss is just based on last token, so hope to improve here
 
 I hope to continue building off of this
+See huggingface models here https://huggingface.co/vrathi101/predictive_concept_decoders
+
+Can run pretrain script like `PYTHONUNBUFFERED=1 torchrun --nproc_per_node={num_gpus} pcd_pretrain.py 2>&1 | tee runs/{log_filename}.log`
