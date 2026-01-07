@@ -7,7 +7,7 @@ I trained on Llama 3.2 3b instruct with 2 A40 GPUs on runpod using DDP - since F
 my best validation loss reached 3.08 -- I'm pretty confident this would get much lower with a larger model (e.g. 8b like the paper) and more data, see old/notes.txt
 
 For finetuning, since I wasn't able to find the data referenced in the [Transluce blog](https://transluce.org/user-modeling) I synthetically generated one using Gemini 3 Flash
-B/c of time constraints I skipped a few steps, like 1. "[filtering] for consistency of revealed beliefs" and 2. "mixing in FineWeb sequences at 50% frequency to reduce forgetting" which I hope to do soon
+B/c of time constraints I skipped a few steps, like 1. "[filtering] for consistency of revealed beliefs" and 2. "mixing in FineWeb sequences at 50% frequency to reduce forgetting" which I hope to do soon;
 I think that without mixing in some pretraining data, my set up for fine-tuning might not fully encourage learning for the patched vectors as the loss is just based on last token, so hope to improve here
 
 I hope to continue building off of this
